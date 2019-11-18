@@ -1,0 +1,220 @@
+@charset "UTF-8";
+// Variables
+@import 'variables';
+//共通レイアウト
+*{
+  margin: 0;
+  padding: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family:'游ゴシック Medium', '游ゴシック体', 'Yu Gothic Medium', YuGothic, sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 1.6rem;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+}
+.header-inner, .contents, .create-contents, .show-contents, .footer-inner {
+  max-width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+//ヘッダーレイアウト
+header {
+  background-color: #fff;
+  border-bottom: 1px solid #c3c3c3;
+  .header-inner {
+    display: flex;
+    justify-content : space-between;
+    padding: 10px 30px;
+  }
+  .header-left {
+    .header-logo {
+      font-size: 2.4rem;
+      font-weight: bold;
+      display: block;
+      padding: 5px;
+    }
+    .back {
+      font-weight: bold;
+    }
+  } 
+  .header-right a {
+    display: inline-block;
+    padding: 13px 5px 5px;
+
+  }
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 5px 10px;
+    appearance: none;
+    font-size: 1.6rem;
+    font-family:'游ゴシック Medium', '游ゴシック体', 'Yu Gothic Medium', YuGothic, sans-serif;
+    color: #333;
+    border-radius: 3px;
+  }
+  .post {
+    background-color: #38b48b;
+    color: #fff;
+  }
+  .delete {
+    color: #ff0000;
+  }
+}
+//コンテナレイアウト
+.container {
+  margin: 0 auto;
+  @mixin title-style {
+    border-bottom: 1px solid #333;
+    margin: 0 auto;
+    padding: 20px 10px 5px;
+    text-align: left;
+    font-weight: bold;
+  }
+  .contents {
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 30px 0;
+    background-color: #fff;
+    text-align: center;
+    .row {
+      display: flex;
+      justify-content: space-around;
+      justify-content: center;
+    }
+    .picture {
+      width: 250px;
+      height: 200px;
+      margin: 5px;
+    }
+  }
+  .create-contents {
+    padding: 55px 0;
+    background-color: #fff;
+    text-align: center;
+    .post-title {
+      width: 800px;
+      @include title-style;
+    }
+  }
+  .show-contents {
+    padding-bottom: 20px;
+    background-color: #fff;
+    text-align: center;
+    .post-title {
+      width: 950px;
+      @include title-style;
+    }
+  }
+  .user-area {
+    width: 950px;
+    margin: 0 auto;
+    padding:  15px 10px 5px;
+    text-align: left;
+    .user-picture {
+      width: 40px;
+      height: 40px;  
+      border: 1px solid #696969;
+      border-radius: 30px; 
+      padding: 2px;
+    }
+    .user-name {
+      padding: 20px 10px;
+    }
+  }
+  .photo { 
+    width: 800px;
+    height: 500px;
+    padding-top: 110px;
+    margin: 0 auto;
+    display: block;
+    border: 1px solid #c3c3c3;
+    border-radius: 5px;
+    outline: 0;
+    font-size: 1.4rem;
+    background-color: #f5f5f5;
+    .my-big1 {
+      color: #fff;
+      font-size: 24rem;
+    }
+  }
+  .file {
+    display: none;
+  }
+  .post-picture {
+    width: 950px;
+    height: 600px;
+  }
+  .title {
+    border: none;
+    width: 100%;
+    font-size: 1.6rem;
+    outline: 0;
+  }
+  .date {
+    width: 950px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    text-align: left;
+    padding: 10px 10px 0; 
+  }
+  .submit input {
+    display: none;
+  }
+}
+//フッターレイアウト
+footer {
+  padding: 50px;
+  background-color: #696969;
+  display: flex;
+  .footer-inner {
+    text-align: center;
+    color: #fff;
+  }
+}
+
+
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
