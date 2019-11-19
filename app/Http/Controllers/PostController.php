@@ -13,9 +13,12 @@ class PostController extends Controller
         return view('post.create');
     }
     public function  store() {
-        // 
+        return view('post.index');
     }
     public function show() {
         return view('post.show');
+    }
+    public function delete() {
+        return view('post.index');
     }
 }

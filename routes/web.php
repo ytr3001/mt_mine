@@ -19,4 +19,6 @@ Route::get('/post/index', 'PostController@index');
 Route::get('/post/create', 'PostController@create');
 Route::post('/post/create', 'PostController@store');
 Route::get('/post/show', 'PostController@show');
+Route::post('/post/show', 'PostController@delete');
+
 
