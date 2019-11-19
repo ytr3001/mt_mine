@@ -16,7 +16,7 @@
         <button class="btn back" onclick="history.back()">&lt</button>
       </div>
       <div class="header-right">
-        <button class="btn delete">削除</button>
+        <button class="btn delete"><i class="far fa-trash-alt"></i></button>
       </div>
     </div>
   </header>

@@ -42,23 +42,39 @@ header {
   .header-inner {
     display: flex;
     justify-content : space-between;
-    padding: 10px 30px;
+    padding: 0px 25px;
   }
   .header-left {
     .header-logo {
       font-size: 2.4rem;
       font-weight: bold;
       display: block;
-      padding: 5px;
+      padding: 15px 0;
     }
     .back {
       font-weight: bold;
+      font-size: 2.4rem;
+      padding: 10px 20px;
+      // padding-bottom: 10px;
     }
   } 
-  .header-right a {
-    display: inline-block;
-    padding: 13px 5px 5px;
-
+  .header-right {
+    a {
+      display: inline-block;
+      padding: 20px 0;
+    }
+    .post {
+      background-color: #38b48b;
+      color: #fff;
+      margin-top: 11px;
+      margin-right: 5px;
+    }
+    .delete {
+      color: #333;
+      font-size: 1.6em;
+      padding-top: 11px;
+      padding-right: 30px;
+    }
   }
   button {
     background-color: transparent;
@@ -71,13 +87,6 @@ header {
     font-family:'游ゴシック Medium', '游ゴシック体', 'Yu Gothic Medium', YuGothic, sans-serif;
     color: #333;
     border-radius: 3px;
-  }
-  .post {
-    background-color: #38b48b;
-    color: #fff;
-  }
-  .delete {
-    color: #ff0000;
   }
 }
 //コンテナレイアウト

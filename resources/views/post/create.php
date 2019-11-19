@@ -13,7 +13,7 @@
   <header>
     <div class="header-inner">
       <div class="header-left">
-      <button class="btn back" onclick="history.back()">キャンセル</button>
+      <button class="btn back" onclick="history.back()">&lt</button>
       </div>
       <div class="header-right">
         <button class="btn post">投稿する</button>

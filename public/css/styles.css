@@ -53,23 +53,39 @@ header .header-inner {
   display: flex;
   -webkit-box-pack: justify;
           justify-content: space-between;
-  padding: 10px 30px;
+  padding: 0px 25px;
 }
 
 header .header-left .header-logo {
   font-size: 2.4rem;
   font-weight: bold;
   display: block;
-  padding: 5px;
+  padding: 15px 0;
 }
 
 header .header-left .back {
   font-weight: bold;
+  font-size: 2.4rem;
+  padding: 10px 20px;
 }
 
 header .header-right a {
   display: inline-block;
-  padding: 13px 5px 5px;
+  padding: 20px 0;
+}
+
+header .header-right .post {
+  background-color: #38b48b;
+  color: #fff;
+  margin-top: 11px;
+  margin-right: 5px;
+}
+
+header .header-right .delete {
+  color: #333;
+  font-size: 1.6em;
+  padding-top: 11px;
+  padding-right: 30px;
 }
 
 header button {
@@ -85,15 +101,6 @@ header button {
   font-family: "\6E38\30B4\30B7\30C3\30AF   Medium", "\6E38\30B4\30B7\30C3\30AF\4F53", "Yu Gothic Medium", YuGothic, sans-serif;
   color: #333;
   border-radius: 3px;
-}
-
-header .post {
-  background-color: #38b48b;
-  color: #fff;
-}
-
-header .delete {
-  color: #ff0000;
 }
 
 .container {
