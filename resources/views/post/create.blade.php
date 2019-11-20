@@ -26,8 +26,8 @@
     <div class="create-contents">
       <form action="create" method="post" id="create-post" enctype="multipart/form-data">
       {{ csrf_field() }}
-        <div class="photo-flie">
-          <label for="file" id="photo"><i class="far fa-image my-big1"></i><br><span>写真を選択</span></label>
+        <div class="picture-flie">
+          <label for="file" id="picture"><i class="far fa-image my-big1"></i><br><span>写真を選択</span></label>
           <label for="file" id="image"></label>
           <input type="file" id="file" class="file" name="picture" accept="image/*">
         </div>

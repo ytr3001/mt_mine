@@ -30,7 +30,7 @@
           <span class="user-name">TEST</span>
         </a>
       </div>
-      <div class="photo-area">
+      <div class="picture-area">
         <img src="../../public/imges/forest1.jpg" alt="画像" class="post-picture">
       </div>
       <div class="post-title">

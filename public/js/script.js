@@ -32,7 +32,7 @@ $(function() {
     reader.onload = function() {
       var img_src = $('<img>').attr('src', reader.result);
       $('#image').html(img_src);
-      $('#photo').css('display', 'none');
+      $('#picture').css('display', 'none');
     }
     reader.readAsDataURL(file);
   });

@@ -24,16 +24,18 @@ body {
   color: #333;
   margin: 0;
   padding: 0;
-  background-color: #f8f8f8;
+  background-color: #f5f5f5;
 }
-.header-inner, .contents, .create-contents, .show-contents, .footer-inner {
+.header-inner, .contents, .create-contents, .show-contents, .user-contents, .footer-inner {
   max-width: 1000px;
   margin-right: auto;
   margin-left: auto;
+  background-color: #fff;
 }
 a {
   text-decoration: none;
   color: #333;
+  cursor: default;
 }
 button {
   background-color: transparent;
@@ -47,7 +49,7 @@ button {
 //ヘッダーレイアウト
 header {
   background-color: #fff;
-  border-bottom: 1px solid #c3c3c3;
+  border-bottom: 1px solid #a9a9a9;
   .header-inner {
     display: flex;
     justify-content : space-between;
@@ -84,6 +86,11 @@ header {
       padding-top: 13px;
       padding-right: 35px;
     }
+    .config {
+      font-size: 2.4rem;
+      padding-top: 11px;
+      padding-right: 20px;
+    }
   }
 }
 //コンテナレイアウト
@@ -101,7 +108,6 @@ header {
     margin-right: auto;
     margin-left: auto;
     padding: 30px 0;
-    background-color: #fff;
     text-align: center;
     .row {
       display: flex;
@@ -116,7 +122,6 @@ header {
   }
   .create-contents {
     padding: 50px 0;
-    background-color: #fff;
     text-align: center;
     .post-title {
       width: 800px;
@@ -125,7 +130,6 @@ header {
   }
   .show-contents {
     padding-bottom: 20px;
-    background-color: #fff;
     text-align: center;
     .post-title {
       width: 950px;
@@ -148,7 +152,7 @@ header {
       padding: 20px 10px;
     }
   }
-  #photo { 
+  #picture { 
     width: 800px;
     height: 500px;
     padding-top: 110px;
@@ -197,6 +201,7 @@ footer {
   .footer-inner {
     text-align: center;
     color: #fff;
+    background-color: #696969;
   }
 }
 //モーダルレイアウト
@@ -248,6 +253,53 @@ footer {
     padding: 15px 0;
   }
 }
+//user関連レイアウト
+.user-contents {
+  padding-bottom: 50px;
+  .user-area {
+    width: 1000px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #a9a9a9;
+    padding: 30px 50px 0px;
+    .user-picture {
+      width: 100px;
+      height: 100px;
+      border-radius: 80px;
+    }
+    .user-name {
+      font-size: 2.4rem;
+      padding: 10px 20px;
+    }
+    .my-big2 {
+      margin-left: 550px;
+      font-size: 2.4rem;
+      background-color: #b1b1b1;
+      color: #fff;
+      padding: 20px;
+      border-radius: 50px;
+      vertical-align: bottom;
+    }
+    .introduction {
+      padding: 30px 0;
+    }
+  }
+  .row {
+    display: flex;
+    justify-content: space-around;
+    .col {
+      margin-bottom: 10px;
+      .post-picture {
+        width: 480px;
+        height: 330px;
+      }
+      .post-title {
+        font-weight: bold;
+        padding-left: 5px;
+        border-bottom: 1px solid #333;
+      }
+    }
+  }
+}
 //レスポンシブデザイン
 @media (max-width: 575px) {
   body {
@@ -282,6 +334,11 @@ footer {
         font-size: 1.2rem;
         padding-top: 11px;
         padding-right: 0px;
+      }
+      .config {
+        font-size: 1.6rem;
+        padding-top: 11px;
+        padding-right: 20px;
       }
     }
   }
@@ -324,7 +381,7 @@ footer {
         width: 350px;
       }
     }
-    #photo { 
+    #picture { 
       width: 350px;
       height: 200px;
       padding-top: 50px;
@@ -364,7 +421,53 @@ footer {
       font-size: 0.8rem;
     }
   }
+  .user-contents {
+    padding-bottom: 40px;
+    .user-area {
+      padding: 20px 30px 10px;
+      border-bottom: 1px solid #a9a9a9;
+      .user-picture {
+        width: 50px;
+        height: 50px;
+      }
+      .user-name {
+        font-size: 1.2rem;
+        padding: 10px;
+      }
+      .my-big2 {
+        margin-left: 150px;
+        font-size: 1.2rem;
+        color: #fff;
+        padding: 10px;
+      }
+      .introduction {
+        padding: 10px 0;
+      }
+    }
+    .row {
+      display: flex;
+      flex-direction: column;
+      .col {
+        margin-bottom: 10px;
+        text-align: center;
+        border-bottom: 1px solid #a9a9a9;
+        .post-picture {
+          width: 350px;
+          height: 200px;
+        }
+        .post-title {
+          font-weight: bold;
+          padding: 5px;
+          border: none;
+          text-align: left;
+          max-width: 350px;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
 }
+
 @media (min-width: 768px) and (max-width: 1024px) {
   .container {
     max-width: 768px;
@@ -402,7 +505,7 @@ footer {
         width: 700px;
       }
     }
-    #photo { 
+    #picture { 
       width: 700px;
       height: 400px;
       padding-top: 80px;
@@ -418,6 +521,21 @@ footer {
     .modal {
       top: 25%;
       left: 18%;
+    }
+  }
+  .user-contents {
+    .user-area {
+      .my-big2 {
+        margin-left: 300px;
+      }
+    }
+    .row {
+      .col {
+        .post-picture {
+          width: 360px;
+          height: 210px;
+        }
+      }
     }
   }
 }

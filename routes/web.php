@@ -21,4 +21,6 @@ Route::post('/post/create', 'PostController@store');
 Route::get('/post/show', 'PostController@show');
 Route::post('/post/show', 'PostController@delete');
 
+Route::get('/user/index','UserController@index');
+
 
