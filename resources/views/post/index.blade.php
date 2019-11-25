@@ -19,7 +19,7 @@
       <div class="header-right">
         <a href="../auth/login">ログイン</a>
         <span> / </span>
-        <a href="../user/signup">新規登録</a>
+        <a href="../user/add">新規登録</a>
       </div>
     </div>
   </header>

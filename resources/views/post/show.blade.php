@@ -26,8 +26,12 @@
     <div class="show-contents">
       <div class="user-area">
         <a href="../user/index">
+        @if(is_null($user->picture))
           <img src="../../public/imges/default.png" alt="画像" class="user-picture">
-          <span class="user-name">TEST</span>
+        @else
+          <img src="../../public/storage/{{$user->picture}}" alt="画像" class="user-picture">
+        @endif
+          <span class="user-name">{{$user->name}}</span>
         </a>
       </div>
       <div class="picture-area">

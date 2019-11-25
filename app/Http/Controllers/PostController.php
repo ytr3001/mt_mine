@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\User;
 
 class PostController extends Controller
 {
@@ -26,7 +27,8 @@ class PostController extends Controller
         $post = Post::where('id', $request->id)->first();
         $date = date_format($post->created_at, 'Y-m-d');
         $time = date_format($post->created_at, 'H:i');
-        return view('post.show',compact('post', 'date', 'time'));
+        $user = User::where('id', $post->user_id)->first();
+        return view('post.show',compact('post', 'date', 'time','user'));
     }
     public function delete(Request $request) {
         $post = Post::find($request->id)->delete();

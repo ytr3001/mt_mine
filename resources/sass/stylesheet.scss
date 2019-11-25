@@ -35,7 +35,7 @@ body {
 .user-contents {
   max-width: 800px;
 }
-.signup-contents, .login-contents {
+.add-contents, .login-contents {
   max-width: 400px;
   margin: 90px auto 100px;
   background-color: #fff;
@@ -188,7 +188,7 @@ header {
       height: 40px;  
       border: 1px solid #696969;
       border-radius: 30px; 
-      padding: 2px;
+      // padding: 2px;
     }
     .user-name {
       padding: 20px 10px;
@@ -420,9 +420,9 @@ footer {
     border-bottom: 1px solid #a9a9a9;
   }
 }
-.signup-contents, .login-contents {
+.add-contents, .login-contents {
   text-align: center;
-  .signup-user, .login-user {
+  .add-user, .login-user {
     input {
       display: block;
       width: 100%;
@@ -434,7 +434,7 @@ footer {
       padding-bottom: 5px;
       margin-bottom: 20px;
     }
-    .signup, .login {
+    .add, .login {
       background-color: #7b8d42;
       color: #fff;
       border: none;
@@ -678,7 +678,7 @@ footer {
       padding: 30px;
     }
   }
-  .signup-contents, .login-contents {
+  .add-contents, .login-contents {
     max-width: 300px;
     margin: 40px auto 50px;
     padding: 30px;

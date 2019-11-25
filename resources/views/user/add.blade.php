@@ -19,20 +19,20 @@
       <div class="header-right">
         <a href="../auth/login">ログイン</a>
         <span> / </span>
-        <a href="signup">新規登録</a>
+        <a href="add">新規登録</a>
       </div>
     </div>
   </header>
 
   <div class="container">
-    <div class="signup-contents">
-      <form action="signup" method="post" class="signup-user">
+    <div class="add-contents">
+      <form action="add" method="post" class="add-user">
         {{ csrf_field() }}
         <p class="title">新規会員登録</p>
         <input type="email" class="email" name="email" placeholder="メールアドレス">
         <input type="text" class="name" name="name" placeholder="ユーザーネーム">
         <input type="password" class="password" name="password" placeholder="パスワード">
-        <input type="submit" class="signup" value="登録する">
+        <input type="submit" class="add" value="登録する">
       </form>
       <a href="../auth/login" class=login-nav>ログインはこちら</a>
     </div>

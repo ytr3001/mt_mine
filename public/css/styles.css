@@ -45,7 +45,7 @@ body {
   max-width: 800px;
 }
 
-.signup-contents,
+.add-contents,
 .login-contents {
   max-width: 400px;
   margin: 90px auto 100px;
@@ -227,7 +227,6 @@ header .header-right .edit {
   height: 40px;
   border: 1px solid #696969;
   border-radius: 30px;
-  padding: 2px;
 }
 
 .container .user-area .user-name {
@@ -504,23 +503,23 @@ footer .footer-inner {
   border-bottom: 1px solid #a9a9a9;
 }
 
-.signup-contents,
+.add-contents,
 .login-contents {
   text-align: center;
 }
 
-.signup-contents .signup-user input,
-.signup-contents .login-user input,
-.login-contents .signup-user input,
+.add-contents .add-user input,
+.add-contents .login-user input,
+.login-contents .add-user input,
 .login-contents .login-user input {
   display: block;
   width: 100%;
   margin: 15px 0;
 }
 
-.signup-contents .signup-user .title,
-.signup-contents .login-user .title,
-.login-contents .signup-user .title,
+.add-contents .add-user .title,
+.add-contents .login-user .title,
+.login-contents .add-user .title,
 .login-contents .login-user .title {
   border-bottom: 1px solid #a9a9a9;
   font-weight: bold;
@@ -528,13 +527,13 @@ footer .footer-inner {
   margin-bottom: 20px;
 }
 
-.signup-contents .signup-user .signup,
-.signup-contents .signup-user .login,
-.signup-contents .login-user .signup,
-.signup-contents .login-user .login,
-.login-contents .signup-user .signup,
-.login-contents .signup-user .login,
-.login-contents .login-user .signup,
+.add-contents .add-user .add,
+.add-contents .add-user .login,
+.add-contents .login-user .add,
+.add-contents .login-user .login,
+.login-contents .add-user .add,
+.login-contents .add-user .login,
+.login-contents .login-user .add,
 .login-contents .login-user .login {
   background-color: #7b8d42;
   color: #fff;
@@ -543,14 +542,14 @@ footer .footer-inner {
   margin-bottom: 30px;
 }
 
-.signup-contents .signup-user .login,
-.signup-contents .login-user .login,
-.login-contents .signup-user .login,
+.add-contents .add-user .login,
+.add-contents .login-user .login,
+.login-contents .add-user .login,
 .login-contents .login-user .login {
   background-color: #c4972f;
 }
 
-.signup-contents a,
+.add-contents a,
 .login-contents a {
   color: royalblue;
 }
@@ -829,7 +828,7 @@ footer .footer-inner {
     padding: 30px;
   }
 
-  .signup-contents,
+  .add-contents,
   .login-contents {
     max-width: 300px;
     margin: 40px auto 50px;
