@@ -25,23 +25,27 @@
   <div class="container">
     <div class="show-contents">
       <div class="user-area">
-        <a href="#">
+        <a href="../user/index">
           <img src="../../public/imges/default.png" alt="画像" class="user-picture">
           <span class="user-name">TEST</span>
         </a>
       </div>
       <div class="picture-area">
-        <img src="../../public/imges/forest1.jpg" alt="画像" class="post-picture">
+        <img src="../../public/storage/{{$post->picture}}" alt="画像" class="post-picture">
       </div>
       <div class="post-title">
-        <p>秋の紅葉　１１月の風景</p>
+      @if(is_null($post->title))
+        <p>無題</p>
+      @else
+        <p>{{$post->title}}</p>
+      @endif
       </div> 
       <div class="date">
-        <pre>2019-11-18   11:00</pre>
+        <pre>{{$date}}   {{$time}}</pre>
       </div>
       <form action="show" method="post" id="delete-post">
         {{ csrf_field() }}
-        <input type="hidden" name="post_id" value="">
+        <input type="hidden" name="id" value="{{$post->id}}">
       </form>
     </div>
 

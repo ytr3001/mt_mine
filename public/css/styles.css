@@ -33,11 +33,29 @@ body {
 .create-contents,
 .show-contents,
 .user-contents,
+.edit-user-contents,
 .footer-inner {
   max-width: 1000px;
   margin-right: auto;
   margin-left: auto;
   background-color: #fff;
+}
+
+.user-contents {
+  max-width: 800px;
+}
+
+.signup-contents,
+.login-contents {
+  max-width: 400px;
+  margin: 90px auto 100px;
+  background-color: #fff;
+  padding: 50px;
+  border: 1px solid #a9a9a9;
+}
+
+.login-contents {
+  margin: 90px auto 150px;
 }
 
 a {
@@ -56,6 +74,11 @@ button {
   font-size: 1.6rem;
   font-family: "\6E38\30B4\30B7\30C3\30AF   Medium", "\6E38\30B4\30B7\30C3\30AF\4F53", "Yu Gothic Medium", YuGothic, sans-serif;
   color: #333;
+}
+
+input {
+  font-size: 1.4rem;
+  padding: 10px;
 }
 
 header {
@@ -79,9 +102,23 @@ header .header-left .header-logo {
 }
 
 header .header-left .back {
+  display: block;
   font-weight: bold;
   font-size: 2.4rem;
   padding: 10px 20px;
+}
+
+header .header-left .back2 {
+  font-weight: bold;
+  font-size: 2.4rem;
+  padding: 10px 0 10px 180px;
+}
+
+header .header-left .back3 {
+  display: block;
+  font-weight: bold;
+  font-size: 2.4rem;
+  padding: 20px 0 20px 110px;
 }
 
 header .header-right a {
@@ -90,7 +127,7 @@ header .header-right a {
 }
 
 header .header-right #post {
-  background-color: #38b48b;
+  background-color: #7b8d42;
   color: #fff;
   margin-top: 11px;
   margin-right: 5px;
@@ -106,8 +143,16 @@ header .header-right #check {
 
 header .header-right .config {
   font-size: 2.4rem;
-  padding-top: 11px;
-  padding-right: 20px;
+  padding-right: 100px;
+}
+
+header .header-right .edit {
+  margin-right: 170px;
+  background-color: #7b8d42;
+  color: #fff;
+  margin-top: 11px;
+  padding: 5px 10px;
+  border-radius: 3px;
 }
 
 .container {
@@ -116,18 +161,18 @@ header .header-right .config {
 
 .container .contents {
   max-width: 1200px;
+  height: 690px;
   margin-right: auto;
   margin-left: auto;
-  padding: 30px 0;
-  text-align: center;
+  padding: 30px 0px;
 }
 
 .container .contents .row {
+  max-width: 1040px;
   display: -webkit-box;
   display: flex;
-  justify-content: space-around;
-  -webkit-box-pack: center;
-          justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
 }
 
 .container .contents .picture {
@@ -148,6 +193,7 @@ header .header-right .config {
   padding: 20px 10px 5px;
   text-align: left;
   font-weight: bold;
+  text-align: center;
 }
 
 .container .show-contents {
@@ -162,6 +208,11 @@ header .header-right .config {
   padding: 20px 10px 5px;
   text-align: left;
   font-weight: bold;
+  text-align: center;
+}
+
+.container .show-contents .post-title p {
+  text-align: left;
 }
 
 .container .user-area {
@@ -189,7 +240,7 @@ header .header-right .config {
   padding-top: 110px;
   margin: 0 auto;
   display: block;
-  border: 1px solid #c3c3c3;
+  border: 1px solid #a9a9a9;
   border-radius: 5px;
   outline: 0;
   font-size: 1.4rem;
@@ -266,7 +317,7 @@ footer .footer-inner {
 }
 
 .msg-area {
-  border-bottom: 1px solid #c3c3c3;
+  border-bottom: 1px solid #a9a9a9;
   padding: 30px 0 10px;
 }
 
@@ -289,7 +340,7 @@ footer .footer-inner {
 
 .btn-area .back {
   color: royalblue;
-  border-right: 1px solid #c3c3c3;
+  border-right: 1px solid #a9a9a9;
   width: 50%;
   padding: 15px 0;
 }
@@ -305,15 +356,15 @@ footer .footer-inner {
 }
 
 .user-contents .user-area {
-  width: 1000px;
+  width: 800px;
   margin-bottom: 20px;
   border-bottom: 1px solid #a9a9a9;
-  padding: 30px 50px 0px;
+  padding: 50px 50px 0px;
 }
 
 .user-contents .user-area .user-picture {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border-radius: 80px;
 }
 
@@ -323,8 +374,8 @@ footer .footer-inner {
 }
 
 .user-contents .user-area .my-big2 {
-  margin-left: 550px;
-  font-size: 2.4rem;
+  margin-left: 300px;
+  font-size: 1.8rem;
   background-color: #b1b1b1;
   color: #fff;
   padding: 20px;
@@ -333,7 +384,7 @@ footer .footer-inner {
 }
 
 .user-contents .user-area .introduction {
-  padding: 30px 0;
+  padding: 30px 0 50px;
 }
 
 .user-contents .row {
@@ -347,8 +398,8 @@ footer .footer-inner {
 }
 
 .user-contents .row .col .post-picture {
-  width: 480px;
-  height: 330px;
+  width: 380px;
+  height: 250px;
 }
 
 .user-contents .row .col .post-title {
@@ -357,8 +408,159 @@ footer .footer-inner {
   border-bottom: 1px solid #333;
 }
 
+.edit-user-contents {
+  max-width: 700px;
+  padding-top: 30px;
+  border-right: 1px solid #a9a9a9;
+  border-left: 1px solid #a9a9a9;
+}
+
+.edit-user-contents .picture-flie {
+  padding-left: 30px;
+}
+
+.edit-user-contents .picture-flie #user-picture {
+  display: block;
+  width: 80px;
+  height: 80px;
+  background-color: #f5f5f5;
+  border: 1px solid #a9a9a9;
+  border-radius: 50px;
+  text-align: center;
+  color: #fff;
+  padding: 0 18px;
+}
+
+.edit-user-contents .picture-flie #user-picture .my-big3 {
+  padding-top: 13px;
+  font-size: 5.2rem;
+}
+
+.edit-user-contents .picture-flie #user-image img {
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+  text-align: center;
+}
+
+.edit-user-contents .user-name {
+  padding-left: 40px;
+  margin-top: 20px;
+  border-top: 1px solid #a9a9a9;
+  border-bottom: 1px solid #a9a9a9;
+}
+
+.edit-user-contents .user-name #name {
+  padding: 20px 0;
+  padding-left: 67px;
+  width: 73%;
+  font-size: 1.6rem;
+  outline: 0;
+  border: none;
+}
+
+.edit-user-contents .user-introduction {
+  padding: 20px 40px;
+  border-bottom: 1px solid #a9a9a9;
+}
+
+.edit-user-contents .user-introduction label {
+  vertical-align: top;
+}
+
+.edit-user-contents .user-introduction textarea {
+  padding-left: 35px;
+  width: 80%;
+  font-size: 1.6rem;
+  outline: 0;
+  resize: none;
+  border: none;
+}
+
+.edit-user-contents .logout,
+.edit-user-contents .user-delete {
+  text-align: center;
+  padding: 20px;
+  border-bottom: 1px solid #a9a9a9;
+}
+
+.edit-user-contents .logout .logout-btn,
+.edit-user-contents .logout .delete-btn,
+.edit-user-contents .user-delete .logout-btn,
+.edit-user-contents .user-delete .delete-btn {
+  color: red;
+}
+
+.edit-user-contents .col2 {
+  padding: 20px;
+  background-color: #e9edf3;
+  border-bottom: 1px solid #a9a9a9;
+}
+
+.edit-user-contents .col3 {
+  padding: 50px;
+  background-color: #e9edf3;
+  border-bottom: 1px solid #a9a9a9;
+}
+
+.signup-contents,
+.login-contents {
+  text-align: center;
+}
+
+.signup-contents .signup-user input,
+.signup-contents .login-user input,
+.login-contents .signup-user input,
+.login-contents .login-user input {
+  display: block;
+  width: 100%;
+  margin: 15px 0;
+}
+
+.signup-contents .signup-user .title,
+.signup-contents .login-user .title,
+.login-contents .signup-user .title,
+.login-contents .login-user .title {
+  border-bottom: 1px solid #a9a9a9;
+  font-weight: bold;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+.signup-contents .signup-user .signup,
+.signup-contents .signup-user .login,
+.signup-contents .login-user .signup,
+.signup-contents .login-user .login,
+.login-contents .signup-user .signup,
+.login-contents .signup-user .login,
+.login-contents .login-user .signup,
+.login-contents .login-user .login {
+  background-color: #7b8d42;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  margin-bottom: 30px;
+}
+
+.signup-contents .signup-user .login,
+.signup-contents .login-user .login,
+.login-contents .signup-user .login,
+.login-contents .login-user .login {
+  background-color: #c4972f;
+}
+
+.signup-contents a,
+.login-contents a {
+  color: royalblue;
+}
+
 @media (max-width: 575px) {
   body {
+    font-size: 0.8rem;
+  }
+
+  input {
     font-size: 0.8rem;
   }
 
@@ -373,14 +575,22 @@ footer .footer-inner {
     padding: 10px 0px;
   }
 
+  header .header-left .back2 {
+    font-size: 1.2rem;
+    padding: 10px 0 10px 10px;
+  }
+
+  header .header-left .back3 {
+    font-size: 1.2rem;
+    padding: 20px 0 20px 10px;
+  }
+
   header .header-right a {
     display: inline-block;
     padding: 12px 0;
   }
 
   header .header-right #post {
-    background-color: #38b48b;
-    color: #fff;
     margin-top: 9px;
     margin-right: 0px;
     padding: 5px 5px;
@@ -395,8 +605,14 @@ footer .footer-inner {
 
   header .header-right .config {
     font-size: 1.6rem;
-    padding-top: 11px;
-    padding-right: 20px;
+    padding: 20px 10px;
+  }
+
+  header .header-right .edit {
+    margin-right: 5px;
+    margin-top: 8px;
+    padding: 2px 5px;
+    font-size: 1.2rem;
   }
 
   .container {
@@ -405,6 +621,8 @@ footer .footer-inner {
 
   .container .contents {
     padding: 20px 0;
+    text-align: center;
+    height: auto;
   }
 
   .container .contents .row {
@@ -414,7 +632,7 @@ footer .footer-inner {
   }
 
   .container .contents .col {
-    border-bottom: 1px solid #c3c3c3;
+    border-bottom: 1px solid #a9a9a9;
   }
 
   .container .contents .picture {
@@ -478,7 +696,7 @@ footer .footer-inner {
   }
 
   .msg-area {
-    border-bottom: 1px solid #c3c3c3;
+    border-bottom: 1px solid #a9a9a9;
     padding: 20px 0 0;
   }
 
@@ -553,19 +771,102 @@ footer .footer-inner {
     max-width: 350px;
     margin: 0 auto;
   }
+
+  .edit-user-contents {
+    border-right: none;
+    border-left: none;
+  }
+
+  .edit-user-contents .picture-flie {
+    padding-left: 30px;
+  }
+
+  .edit-user-contents .picture-flie #user-picture {
+    width: 50px;
+    height: 50px;
+    padding: 0 15px;
+  }
+
+  .edit-user-contents .picture-flie #user-picture .my-big3 {
+    padding-top: 13px;
+    font-size: 2.3rem;
+  }
+
+  .edit-user-contents .picture-flie #user-image img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .edit-user-contents .user-name #name {
+    margin-left: 39px;
+    width: 63%;
+    font-size: 0.8rem;
+  }
+
+  .edit-user-contents .user-introduction textarea {
+    margin-left: 20px;
+    width: 75%;
+    font-size: 0.8rem;
+  }
+
+  .edit-user-contents .logout,
+  .edit-user-contents .user-delete {
+    padding: 15px;
+  }
+
+  .edit-user-contents .logout .logout-btn,
+  .edit-user-contents .logout .delete-btn,
+  .edit-user-contents .user-delete .logout-btn,
+  .edit-user-contents .user-delete .delete-btn {
+    font-size: 0.8rem;
+  }
+
+  .edit-user-contents .col2 {
+    padding: 10px;
+  }
+
+  .edit-user-contents .col3 {
+    padding: 30px;
+  }
+
+  .signup-contents,
+  .login-contents {
+    max-width: 300px;
+    margin: 40px auto 50px;
+    padding: 30px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
+  header .header-left .back2 {
+    padding: 10px 0 10px 50px;
+  }
+
+  header .header-left .back3 {
+    padding: 20px 0 20px 40px;
+  }
+
+  header .header-right .edit {
+    margin-right: 40px;
+    margin-top: 12px;
+  }
+
+  header .header-right .config {
+    padding-right: 30px;
+  }
+
   .container {
     max-width: 768px;
   }
 
   .container .contents {
     padding: 20px 0;
+    height: auto;
   }
 
   .container .contents .row {
     flex-wrap: wrap;
+    max-width: 720px;
   }
 
   .container .contents .picture {

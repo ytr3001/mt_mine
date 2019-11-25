@@ -24,6 +24,15 @@
 
   <div class="container">
     <div class="create-contents">
+      @if (count($errors) > 0)
+      <div>
+        <ul>
+          @foreach ($errors->all() as $error)
+          <li>{{$error}}</li>
+          @endforeach
+        </ul>
+      </div>
+      @endif
       <form action="create" method="post" id="create-post" enctype="multipart/form-data">
       {{ csrf_field() }}
         <div class="picture-flie">
@@ -32,7 +41,7 @@
           <input type="file" id="file" class="file" name="picture" accept="image/*">
         </div>
         <div class="post-title">
-          <input type="text" id="title" class="title" name="title" placeholder="タイトルを入力">
+          <input type="text" id="title" class="title" name="title" value="{{old('title')}}" placeholder="タイトルを入力">
         </div>
       </form>
     </div>

@@ -22,5 +22,11 @@ Route::get('/post/show', 'PostController@show');
 Route::post('/post/show', 'PostController@delete');
 
 Route::get('/user/index','UserController@index');
+Route::get('/user/edit','UserController@edit');
+Route::post('/user/edit','UserController@index');
+Route::get('/user/signup','UserController@signup');
+Route::post('/user/signup','PostController@index');
 
+Route::get('/auth/login', 'LoginController@login');
+Route::post('/auth/login', 'PostController@index');
 

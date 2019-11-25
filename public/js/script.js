@@ -17,7 +17,7 @@ $(function() {
   $('#post').click(function() {
     $('#create-post').submit();
   })
-  // アップロードするファイルを選択
+  // 投稿写真のアップロード
   $('input[type=file]').change(function() {
     var file = $(this).prop('files')[0];
     // 画像以外は処理を停止
@@ -33,6 +33,25 @@ $(function() {
       var img_src = $('<img>').attr('src', reader.result);
       $('#image').html(img_src);
       $('#picture').css('display', 'none');
+    }
+    reader.readAsDataURL(file);
+  });
+  // ユーザー写真のアップロード
+  $('input[type=file]').change(function() {
+    var file = $(this).prop('files')[0];
+    // 画像以外は処理を停止
+    if (! file.type.match('image.*')) {
+      // クリア
+      $(this).val('');
+      $('#user-image').html('');
+      return;
+    }
+    // 画像表示
+    var reader = new FileReader();
+    reader.onload = function() {
+      var img_src = $('<img>').attr('src', reader.result);
+      $('#user-image').html(img_src);
+      $('#user-picture').css('display', 'none');
     }
     reader.readAsDataURL(file);
   });

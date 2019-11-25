@@ -14,10 +14,10 @@
   <header>
     <div class="header-inner">
       <div class="header-left">
-        <button class="back" onclick="history.back()">&lt</button>
+        <a href="../post/index" class="back3" >&lt</a>
       </div>
       <div class="header-right">
-        <a href="#" class="config"><i class="fas fa-cog"></i></a>
+        <a href="edit" class="config"><i class="fas fa-cog"></i></a>
       </div>
     </div>
   </header>
@@ -27,12 +27,12 @@
       <div class="user-area">
         <img src="../../public/imges/default.png" alt="画像" class="user-picture">
         <span class="user-name">TEST</span>
-        <a href="#"><i class="far fa-paper-plane my-big2"></i></a>
+        <a href="../post/create"><i class="far fa-paper-plane my-big2"></i></a>
         <p class="introduction">自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介</p>
       </div>
       <div class="row">
         <div class="col">
-          <a href="#">
+          <a href="../post/show">
             <img src="../../public/imges/forest1.jpg" alt="画像" class="post-picture">
             <p class="post-title">秋の紅葉　１１月の風景</p>
           </a>
