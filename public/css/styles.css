@@ -146,7 +146,7 @@ header .header-right .config {
   padding-right: 100px;
 }
 
-header .header-right .edit {
+header .header-right #edit {
   margin-right: 170px;
   background-color: #7b8d42;
   color: #fff;
@@ -383,25 +383,21 @@ footer .footer-inner {
 }
 
 .user-contents .user-area .introduction {
-  padding: 30px 0 50px;
+  padding: 30px 0;
 }
 
-.user-contents .row {
+.user-contents .col {
   display: -webkit-box;
   display: flex;
-  justify-content: space-around;
+  margin-bottom: 50px;
 }
 
-.user-contents .row .col {
-  margin-bottom: 10px;
+.user-contents .col .post-picture {
+  width: 100%;
+  height: 450px;
 }
 
-.user-contents .row .col .post-picture {
-  width: 380px;
-  height: 250px;
-}
-
-.user-contents .row .col .post-title {
+.user-contents .col .post-title {
   font-weight: bold;
   padding-left: 5px;
   border-bottom: 1px solid #333;
@@ -607,7 +603,7 @@ footer .footer-inner {
     padding: 20px 10px;
   }
 
-  header .header-right .edit {
+  header .header-right #edit {
     margin-right: 5px;
     margin-top: 8px;
     padding: 2px 5px;
@@ -743,26 +739,17 @@ footer .footer-inner {
     padding: 10px 0;
   }
 
-  .user-contents .row {
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-            flex-direction: column;
-  }
-
-  .user-contents .row .col {
+  .user-contents .col {
     margin-bottom: 10px;
     text-align: center;
     border-bottom: 1px solid #a9a9a9;
   }
 
-  .user-contents .row .col .post-picture {
-    width: 350px;
+  .user-contents .col .post-picture {
     height: 200px;
   }
 
-  .user-contents .row .col .post-title {
+  .user-contents .col .post-title {
     font-weight: bold;
     padding: 5px;
     border: none;
@@ -845,7 +832,7 @@ footer .footer-inner {
     padding: 20px 0 20px 40px;
   }
 
-  header .header-right .edit {
+  header .header-right #edit {
     margin-right: 40px;
     margin-top: 12px;
   }
@@ -924,11 +911,6 @@ footer .footer-inner {
 
   .user-contents .user-area .my-big2 {
     margin-left: 300px;
-  }
-
-  .user-contents .row .col .post-picture {
-    width: 360px;
-    height: 210px;
   }
 }
 

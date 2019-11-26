@@ -25,7 +25,7 @@
   <div class="container">
     <div class="show-contents">
       <div class="user-area">
-        <a href="../user/index">
+        <a href="../user/index?id={{$user->id}}">
         @if(is_null($user->picture))
           <img src="../../public/imges/default.png" alt="画像" class="user-picture">
         @else

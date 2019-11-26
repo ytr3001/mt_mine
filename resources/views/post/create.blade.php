@@ -43,6 +43,7 @@
         <div class="post-title">
           <input type="text" id="title" class="title" name="title" value="{{old('title')}}" placeholder="タイトルを入力">
         </div>
+        <input type="hidden" value="{{$user->id}}" name="user_id">
       </form>
     </div>
   </div>

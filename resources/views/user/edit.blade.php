@@ -17,7 +17,7 @@
         <button class="back2" onclick="history.back()">&lt</button>
       </div>
       <div class="header-right">
-        <button class="edit">保存</button>
+        <button id="edit">保存</button>
       </div>
     </div>
   </header>
@@ -27,15 +27,22 @@
     <form action="edit" method="post" id="edit-user" enctype="multipart/form-data">
       {{ csrf_field() }}
         <div class="picture-flie">
+          @if(is_null($user->picture))
           <label for="file" id="user-picture"><i class="fas fa-user my-big3"></i><br></label>
+          @else
+          <label for="file" id="user-image"><img src="../../public/storage/{{$user->picture}}" alt="画像"></label>
+          @endif
           <label for="file" id="user-image"></label>
-          <input type="file" id="file" class="file" name="user-picture" accept="image/*">
+          <input type="file" id="file" class="file" name="picture" accept="image/*" value="{{$user->picture}}">
+          <input type="hidden" name="picture2" value="{{$user->picture}}">
         </div>
         <div class="user-name">
-          <label for="name">名前</label><input type="text" id="name" class="name" name="name">
+          <label for="name">名前</label><input type="text" id="name" class="name" name="name" placeholder="名前を変更" 
+          value="{{$user->name}}"required>
         </div>
         <div class="user-introduction">
-          <label for="introduction">自己紹介</label><textarea name="introduction" id="introduction" cols="30" rows="5"></textarea>
+          <label for="introduction">自己紹介</label><textarea name="introduction" id="introduction"
+           placeholder="自己紹介を追加" cols="30" rows="5">{{$user->introduction}}</textarea>
         </div>
         <div class="col2"></div>
         <div class="logout">
@@ -46,6 +53,7 @@
         <a href="#" class="logout-btn">アカウントを削除</a>
         </div>
         <div class="col3"></div>
+        <input type="hidden" name="id" value="{{$user->id}}">
       </form>
     </div>
   </div>

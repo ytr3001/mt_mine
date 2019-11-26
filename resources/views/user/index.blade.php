@@ -25,39 +25,27 @@
   <div class="container">
     <div class="user-contents">
       <div class="user-area">
+        @if(is_null($user->picture))
         <img src="../../public/imges/default.png" alt="画像" class="user-picture">
-        <span class="user-name">TEST</span>
+        @else
+        <img src="../../public/storage/{{$user->picture}}" alt="画像" class="user-picture">
+        @endif
+        <span class="user-name">{{$user->name}}</span>
         <a href="../post/create"><i class="far fa-paper-plane my-big2"></i></a>
-        <p class="introduction">自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介</p>
+        <p class="introduction">{{$user->introduction}}</p>
       </div>
-      <div class="row">
+      @foreach($posts as $post)
         <div class="col">
-          <a href="../post/show">
-            <img src="../../public/imges/forest1.jpg" alt="画像" class="post-picture">
-            <p class="post-title">秋の紅葉　１１月の風景</p>
+          <a href="../post/show?id={{$post->id}}">
+            <img src="../../public/storage/{{$post->picture}}" alt="画像" class="post-picture">
+            @if(is_null($post->title))
+            <p class="post-title">無題</p>
+            @else
+            <p class="post-title">{{$post->title}}</p>
+            @endif
           </a>
         </div>
-        <div class="col">
-          <a href="#">
-            <img src="../../public/imges/forest4.jpg" alt="画像" class="post-picture">
-            <p class="post-title">夏の日差し　8月の風景</p>
-          </a>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <a href="#">
-            <img src="../../public/imges/forest5.jpg" alt="画像" class="post-picture">
-            <p class="post-title">夕焼け　６月の風景</p>
-          </a>
-        </div>
-        <div class="col">
-          <a href="#">
-            <img src="../../public/imges/forest10.jpg" alt="画像" class="post-picture">
-            <p class="post-title">落ち葉　１２月の風景</p>
-          </a>
-        </div>
-      </div>
+      @endforeach
     </div>
   </div>
 

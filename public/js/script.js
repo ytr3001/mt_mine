@@ -4,19 +4,23 @@ $(function() {
   $('#check').click(function() { 
       $('#check-modal').fadeIn();
   });
+
   //モーダルの削除ボタンクリック時にpost-idをsubmit
   $('#delete').click(function() {
     $('#delete-post').submit();
   }); 
+
   // キャンセルボタンクリック時にモーダルを消す
   $('#back').click(function() {
     $('#check-modal').fadeOut();
   })
+
   //create.php
   //投稿ボタンクリック時に投稿内容をsubmit
   $('#post').click(function() {
     $('#create-post').submit();
   })
+
   // 投稿写真のアップロード
   $('input[type=file]').change(function() {
     var file = $(this).prop('files')[0];
@@ -36,6 +40,8 @@ $(function() {
     }
     reader.readAsDataURL(file);
   });
+
+  //edit.php
   // ユーザー写真のアップロード
   $('input[type=file]').change(function() {
     var file = $(this).prop('files')[0];
@@ -55,4 +61,9 @@ $(function() {
     }
     reader.readAsDataURL(file);
   });
+
+  //保存ボタンクリック時にプロフィール編集内容をsubmit
+  $('#edit').click(function() {
+    $('#edit-user').submit();
+  })
 })

@@ -12,6 +12,6 @@ class Post extends Model
 
     public static  $rules = array (
         'picture' => 'required|file|image|mimes:jpeg,png,jpg,gif' ,
-        'title' => 'string|size:30'
+        // 'title' => 'string'
     );
 }

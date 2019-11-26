@@ -23,10 +23,15 @@ Route::post('/post/show', 'PostController@delete');
 
 Route::get('/user/index','UserController@index');
 Route::get('/user/edit','UserController@edit');
-Route::post('/user/edit','UserController@index');
+Route::post('/user/edit','UserController@update');
 Route::get('/user/add','UserController@add');
 Route::post('/user/add','UserController@create');
 
-Route::get('/auth/login', 'LoginController@getAuth');
-Route::post('/auth/login', 'LoginController@postAuth');
+Route::get('/auth/login', 'AuthController@getAuth');
+Route::post('/auth/login', 'AuthController@postAuth');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 

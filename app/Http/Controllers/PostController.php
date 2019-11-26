@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Post;
 use App\User;
 
@@ -13,13 +14,16 @@ class PostController extends Controller
         return view('post.index',compact('posts'));
     }
     public function create() {
-        return view('post.create');
+        $user = Auth::user();
+        return view('post.create',compact('user'));
     }
     public function  store(Request $request, Post $post) {
         $this->validate($request, Post::$rules);
         $originalImg = $request->picture;
         $filePath = $originalImg->store('public');
         $post->picture = str_replace('public/', '', $filePath);
+        $post->title = $request->title;
+        $post->user_id = $request->user_id;
         $post->save();
         return redirect('/post/index');
         }

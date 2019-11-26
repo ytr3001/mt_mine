@@ -3,21 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-// use Illuminate\Support\Facades\Auth;
 use Auth;
 
-class LoginController extends Controller
+class AuthController extends Controller
 {
     public function getAuth() {
-        return view('auth.login');
+        $msg = 'ログインしてください。';
+        return view('auth.login', ['message' => $msg]);
     }
     public function postAuth(Request $request) {
         $email = $request->email;
         $password = $request->password;
         if(Auth::attempt(['email' => $email, 'password' =>$password])) {
             return redirect('/post/index');
-        } else {
-            return redirect('/auth/login');
+            $msg = 'ログインしました。';
+        }  else {
+            $msg = 'ログインに失敗しました。';
         }
+        return view('auth.login', ['message' => $msg]);
     }
 }
