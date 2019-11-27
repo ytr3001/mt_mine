@@ -40,7 +40,7 @@
       </div>
       @foreach($posts as $post)
         <div class="col">
-          <a href="../post/show?id={{$post->id}}">
+          <a href="../post/show?id={{$post->id}}&no=1">
             <img src="../../public/storage/{{$post->picture}}" alt="画像" class="post-picture">
             @if(is_null($post->title))
             <p class="post-title">無題</p>

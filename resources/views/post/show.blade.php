@@ -17,7 +17,9 @@
         <button class="back" onclick="history.back()">&lt</button>
       </div>
       <div class="header-right">
+        @if($user->id === $auth->id)
         <button id="check"><i class="far fa-trash-alt"></i></button>
+        @endif
       </div>
     </div>
   </header>
@@ -50,6 +52,7 @@
       <form action="show" method="post" id="delete-post">
         {{ csrf_field() }}
         <input type="hidden" name="id" value="{{$post->id}}">
+        <input type="hidden" name="no" value="<?= $_GET['no']; ?>">
       </form>
     </div>
 

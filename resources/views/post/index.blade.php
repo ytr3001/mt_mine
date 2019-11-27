@@ -19,7 +19,7 @@
       <div class="header-right">
         <a href="../auth/login">ログイン</a>
         <span> / </span>
-        <a href="../user/add">新規登録</a>
+        <a href="../user/profile?id={{$user->id}}">新規登録</a>
       </div>
     </div>
   </header>
@@ -29,7 +29,7 @@
       <div class="row">
         @foreach($posts as $post)
         <div class="col">
-          <a href="../post/show?id={{$post->id}}">
+          <a href="../post/show?id={{$post->id}}&no=0">
             <img src="../../public/storage/{{$post->picture}}" alt="画像" class="picture">
           </a>
         </div>

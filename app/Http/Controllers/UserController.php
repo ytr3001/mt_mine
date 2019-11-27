@@ -10,7 +10,12 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
     public function show(Request $request) {
-        $user = User::find($request->id);
+        // dd($request->id);
+        if(is_null($request->id)) {
+            $user = Auth::user();
+        } else {
+            $user = User::find($request->id);
+        }
         $auth = Auth::user();
         $posts = Post::where('user_id', $user->id)->orderby('id', 'desc')->get();
         return view('user.profile',compact('user', 'posts', 'auth'));
@@ -43,6 +48,6 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->introduction = $request->introduction;
         $user->save();
-        return redirect('/user/index');
+        return redirect('/user/profile');
     }
 }

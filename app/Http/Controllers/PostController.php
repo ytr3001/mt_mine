@@ -10,8 +10,9 @@ use App\User;
 class PostController extends Controller
 {
     public function index() {
+        $user = Auth::user();
         $posts = Post::orderby('id','desc')->get();
-        return view('post.index',compact('posts'));
+        return view('post.index',compact('posts', 'user'));
     }
     public function create() {
         $user = Auth::user();
@@ -25,17 +26,23 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->user_id = $request->user_id;
         $post->save();
-        return redirect('/post/index');
+        return redirect('/user/profile');
         }
     public function show(Request $request) {
         $post = Post::where('id', $request->id)->first();
         $date = date_format($post->created_at, 'Y-m-d');
         $time = date_format($post->created_at, 'H:i');
         $user = User::where('id', $post->user_id)->first();
-        return view('post.show',compact('post', 'date', 'time','user'));
+        $auth = Auth::user();
+        return view('post.show',compact('post', 'date', 'time','user', 'auth'));
     }
-    public function delete(Request $request) {
+    //Post必要ないかもviewの修正含めて確認
+    public function delete(Request $request, Post $post) {
         $post = Post::find($request->id)->delete();
-        return redirect('/post/index');
+        if($request->no == 0) { 
+            return redirect('/post/index');
+        } elseif($request->no == 1) {
+            return redirect('/user/profile');
+        }
     }
 }
