@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
     public function show(Request $request) {
-        // dd($request->id);
         if(is_null($request->id)) {
             $user = Auth::user();
         } else {

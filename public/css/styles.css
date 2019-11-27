@@ -105,7 +105,7 @@ header .header-left .back {
   display: block;
   font-weight: bold;
   font-size: 2.4rem;
-  padding: 10px 20px;
+  padding: 5px 20px;
 }
 
 header .header-left .back2 {
@@ -123,13 +123,12 @@ header .header-left .back3 {
 
 header .header-right a {
   display: inline-block;
-  padding: 20px 0;
 }
 
 header .header-right #post {
-  background-color: #7b8d42;
+  background-color: #38b48b;
   color: #fff;
-  margin-top: 11px;
+  margin-top: 6px;
   margin-right: 5px;
   padding: 5px 10px;
   border-radius: 3px;
@@ -137,22 +136,36 @@ header .header-right #post {
 
 header .header-right #check {
   font-size: 2.2rem;
-  padding-top: 13px;
+  padding-top: 8px;
   padding-right: 35px;
 }
 
 header .header-right .config {
   font-size: 2.4rem;
   padding-right: 100px;
+  padding-top: 20px;
 }
 
 header .header-right #edit {
   margin-right: 170px;
-  background-color: #7b8d42;
+  background-color: #38b48b;
   color: #fff;
   margin-top: 11px;
   padding: 5px 10px;
   border-radius: 3px;
+}
+
+header .header-right .user-picture {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #696969;
+  border-radius: 30px;
+  margin: 10px 0;
+}
+
+header .header-right .login,
+header .header-right .register {
+  padding: 20px 0;
 }
 
 .container {
@@ -190,7 +203,7 @@ header .header-right #edit {
   width: 800px;
   border-bottom: 1px solid #333;
   margin: 0 auto;
-  padding: 20px 10px 5px;
+  padding: 10px 10px 5px;
   text-align: left;
   font-weight: bold;
   text-align: center;
@@ -205,7 +218,7 @@ header .header-right #edit {
   width: 950px;
   border-bottom: 1px solid #333;
   margin: 0 auto;
-  padding: 20px 10px 5px;
+  padding: 10px 10px 5px;
   text-align: left;
   font-weight: bold;
   text-align: center;
@@ -531,7 +544,7 @@ footer .footer-inner {
 .login-contents .add-user .login,
 .login-contents .login-user .add,
 .login-contents .login-user .login {
-  background-color: #7b8d42;
+  background-color: #38b48b;
   color: #fff;
   border: none;
   border-radius: 3px;

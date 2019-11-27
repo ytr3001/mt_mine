@@ -17,8 +17,10 @@
         <button class="back" onclick="history.back()">&lt</button>
       </div>
       <div class="header-right">
-        @if($user->id === $auth->id)
-        <button id="check"><i class="far fa-trash-alt"></i></button>
+        @if(Auth::check())
+          @if($user->id === $auth->id)
+          <button id="check"><i class="far fa-trash-alt"></i></button>
+          @endif
         @endif
       </div>
     </div>

@@ -83,7 +83,7 @@ header {
       display: block;
       font-weight: bold;
       font-size: 2.4rem;
-      padding: 10px 20px;
+      padding: 5px 20px;
     }
     .back2 {
       font-weight: bold;
@@ -100,32 +100,42 @@ header {
   .header-right {
     a {
       display: inline-block;
-      padding: 20px 0;
     }
     #post {
-      background-color: #7b8d42;
+      background-color: #38b48b;
       color: #fff;
-      margin-top: 11px;
+      margin-top: 6px;
       margin-right: 5px;
       padding: 5px 10px;
       border-radius: 3px;
     }
     #check {
       font-size: 2.2rem;
-      padding-top: 13px;
+      padding-top: 8px;
       padding-right: 35px;
     }
     .config {
       font-size: 2.4rem;
       padding-right: 100px;
+      padding-top: 20px;
     }
     #edit {
       margin-right: 170px;
-      background-color: #7b8d42;
+      background-color: #38b48b;
       color: #fff;
       margin-top: 11px;
       padding: 5px 10px;
       border-radius: 3px;
+    }
+    .user-picture {
+      width: 40px;
+      height: 40px;  
+      border: 1px solid #696969;
+      border-radius: 30px; 
+      margin: 10px 0;
+    }
+    .login, .register {
+      padding: 20px 0;
     }
   }
 }
@@ -135,7 +145,7 @@ header {
   @mixin title-style {
     border-bottom: 1px solid #333;
     margin: 0 auto;
-    padding: 20px 10px 5px;
+    padding: 10px 10px 5px;
     text-align: left;
     font-weight: bold;
     text-align: center;
@@ -188,7 +198,6 @@ header {
       height: 40px;  
       border: 1px solid #696969;
       border-radius: 30px; 
-      // padding: 2px;
     }
     .user-name {
       padding: 20px 10px;
@@ -432,7 +441,7 @@ footer {
       margin-bottom: 20px;
     }
     .add, .login {
-      background-color: #7b8d42;
+      background-color: #38b48b;
       color: #fff;
       border: none;
       border-radius: 3px;

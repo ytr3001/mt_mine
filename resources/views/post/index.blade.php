@@ -16,11 +16,23 @@
       <div class="header-left">
         <a href="#" class="header-logo">Mt.Mine</a>
       </div>
+      @if(Auth::check())
       <div class="header-right">
-        <a href="../auth/login">ログイン</a>
-        <span> / </span>
-        <a href="../user/profile?id={{$user->id}}">新規登録</a>
+      <a href="../user/profile?id={{$user->id}}">
+        @if(is_null($user->picture))
+          <img src="../../public/imges/default.png" alt="画像" class="user-picture">
+        @else
+          <img src="../../public/storage/{{$user->picture}}" alt="画像" class="user-picture">
+        @endif
+        </a>
       </div>
+      @else
+      <div class="header-right">
+        <a href="../login" class="login">ログイン</a>
+        <span> / </span>
+        <a href="../register" class="register">新規登録</a>
+      </div>
+      @endif
     </div>
   </header>
 
