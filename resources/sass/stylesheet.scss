@@ -132,7 +132,7 @@ header {
       height: 40px;  
       border: 1px solid #696969;
       border-radius: 30px; 
-      margin: 10px 0;
+      margin-top: 14px;
     }
     .login, .register {
       padding: 20px 0;
@@ -152,7 +152,7 @@ header {
   }
   .contents {
     max-width: 1200px;
-    height: 690px;
+    height: 750px;
     margin-right: auto;
     margin-left: auto;
     padding: 30px 0px;
@@ -453,6 +453,29 @@ footer {
   }
   a {
     color: royalblue;
+  }
+}
+//ペジネーション
+.pagination {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: 0.25rem;
+  margin-top: 15px;
+  justify-content: center;
+  ul {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  .page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #696969;
   }
 }
 

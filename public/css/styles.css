@@ -160,7 +160,7 @@ header .header-right .user-picture {
   height: 40px;
   border: 1px solid #696969;
   border-radius: 30px;
-  margin: 10px 0;
+  margin-top: 14px;
 }
 
 header .header-right .login,
@@ -174,7 +174,7 @@ header .header-right .register {
 
 .container .contents {
   max-width: 1200px;
-  height: 690px;
+  height: 750px;
   margin-right: auto;
   margin-left: auto;
   padding: 30px 0px;
@@ -561,6 +561,33 @@ footer .footer-inner {
 .add-contents a,
 .login-contents a {
   color: royalblue;
+}
+
+.pagination {
+  display: -webkit-box;
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: 0.25rem;
+  margin-top: 15px;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+.pagination ul {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.pagination .page-link {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #696969;
 }
 
 @media (max-width: 575px) {
