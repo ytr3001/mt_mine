@@ -17,7 +17,9 @@
         <a href="../post/index" class="back3" >&lt</a>
       </div>
       <div class="header-right">
+        @if($user->id === $auth->id)
         <a href="edit" class="config"><i class="fas fa-cog"></i></a>
+        @endif
       </div>
     </div>
   </header>
@@ -31,7 +33,9 @@
         <img src="../../public/storage/{{$user->picture}}" alt="画像" class="user-picture">
         @endif
         <span class="user-name">{{$user->name}}</span>
+        @if($user->id === $auth->id)
         <a href="../post/create"><i class="far fa-paper-plane my-big2"></i></a>
+        @endif
         <p class="introduction">{{$user->introduction}}</p>
       </div>
       @foreach($posts as $post)

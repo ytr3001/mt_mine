@@ -21,7 +21,7 @@ Route::post('/post/create', 'PostController@store');
 Route::get('/post/show', 'PostController@show');
 Route::post('/post/show', 'PostController@delete');
 
-Route::get('/user/index','UserController@index');
+Route::get('/user/profile','UserController@show');
 Route::get('/user/edit','UserController@edit');
 Route::post('/user/edit','UserController@update');
 Route::get('/user/add','UserController@add');

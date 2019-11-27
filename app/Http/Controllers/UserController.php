@@ -9,10 +9,11 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    public function index() {
-        $user = Auth::user();
-        $posts = Post::where('user_id', $user->id)->get();
-        return view('user.index',compact('user', 'posts'));
+    public function show(Request $request) {
+        $user = User::find($request->id);
+        $auth = Auth::user();
+        $posts = Post::where('user_id', $user->id)->orderby('id', 'desc')->get();
+        return view('user.profile',compact('user', 'posts', 'auth'));
     }
     public function add() {
         return view('user.add');
