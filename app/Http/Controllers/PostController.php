@@ -14,10 +14,12 @@ class PostController extends Controller
         $posts = Post::orderby('id','desc')->paginate(12);
         return view('post.index',compact('posts', 'user'));
     }
+
     public function create() {
         $user = Auth::user();
         return view('post.create',compact('user'));
     }
+
     public function  store(Request $request, Post $post) {
         $this->validate($request, Post::$rules);
         $originalImg = $request->picture;
@@ -28,6 +30,7 @@ class PostController extends Controller
         $post->save();
         return redirect('/user/profile');
         }
+
     public function show(Request $request) {
         $post = Post::where('id', $request->id)->first();
         $date = date_format($post->created_at, 'Y-m-d');
@@ -36,6 +39,7 @@ class PostController extends Controller
         $auth = Auth::user();
         return view('post.show',compact('post', 'date', 'time','user', 'auth'));
     }
+    
     //Post必要ないかもviewの修正含めて確認
     public function delete(Request $request, Post $post) {
         $post = Post::find($request->id)->delete();

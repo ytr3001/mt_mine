@@ -38,7 +38,7 @@
         </div>
         <div class="user-name">
           <label for="name">名前</label><input type="text" id="name" class="name" name="name" placeholder="名前を変更" 
-          value="{{$user->name}}"required>
+          value="{{$user->name}}" required autofocus>
         </div>
         <div class="user-introduction">
           <label for="introduction">自己紹介</label><textarea name="introduction" id="introduction"
@@ -46,7 +46,7 @@
         </div>
         <div class="col2"></div>
         <div class="logout">
-          <a href="#" class="logout-btn">ログアウト</a>
+          <a href="logout" class="logout-btn">ログアウト</a>
         </div>
         <div class="col2"></div>
         <div class="user-delete">

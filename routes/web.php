@@ -27,8 +27,7 @@ Route::post('/user/edit','UserController@update');
 Route::get('/user/add','UserController@add');
 Route::post('/user/add','UserController@create');
 
-// Route::get('/auth/login', 'AuthController@getAuth');
-// Route::post('/auth/login', 'AuthController@postAuth');
+Route::get('user/logout', 'LogoutController@getlogout');
 
 Auth::routes();
 

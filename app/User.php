@@ -46,10 +46,11 @@ class User extends Authenticatable
         'email' => 'required|email|unique:users,email',
         'password' => 'required|between:8,16',
     );
+    
     public static $edit_rules = array (
         'name' => 'required|string',
         'picture' => 'file|image|mimes:jpeg,png,jpg,gif' ,
-        'introduction' => 'string'
+        // 'introduction' => 'string'
     );
 }
 

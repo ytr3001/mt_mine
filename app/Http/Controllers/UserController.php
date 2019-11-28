@@ -19,9 +19,11 @@ class UserController extends Controller
         $posts = Post::where('user_id', $user->id)->orderby('id', 'desc')->get();
         return view('user.profile',compact('user', 'posts', 'auth'));
     }
+
     public function add() {
         return view('user.add');
     }
+
     public function create(Request $request) {
         $this->validate($request, User::$create_rules);
         $user = new User;
@@ -30,10 +32,12 @@ class UserController extends Controller
         $user->fill($form)->save();
         return redirect('/user/add');
     }
+
     public function edit() {
         $user = Auth::user();
         return view('user.edit',compact('user'));
     }
+    
     public function update(Request $request) {
         $this->validate($request, User::$edit_rules);
         $user = User::find($request->id);
