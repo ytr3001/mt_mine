@@ -11,25 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/top', 'Controller@index');
 
 Route::get('/post/index', 'PostController@index');
-Route::get('/post/create', 'PostController@create');
-Route::post('/post/create', 'PostController@store');
+Route::get('/post/create', 'PostController@create')->middleware('auth');
+Route::post('/post/create', 'PostController@store')->middleware('auth');
 Route::get('/post/show', 'PostController@show');
-Route::post('/post/show', 'PostController@delete');
+Route::post('/post/show', 'PostController@delete')->middleware('auth');
 
 Route::get('/user/profile','UserController@show');
-Route::get('/user/edit','UserController@edit');
-Route::post('/user/edit','UserController@update');
-Route::get('/user/add','UserController@add');
-Route::post('/user/add','UserController@create');
+Route::get('/user/edit','UserController@edit')->middleware('auth');
+Route::post('/user/edit','UserController@update')->middleware('auth');
 
-Route::get('user/logout', 'LogoutController@getlogout');
+Route::get('user/logout', 'LogoutController@getlogout')->middleware('auth');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/register_done', 'HomeController@index')->name('home');
 

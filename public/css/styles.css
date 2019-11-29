@@ -45,17 +45,20 @@ body {
   max-width: 800px;
 }
 
-.add-contents,
-.login-contents {
-  max-width: 400px;
-  margin: 90px auto 100px;
+.register-contents {
+  max-width: 500px;
+  margin: 70px auto;
   background-color: #fff;
-  padding: 50px;
+  padding: 50px 80px;
   border: 1px solid #a9a9a9;
 }
 
 .login-contents {
+  max-width: 400px;
   margin: 90px auto 150px;
+  background-color: #fff;
+  padding: 50px;
+  border: 1px solid #a9a9a9;
 }
 
 a {
@@ -118,7 +121,7 @@ header .header-left .back3 {
   display: block;
   font-weight: bold;
   font-size: 2.4rem;
-  padding: 20px 0 20px 110px;
+  padding: 10px 0 10px 170px;
 }
 
 header .header-right a {
@@ -150,7 +153,7 @@ header .header-right #edit {
   margin-right: 170px;
   background-color: #38b48b;
   color: #fff;
-  margin-top: 11px;
+  margin-top: 12px;
   padding: 5px 10px;
   border-radius: 3px;
 }
@@ -207,6 +210,12 @@ header .header-right .register {
   text-align: left;
   font-weight: bold;
   text-align: center;
+}
+
+.container .create-contents .error-message {
+  text-align: center;
+  background-color: pink;
+  margin: 0 100px 20px;
 }
 
 .container .show-contents {
@@ -424,11 +433,8 @@ footer .footer-inner {
   border-left: 1px solid #a9a9a9;
 }
 
-.edit-user-contents .picture-flie {
-  padding-left: 30px;
-}
-
 .edit-user-contents .picture-flie #user-picture {
+  margin-left: 30px;
   display: block;
   width: 80px;
   height: 80px;
@@ -446,6 +452,8 @@ footer .footer-inner {
 }
 
 .edit-user-contents .picture-flie #user-image img {
+  margin-left: 30px;
+  margin-bottom: 20px;
   display: block;
   width: 80px;
   height: 80px;
@@ -454,8 +462,6 @@ footer .footer-inner {
 }
 
 .edit-user-contents .user-name {
-  padding-left: 40px;
-  margin-top: 20px;
   border-top: 1px solid #a9a9a9;
   border-bottom: 1px solid #a9a9a9;
 }
@@ -469,17 +475,23 @@ footer .footer-inner {
   border: none;
 }
 
+.edit-user-contents .user-name label {
+  padding-left: 40px;
+}
+
 .edit-user-contents .user-introduction {
-  padding: 20px 40px;
+  padding-top: 20px;
   border-bottom: 1px solid #a9a9a9;
 }
 
 .edit-user-contents .user-introduction label {
   vertical-align: top;
+  padding-left: 40px;
 }
 
 .edit-user-contents .user-introduction textarea {
   padding-left: 35px;
+  margin-bottom: 20px;
   width: 80%;
   font-size: 1.6rem;
   outline: 0;
@@ -513,23 +525,28 @@ footer .footer-inner {
   border-bottom: 1px solid #a9a9a9;
 }
 
-.add-contents,
+.edit-user-contents .error-message {
+  text-align: center;
+  background-color: pink;
+}
+
+.register-contents,
 .login-contents {
   text-align: center;
 }
 
-.add-contents .add-user input,
-.add-contents .login-user input,
-.login-contents .add-user input,
+.register-contents .register-user input,
+.register-contents .login-user input,
+.login-contents .register-user input,
 .login-contents .login-user input {
   display: block;
   width: 100%;
   margin: 15px 0;
 }
 
-.add-contents .add-user .title,
-.add-contents .login-user .title,
-.login-contents .add-user .title,
+.register-contents .register-user .title,
+.register-contents .login-user .title,
+.login-contents .register-user .title,
 .login-contents .login-user .title {
   border-bottom: 1px solid #a9a9a9;
   font-weight: bold;
@@ -537,13 +554,13 @@ footer .footer-inner {
   margin-bottom: 20px;
 }
 
-.add-contents .add-user .add,
-.add-contents .add-user .login,
-.add-contents .login-user .add,
-.add-contents .login-user .login,
-.login-contents .add-user .add,
-.login-contents .add-user .login,
-.login-contents .login-user .add,
+.register-contents .register-user .register,
+.register-contents .register-user .login,
+.register-contents .login-user .register,
+.register-contents .login-user .login,
+.login-contents .register-user .register,
+.login-contents .register-user .login,
+.login-contents .login-user .register,
 .login-contents .login-user .login {
   background-color: #38b48b;
   color: #fff;
@@ -552,14 +569,14 @@ footer .footer-inner {
   margin-bottom: 30px;
 }
 
-.add-contents .add-user .login,
-.add-contents .login-user .login,
-.login-contents .add-user .login,
+.register-contents .register-user .login,
+.register-contents .login-user .login,
+.login-contents .register-user .login,
 .login-contents .login-user .login {
   background-color: #c4972f;
 }
 
-.add-contents a,
+.register-contents a,
 .login-contents a {
   color: royalblue;
 }
@@ -589,6 +606,13 @@ footer .footer-inner {
   color: #333;
   background-color: #fff;
   border: 1px solid #696969;
+}
+
+.invalid-feedback {
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 75%;
+  color: #e3342f;
 }
 
 @media (max-width: 575px) {
@@ -856,7 +880,7 @@ footer .footer-inner {
     padding: 30px;
   }
 
-  .add-contents,
+  .register-contents,
   .login-contents {
     max-width: 300px;
     margin: 40px auto 50px;

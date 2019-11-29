@@ -40,17 +40,11 @@ class User extends Authenticatable
     protected $table = 'users';
 
     protected $guarded = array('id');
-
-    public static $create_rules = array(
-        'name' => 'required|string',
-        'email' => 'required|email|unique:users,email',
-        'password' => 'required|between:8,16',
-    );
     
-    public static $edit_rules = array (
-        'name' => 'required|string',
-        'picture' => 'file|image|mimes:jpeg,png,jpg,gif' ,
-        // 'introduction' => 'string'
+    public static $rules = array (
+        'name' => 'required|string|max:20',
+        'picture' => 'file|image|mimes:jpeg,png,jpg' ,
+        'introduction' => 'string|max:100'
     );
 }
 

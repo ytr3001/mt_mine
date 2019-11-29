@@ -9,6 +9,6 @@ class LogoutController extends Controller
 {
     public function getlogout() {
         Auth::logout();
-        return redirect('/post/index');
+        return redirect('/top');
     }
 }

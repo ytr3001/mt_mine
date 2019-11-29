@@ -14,12 +14,12 @@
 <header>
     <div class="header-inner">
       <div class="header-left">
-        <a href="#" class="header-logo">Mt.Mine</a>
+        <a href="top" class="header-logo">Mt.Mine</a>
       </div>
       <div class="header-right">
         <a href="login" class="login">ログイン</a>
         <span> / </span>
-        <a href="../user/add" class="register">新規登録</a>
+        <a href="register" class="register">新規登録</a>
       </div>
     </div>
   </header>
@@ -31,9 +31,20 @@
         <p class="title">ログイン</p>
         <input type="email" class="email" name="email" placeholder="メールアドレス" value="{{old('email')}}" required autocomplete="email" autofocus>
         <input type="password" class="password" name="password" placeholder="パスワード" required autocomplete="current-password">
+        @error('email')
+          <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+          </span>
+        @enderror
+        @error('password')
+          <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+          </span>
+        @enderror
+
         <input type="submit" class="login" value="ログイン">
       </form>
-      <a href="../user/add" class=add-nav>新規会員登録はこちら</a>
+      <a href="register" class=register-nav>新規会員登録はこちら</a>
     </div>
   </div>
 
@@ -43,7 +54,7 @@
     </div>
   </footer>
 
-  <script src="../../public/js/script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
 

@@ -14,7 +14,7 @@
   <header>
     <div class="header-inner">
       <div class="header-left">
-        <button class="back2" onclick="history.back()">&lt</button>
+        <a href="../user/profile" class="back3" >&lt</a>
       </div>
       <div class="header-right">
         <button id="edit">保存</button>
@@ -35,14 +35,35 @@
           <label for="file" id="user-image"></label>
           <input type="file" id="file" class="file" name="picture" accept="image/*" value="{{$user->picture}}">
           <input type="hidden" name="picture2" value="{{$user->picture}}">
+          @if($errors->has('picture'))
+           <div class="error-message">
+              <span class="invalid-feedback" role="alert">
+                <strong>{{$errors->first('picture')}}</strong>
+              </span>
+            </div>
+          @endif
         </div>
         <div class="user-name">
           <label for="name">名前</label><input type="text" id="name" class="name" name="name" placeholder="名前を変更" 
           value="{{$user->name}}" required autofocus>
+          @if($errors->has('name'))
+           <div class="error-message">
+              <span class="invalid-feedback" role="alert">
+                <strong>{{$errors->first('name')}}</strong>
+              </span>
+            </div>
+          @endif
         </div>
         <div class="user-introduction">
           <label for="introduction">自己紹介</label><textarea name="introduction" id="introduction"
            placeholder="自己紹介を追加" cols="30" rows="5">{{$user->introduction}}</textarea>
+           @if($errors->has('introduction'))
+           <div class="error-message">
+              <span class="invalid-feedback" role="alert">
+                <strong>{{$errors->first('introduction')}}</strong>
+              </span>
+            </div>
+            @endif
         </div>
         <div class="col2"></div>
         <div class="logout">

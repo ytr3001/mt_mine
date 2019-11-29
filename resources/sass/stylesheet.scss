@@ -35,16 +35,21 @@ body {
 .user-contents {
   max-width: 800px;
 }
-.add-contents, .login-contents {
+.register-contents {
+  max-width: 500px;
+  margin: 70px auto;
+  background-color: #fff;
+  padding: 50px 80px;
+  border: 1px solid #a9a9a9;
+}
+.login-contents {
   max-width: 400px;
-  margin: 90px auto 100px;
+  margin: 90px auto 150px;
   background-color: #fff;
   padding: 50px;
   border: 1px solid #a9a9a9;
 }
-.login-contents {
-  margin: 90px auto 150px;
-}
+
 a {
   text-decoration: none;
   color: #333;
@@ -94,7 +99,7 @@ header {
       display: block;
       font-weight: bold;
       font-size: 2.4rem;
-      padding: 20px 0 20px 110px;
+      padding: 10px 0 10px 170px;
     }
   } 
   .header-right {
@@ -123,7 +128,7 @@ header {
       margin-right: 170px;
       background-color: #38b48b;
       color: #fff;
-      margin-top: 11px;
+      margin-top: 12px;
       padding: 5px 10px;
       border-radius: 3px;
     }
@@ -175,6 +180,11 @@ header {
     .post-title {
       width: 800px;
       @include title-style;
+    }
+    .error-message {
+      text-align: center;
+      background-color: pink;
+      margin: 0 100px 20px;
     }
   }
   .show-contents {
@@ -355,8 +365,8 @@ footer {
   border-right: 1px solid #a9a9a9;
   border-left: 1px solid #a9a9a9;
   .picture-flie {
-    padding-left: 30px;
     #user-picture {
+      margin-left: 30px;
       display: block;
       width: 80px;
       height: 80px;
@@ -372,6 +382,8 @@ footer {
       }
     }
     #user-image img {
+      margin-left: 30px;
+      margin-bottom: 20px;
       display: block;
       width: 80px;
       height: 80px;
@@ -380,8 +392,6 @@ footer {
     }
   }
   .user-name {
-    padding-left: 40px;
-    margin-top: 20px;
     border-top: 1px solid #a9a9a9;
     border-bottom: 1px solid #a9a9a9;
     #name {
@@ -392,15 +402,20 @@ footer {
       outline: 0;
       border: none;
     }
+    label {
+      padding-left: 40px;
+    }
   }
   .user-introduction {
-    padding: 20px 40px;
+    padding-top: 20px;
     border-bottom: 1px solid #a9a9a9;
     label {
       vertical-align: top;
+      padding-left: 40px;
     }
     textarea {
       padding-left: 35px;
+      margin-bottom: 20px;
       width: 80%;
       font-size: 1.6rem;
       outline: 0;
@@ -426,10 +441,14 @@ footer {
     background-color: #e9edf3;
     border-bottom: 1px solid #a9a9a9;
   }
+  .error-message {
+    text-align: center;
+    background-color: pink;
+  }
 }
-.add-contents, .login-contents {
+.register-contents, .login-contents {
   text-align: center;
-  .add-user, .login-user {
+  .register-user, .login-user {
     input {
       display: block;
       width: 100%;
@@ -441,7 +460,7 @@ footer {
       padding-bottom: 5px;
       margin-bottom: 20px;
     }
-    .add, .login {
+    .register, .login {
       background-color: #38b48b;
       color: #fff;
       border: none;
@@ -478,6 +497,13 @@ footer {
     background-color: #fff;
     border: 1px solid #696969;
   }
+}
+//erroメッセージ
+.invalid-feedback {
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 75%;
+  color: #e3342f;
 }
 
 //レスポンシブデザイン
@@ -645,7 +671,6 @@ footer {
       text-align: center;
       border-bottom: 1px solid #a9a9a9;
       .post-picture {
-        // width: 350px;
         height: 200px;
       }
       .post-title {
@@ -704,7 +729,7 @@ footer {
       padding: 30px;
     }
   }
-  .add-contents, .login-contents {
+  .register-contents, .login-contents {
     max-width: 300px;
     margin: 40px auto 50px;
     padding: 30px;
