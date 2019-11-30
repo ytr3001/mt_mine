@@ -22,6 +22,7 @@ class UserController extends Controller
         }
         $auth = Auth::user();
         $posts = Post::where('user_id', $user->id)->orderby('id', 'desc')->get();
+        // dd($posts);
         return view('user.profile',compact('user', 'posts', 'auth'));
     }
 

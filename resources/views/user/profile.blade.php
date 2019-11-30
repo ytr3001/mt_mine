@@ -42,18 +42,31 @@
         @endif
         <p class="introduction">{{$user->introduction}}</p>
       </div>
-      @foreach($posts as $post)
-        <div class="col">
-          <a href="../post/show?id={{$post->id}}&no=1">
-            <img src="../../public/storage/{{$post->picture}}" alt="画像" class="post-picture">
-            @if(is_null($post->title))
-            <p class="post-title">無題</p>
-            @else
-            <p class="post-title">{{$post->title}}</p>
-            @endif
+      @if(count($posts) <= 0 )
+        <div class="col" style="padding:10px 0 70px; margin-top: 40px;background-color:#e9edf3; border-top:1px solid #a9a9a9;border-bottom:1px solid #a9a9a9;">
+          <p style="margin:0 auto; font-weight:bold; padding:30px 0 0;">ようこそMt.mineへ！</p>
+          <p style="margin:0 auto; font-weight:bold">さっそくあなたの山の魅力を伝えてみましょう。</p>
+          <div class="picture-flie" style="margin:0 auto;">
+          <a href="../post/create">
+          <label for="file" id="picture" class="picture" style="padding-top: 60px;margin: 0 auto;text-align:center; margin:30px; width:450px; height:280px;"><i class="far fa-image my-big1" style="font-size:16rem;"></i><br></label>
           </a>
-        </div>
-      @endforeach
+          </div>
+          <a href="../post/create" style="width:100px;margin:0 auto;text-align:center;background-color:#38b48b;color:#fff; border-radius:3px;">投稿する</a>
+          </div>
+      @else
+        @foreach($posts as $post)
+          <div class="col">
+            <a href="../post/show?id={{$post->id}}&no=1">
+              <img src="../../public/storage/{{$post->picture}}" alt="画像" class="post-picture">
+              @if(is_null($post->title))
+              <p class="post-title">無題</p>
+              @else
+              <p class="post-title">{{$post->title}}</p>
+              @endif
+            </a>
+          </div>
+        @endforeach
+      @endif
     </div>
   </div>
 

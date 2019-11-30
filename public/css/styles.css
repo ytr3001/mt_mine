@@ -448,7 +448,10 @@ footer .footer-inner {
 .user-contents .col {
   display: -webkit-box;
   display: flex;
-  margin-bottom: 50px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  padding-bottom: 25px;
 }
 
 .user-contents .col .post-picture {
