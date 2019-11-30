@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Mt.Mine | プロフィール</title>
+  <title>Mt.Mine | ユーザー編集</title>
   <link rel="stylesheet" href="../../public/css/styles.css">
   <link rel="stylesheet" href="../../public/sanitize.css-master/sanitize.css">
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
@@ -71,7 +71,7 @@
         </div>
         <div class="col2"></div>
         <div class="user-delete">
-        <a href="#" class="logout-btn">アカウントを削除</a>
+        <a href="delete" class="logout-btn">アカウントを削除</a>
         </div>
         <div class="col3"></div>
         <input type="hidden" name="id" value="{{$user->id}}">

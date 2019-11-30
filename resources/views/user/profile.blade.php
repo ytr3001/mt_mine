@@ -14,7 +14,7 @@
   <header>
     <div class="header-inner">
       <div class="header-left">
-        <a href="../post/index" class="back3" >&lt</a>
+        <a href="../post/index" class="back2" >&lt</a>
       </div>
       <div class="header-right">
         @if(Auth::check())
@@ -30,7 +30,7 @@
     <div class="user-contents">
       <div class="user-area">
         @if(is_null($user->picture))
-        <img src="../../public/imges/default.png" alt="画像" class="user-picture">
+        <img src="../../public/images/default.png" alt="画像" class="user-picture">
         @else
         <img src="../../public/storage/{{$user->picture}}" alt="画像" class="user-picture">
         @endif

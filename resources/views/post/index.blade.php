@@ -20,7 +20,7 @@
       <div class="header-right">
       <a href="../user/profile?id={{$user->id}}">
         @if(is_null($user->picture))
-          <img src="../../public/imges/default.png" alt="画像" class="user-picture">
+          <img src="../../public/images/default.png" alt="画像" class="user-picture">
         @else
           <img src="../../public/storage/{{$user->picture}}" alt="画像" class="user-picture">
         @endif

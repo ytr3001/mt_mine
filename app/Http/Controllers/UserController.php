@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+    public function index() {
+        $user = Auth::user();
+        return view('user.delete',compact('user'));
+    }
+
     public function show(Request $request) {
         if(is_null($request->id)) {
             $user = Auth::user();
@@ -39,5 +44,12 @@ class UserController extends Controller
         $user->introduction = $request->introduction;
         $user->save();
         return redirect('/user/profile');
+    }
+
+    public function delete(Request $request) {
+        $auth = Auth::user();
+        $user = User::where('id', $auth->id)->delete();
+        $post = Post::where('user_id', $auth->id)->delete();
+        return redirect('/post/index');
     }
 }

@@ -34,6 +34,7 @@ body {
 .show-contents,
 .user-contents,
 .edit-user-contents,
+.delete-user-contents,
 .footer-inner {
   max-width: 1000px;
   margin-right: auto;
@@ -112,9 +113,10 @@ header .header-left .back {
 }
 
 header .header-left .back2 {
+  display: block;
   font-weight: bold;
   font-size: 2.4rem;
-  padding: 10px 0 10px 180px;
+  padding: 10px 0 10px 120px;
 }
 
 header .header-left .back3 {
@@ -146,7 +148,7 @@ header .header-right #check {
 header .header-right .config {
   font-size: 2.4rem;
   padding-right: 100px;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 header .header-right #edit {
@@ -215,7 +217,11 @@ header .header-right .register {
 .container .create-contents .error-message {
   text-align: center;
   background-color: pink;
-  margin: 0 100px 20px;
+  margin: 0 100px;
+}
+
+.container .create-contents .picture .error-message {
+  margin: 30px 0;
 }
 
 .container .show-contents {
@@ -300,6 +306,36 @@ header .header-right .register {
 .container #image img {
   width: 800px;
   height: 500px;
+}
+
+.top-contents {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 110px 0 120px;
+}
+
+.top-contents .done-message {
+  margin-bottom: 10px;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #38b48b;
+}
+
+.top-contents .img1 {
+  border-radius: 200px;
+  height: 250px;
+  width: 250px;
+}
+
+.top-contents .btn {
+  display: block;
+  width: 150px;
+  padding: 5px 10px;
+  background-color: #38b48b;
+  color: #fff;
+  border-radius: 20px;
+  margin: 30px auto 0;
 }
 
 footer {
@@ -426,14 +462,16 @@ footer .footer-inner {
   border-bottom: 1px solid #333;
 }
 
-.edit-user-contents {
+.edit-user-contents,
+.delete-user-contents {
   max-width: 700px;
   padding-top: 30px;
   border-right: 1px solid #a9a9a9;
   border-left: 1px solid #a9a9a9;
 }
 
-.edit-user-contents .picture-flie #user-picture {
+.edit-user-contents .picture-flie #user-picture,
+.delete-user-contents .picture-flie #user-picture {
   margin-left: 30px;
   display: block;
   width: 80px;
@@ -446,12 +484,14 @@ footer .footer-inner {
   padding: 0 18px;
 }
 
-.edit-user-contents .picture-flie #user-picture .my-big3 {
+.edit-user-contents .picture-flie #user-picture .my-big3,
+.delete-user-contents .picture-flie #user-picture .my-big3 {
   padding-top: 13px;
   font-size: 5.2rem;
 }
 
-.edit-user-contents .picture-flie #user-image img {
+.edit-user-contents .picture-flie #user-image img,
+.delete-user-contents .picture-flie #user-image img {
   margin-left: 30px;
   margin-bottom: 20px;
   display: block;
@@ -461,12 +501,14 @@ footer .footer-inner {
   text-align: center;
 }
 
-.edit-user-contents .user-name {
+.edit-user-contents .user-name,
+.delete-user-contents .user-name {
   border-top: 1px solid #a9a9a9;
   border-bottom: 1px solid #a9a9a9;
 }
 
-.edit-user-contents .user-name #name {
+.edit-user-contents .user-name .name,
+.delete-user-contents .user-name .name {
   padding: 20px 0;
   padding-left: 67px;
   width: 73%;
@@ -475,21 +517,25 @@ footer .footer-inner {
   border: none;
 }
 
-.edit-user-contents .user-name label {
+.edit-user-contents .user-name label,
+.delete-user-contents .user-name label {
   padding-left: 40px;
 }
 
-.edit-user-contents .user-introduction {
+.edit-user-contents .user-introduction,
+.delete-user-contents .user-introduction {
   padding-top: 20px;
   border-bottom: 1px solid #a9a9a9;
 }
 
-.edit-user-contents .user-introduction label {
+.edit-user-contents .user-introduction label,
+.delete-user-contents .user-introduction label {
   vertical-align: top;
   padding-left: 40px;
 }
 
-.edit-user-contents .user-introduction textarea {
+.edit-user-contents .user-introduction textarea,
+.delete-user-contents .user-introduction textarea {
   padding-left: 35px;
   margin-bottom: 20px;
   width: 80%;
@@ -500,7 +546,9 @@ footer .footer-inner {
 }
 
 .edit-user-contents .logout,
-.edit-user-contents .user-delete {
+.edit-user-contents .user-delete,
+.delete-user-contents .logout,
+.delete-user-contents .user-delete {
   text-align: center;
   padding: 20px;
   border-bottom: 1px solid #a9a9a9;
@@ -509,25 +557,53 @@ footer .footer-inner {
 .edit-user-contents .logout .logout-btn,
 .edit-user-contents .logout .delete-btn,
 .edit-user-contents .user-delete .logout-btn,
-.edit-user-contents .user-delete .delete-btn {
+.edit-user-contents .user-delete .delete-btn,
+.delete-user-contents .logout .logout-btn,
+.delete-user-contents .logout .delete-btn,
+.delete-user-contents .user-delete .logout-btn,
+.delete-user-contents .user-delete .delete-btn {
   color: red;
 }
 
-.edit-user-contents .col2 {
+.edit-user-contents .col2,
+.delete-user-contents .col2 {
   padding: 20px;
   background-color: #e9edf3;
   border-bottom: 1px solid #a9a9a9;
 }
 
-.edit-user-contents .col3 {
+.edit-user-contents .col3,
+.delete-user-contents .col3 {
   padding: 50px;
   background-color: #e9edf3;
   border-bottom: 1px solid #a9a9a9;
 }
 
-.edit-user-contents .error-message {
+.edit-user-contents .error-message,
+.delete-user-contents .error-message {
   text-align: center;
   background-color: pink;
+}
+
+.edit-user-contents .delete-area,
+.delete-user-contents .delete-area {
+  background-color: #e9edf3;
+  text-align: center;
+}
+
+.edit-user-contents .delete-area .delete-message,
+.delete-user-contents .delete-area .delete-message {
+  padding: 50px 20px 0;
+  font-weight: bold;
+}
+
+.edit-user-contents .delete-area .delete-btn,
+.delete-user-contents .delete-area .delete-btn {
+  padding: 5px 10px;
+  background-color: tomato;
+  color: #fff;
+  border-radius: 5px;
+  margin: 30px 0 150px;
 }
 
 .register-contents,
@@ -823,60 +899,75 @@ footer .footer-inner {
     margin: 0 auto;
   }
 
-  .edit-user-contents {
+  .edit-user-contents,
+  .delete-user-contents {
     border-right: none;
     border-left: none;
   }
 
-  .edit-user-contents .picture-flie {
+  .edit-user-contents .picture-flie,
+  .delete-user-contents .picture-flie {
     padding-left: 30px;
   }
 
-  .edit-user-contents .picture-flie #user-picture {
+  .edit-user-contents .picture-flie #user-picture,
+  .delete-user-contents .picture-flie #user-picture {
     width: 50px;
     height: 50px;
     padding: 0 15px;
   }
 
-  .edit-user-contents .picture-flie #user-picture .my-big3 {
+  .edit-user-contents .picture-flie #user-picture .my-big3,
+  .delete-user-contents .picture-flie #user-picture .my-big3 {
     padding-top: 13px;
     font-size: 2.3rem;
   }
 
-  .edit-user-contents .picture-flie #user-image img {
+  .edit-user-contents .picture-flie #user-image img,
+  .delete-user-contents .picture-flie #user-image img {
     width: 50px;
     height: 50px;
   }
 
-  .edit-user-contents .user-name #name {
+  .edit-user-contents .user-name .name,
+  .delete-user-contents .user-name .name {
     margin-left: 39px;
     width: 63%;
     font-size: 0.8rem;
   }
 
-  .edit-user-contents .user-introduction textarea {
+  .edit-user-contents .user-introduction textarea,
+  .delete-user-contents .user-introduction textarea {
     margin-left: 20px;
     width: 75%;
     font-size: 0.8rem;
   }
 
   .edit-user-contents .logout,
-  .edit-user-contents .user-delete {
+  .edit-user-contents .user-delete,
+  .delete-user-contents .logout,
+  .delete-user-contents .user-delete {
     padding: 15px;
   }
 
   .edit-user-contents .logout .logout-btn,
   .edit-user-contents .logout .delete-btn,
   .edit-user-contents .user-delete .logout-btn,
-  .edit-user-contents .user-delete .delete-btn {
+  .edit-user-contents .user-delete .delete-btn,
+  .delete-user-contents .logout .logout-btn,
+  .delete-user-contents .logout .delete-btn,
+  .delete-user-contents .user-delete .logout-btn,
+  .delete-user-contents .user-delete .delete-btn {
     font-size: 0.8rem;
   }
 
-  .edit-user-contents .col2 {
+  .edit-user-contents .col2,
+  .delete-user-contents .col2 {
     padding: 10px;
   }
 
-  .edit-user-contents .col3 {
+  .edit-user-contents .col3,
+  .delete-user-contents .col3 {
     padding: 30px;
   }
 

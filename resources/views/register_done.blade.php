@@ -19,7 +19,7 @@
       <div class="header-right">
         <a href="user/profile?id={{$user->id}}">
           @if(is_null($user->picture))
-            <img src="imges/default.png" alt="画像" class="user-picture">
+            <img src="images/default.png" alt="画像" class="user-picture">
           @else
             <img src="storage/{{$user->picture}}" alt="画像" class="user-picture">
           @endif
@@ -29,10 +29,10 @@
   </header>
 
   <div class="container">
-    <div class="top-contents" style="max-width:1200px; margin:0 auto; height:600px; background-color:#fff;">
-    <p>アカウント登録が完了しました。</p>
-    <a href="post/index">さっそく山を探す</a>
-
+    <div class="top-contents">
+      <p class="done-message">アカウント登録が完了しました。<br/></p>
+      <img src="../public/images/mountain.png" alt="画像" class="img1">
+      <a href="post/index" class="btn">さっそく山を探す</a>
     </div>
   </div>
 
