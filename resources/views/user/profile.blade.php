@@ -42,25 +42,28 @@
         @endif
         <p class="introduction">{{$user->introduction}}</p>
       </div>
-      @if($user->id !== $auth->id)
-        <div class="col" style="padding:80px 0 150px; margin-top: 40px;background-color:#e9edf3; border-top:1px solid #a9a9a9;border-bottom:1px solid #a9a9a9;">
-          <p style="font-size:1.8rem;margin:0 auto 20px; font-weight:bold; padding:30px 0 0;">※このアカウントはまだ投稿がありません。</p>
-          <a href="../user/profile" style="margin:0 auto;text-align:center;background-color:tomato;color:#fff; border-radius:20px; padding:5px 10px;">マイページへ</a>
-        </div>
-      @elseif(count($posts) <= 0 )
-        <div class="col" style="padding:10px 0 70px; margin-top: 40px;background-color:#e9edf3; border-top:1px solid #a9a9a9;border-bottom:1px solid #a9a9a9;">
-          <p style="margin:0 auto; font-weight:bold; padding:30px 0 0;">ようこそMt.mineへ！</p>
-          <p style="margin:0 auto; font-weight:bold">さっそくあなたの山の魅力を伝えてみましょう。</p>
-          <div class="picture-flie" style="margin:0 auto;">
-          <a href="../post/create">
-          <label for="file" id="picture" class="picture" style="padding-top: 60px;margin: 0 auto;text-align:center; margin:30px; width:450px; height:280px;"><i class="far fa-image my-big1" style="font-size:16rem;"></i><br></label>
-          </a>
+      
+      @if(count($posts) <= 0 )
+        @if($user->id !== $auth->id)
+          <div class="posts-area1">
+            <p class=message1>※このアカウントはまだ投稿がありません。</p>
+            <a href="../user/profile" class="btn">マイページへ</a>
           </div>
-          <a href="../post/create" style="padding:5px 10px;margin:0 auto;text-align:center;background-color:#38b48b;color:#fff; border-radius:3px;">投稿する</a>
+        @else
+          <div class="posts-area2">
+            <p class="message2">ようこそMt.mineへ！</p>
+            <p class="message2">さっそくあなたの山の魅力を伝えてみましょう。</p>
+            <div class="picture-flie">
+            <a href="../post/create">
+            <label for="file" id="picture"style=""><i class="far fa-image my-big2" ></i><br></label>
+            </a>
+            </div>
+            <a href="../post/create" class="btn">投稿する</a>
           </div>
+        @endif
       @else
         @foreach($posts as $post)
-          <div class="col">
+          <div class="posts-area3">
             <a href="../post/show?id={{$post->id}}&no=1">
               <img src="../../public/storage/{{$post->picture}}" alt="画像" class="post-picture">
               @if(is_null($post->title))

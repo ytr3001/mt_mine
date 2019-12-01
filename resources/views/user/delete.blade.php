@@ -37,8 +37,7 @@
           <label>自己紹介</label><textarea cols="30" rows="5" readonly>{{$user->introduction}}</textarea>
         </div>
         <div class="delete-area">
-          <p class="delete-message">アカウントの削除を行います。削除したアカウントは元に戻すことができません。
-          <br/>本当によろしいですか？</p>
+          <p class="delete-message">アカウントの削除を行います。本当によろしいですか？</p>
           <button class="delete-btn">削除する</button>
         </div>   
       </form>
