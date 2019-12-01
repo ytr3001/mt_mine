@@ -42,7 +42,12 @@
         @endif
         <p class="introduction">{{$user->introduction}}</p>
       </div>
-      @if(count($posts) <= 0 )
+      @if($user->id !== $auth->id)
+        <div class="col" style="padding:80px 0 150px; margin-top: 40px;background-color:#e9edf3; border-top:1px solid #a9a9a9;border-bottom:1px solid #a9a9a9;">
+          <p style="font-size:1.8rem;margin:0 auto 20px; font-weight:bold; padding:30px 0 0;">※このアカウントはまだ投稿がありません。</p>
+          <a href="../user/profile" style="margin:0 auto;text-align:center;background-color:tomato;color:#fff; border-radius:20px; padding:5px 10px;">マイページへ</a>
+        </div>
+      @elseif(count($posts) <= 0 )
         <div class="col" style="padding:10px 0 70px; margin-top: 40px;background-color:#e9edf3; border-top:1px solid #a9a9a9;border-bottom:1px solid #a9a9a9;">
           <p style="margin:0 auto; font-weight:bold; padding:30px 0 0;">ようこそMt.mineへ！</p>
           <p style="margin:0 auto; font-weight:bold">さっそくあなたの山の魅力を伝えてみましょう。</p>
@@ -51,7 +56,7 @@
           <label for="file" id="picture" class="picture" style="padding-top: 60px;margin: 0 auto;text-align:center; margin:30px; width:450px; height:280px;"><i class="far fa-image my-big1" style="font-size:16rem;"></i><br></label>
           </a>
           </div>
-          <a href="../post/create" style="width:100px;margin:0 auto;text-align:center;background-color:#38b48b;color:#fff; border-radius:3px;">投稿する</a>
+          <a href="../post/create" style="padding:5px 10px;margin:0 auto;text-align:center;background-color:#38b48b;color:#fff; border-radius:3px;">投稿する</a>
           </div>
       @else
         @foreach($posts as $post)

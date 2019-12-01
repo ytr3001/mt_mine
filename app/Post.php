@@ -11,7 +11,7 @@ class Post extends Model
     protected $guarded = array('id');
 
     public static  $rules = array (
-        'picture' => 'required|file|image|mimes:jpeg,png,jpg|size:30' ,
+        'picture' => 'required|file|image|mimes:jpeg,png,jpg' ,
         'title' => 'max:30'
     );
 }
