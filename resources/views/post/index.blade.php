@@ -51,12 +51,12 @@
   </header>
 
   <div class="container">
-    <div class="contents">
-      <div class="row">
+    <div class="posts-wrapper">
+      <div class="posts-column">
         @foreach($posts as $post)
-        <div class="col">
+        <div class="post">
           <a href="../post/show?id={{$post->id}}&no=0">
-            <img src="../../public/storage/{{$post->picture}}" alt="画像" class="picture">
+            <img src="../../public/storage/{{$post->picture}}" alt="画像" class="post-picture_small">
           </a>
         </div>
         @endforeach

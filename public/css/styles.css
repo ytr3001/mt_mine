@@ -29,7 +29,6 @@ body {
 }
 
 .header-inner,
-.contents,
 .create-contents,
 .show-contents,
 .user-contents,
@@ -309,15 +308,16 @@ header .header-inner .header-right .login-user_picture {
   margin: 30px auto 0;
 }
 
-.container .contents {
+.container .posts-wrapper {
   max-width: 1200px;
   height: 750px;
   margin-right: auto;
   margin-left: auto;
   padding: 30px 0px;
+  background-color: #fff;
 }
 
-.container .contents .row {
+.container .posts-wrapper .posts-column {
   max-width: 1040px;
   display: -webkit-box;
   display: flex;
@@ -325,7 +325,7 @@ header .header-inner .header-right .login-user_picture {
   margin: 0 auto;
 }
 
-.container .contents .picture {
+.container .posts-wrapper .post-picture_small {
   width: 250px;
   height: 200px;
   margin: 5px;
@@ -941,23 +941,23 @@ footer .footer-inner {
     font-size: 2rem;
   }
 
-  .container .contents {
+  .container .posts-wrapper {
     padding: 20px 0;
     text-align: center;
     height: auto;
   }
 
-  .container .contents .row {
+  .container .posts-wrapper .posts-column {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
             flex-direction: column;
   }
 
-  .container .contents .col {
+  .container .posts-wrapper .post {
     border-bottom: 1px solid #a9a9a9;
   }
 
-  .container .contents .picture {
+  .container .posts-wrapper .post-picture_small {
     width: 350px;
     height: 250px;
   }
@@ -1219,17 +1219,17 @@ footer .footer-inner {
     overflow: hidden;
   }
 
-  .container .contents {
+  .container .posts-wrapper {
     padding: 20px 0;
-    height: auto;
+    height: 1700px;
   }
 
-  .container .contents .row {
+  .container .posts-wrapper .posts-column {
     flex-wrap: wrap;
     max-width: 720px;
   }
 
-  .container .contents .picture {
+  .container .posts-wrapper .post-picture_small {
     width: 350px;
     height: 250px;
   }
