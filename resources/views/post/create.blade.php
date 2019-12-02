@@ -14,10 +14,14 @@
   <header>
     <div class="header-inner">
       <div class="header-left">
-        <a href="../user/profile" class="back" >&lt</a>
+        <a href="../user/profile" class="header-back header-back_create" >&lt</a>
       </div>
       <div class="header-right">
-        <button id="post" class="post">投稿する</button>
+        <div class="utility">
+          <div class="utility-item">
+            <button id="utility-item_post" class="utility-button utility-item_post">投稿する</button>
+          </div>
+        </div>
       </div>
     </div>
   </header>

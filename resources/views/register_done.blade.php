@@ -14,16 +14,19 @@
   <header>
     <div class="header-inner">
       <div class="header-left">
-        <a href="post/index" class="header-logo">Mt.Mine</a>
+        <h1 class="header-logo"><a href="post/index">Mt.Mine</a></h1>
       </div>
       <div class="header-right">
-        <a href="user/profile?id={{$user->id}}">
-          @if(is_null($user->picture))
-            <img src="images/default.png" alt="画像" class="user-picture">
-          @else
-            <img src="storage/{{$user->picture}}" alt="画像" class="user-picture">
-          @endif
-        </a>
+        <div class="login-user">
+          <a href="user/profile?id={{$user->id}}">
+            <!-- ユーザー写真の登録があれば登録された写真、なければデフォルト画像表示 -->
+            @if(is_null($user->picture))
+            <img src="images/default.png" alt="画像" class="login-user_picture">
+            @else
+            <img src="storage/{{$user->picture}}" alt="画像" class="login-user_picture">
+            @endif
+          </a>
+        </div>
       </div>
     </div>
   </header>

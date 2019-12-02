@@ -14,12 +14,15 @@
   <header>
     <div class="header-inner">
       <div class="header-left">
-        <a href="top" class="header-logo">Mt.Mine</a>
+        <h1 class="header-logo"><a href="top">Mt.Mine</a></h1>
       </div>
       <div class="header-right">
-        <a href="login" class="login">ログイン</a>
-        <span> / </span>
-        <a href="register" class="register">新規登録</a>
+        <div class="utility">
+          <ul class="utility-item">
+            <li><a href="login" class="utility-item_login">ログイン /</a></li>
+            <li><a href="register" class="utility-item_register">新規登録</a></li>
+          </ul>   
+        </div>
       </div>
     </div>
   </header>

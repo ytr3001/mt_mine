@@ -13,30 +13,38 @@
 <body>
   <header>
     <div class="header-inner">
+      <!-- ログインしていない時はヘッダーロゴからtop画面へナビ -->
       @if(Auth::check())
       <div class="header-left">
-        <a href="#" class="header-logo">Mt.Mine</a>
+        <h1 class="header-logo"><a href="#">Mt.Mine</a></h1>
       </div>
       @else
       <div class="header-left">
-        <a href="../top" class="header-logo">Mt.Mine</a>
+        <h1 class="header-logo"><a href="../top">Mt.Mine</a></h1>
       </div>
       @endif
+      <!-- ログインしている時はユーザー写真を表示、ログインしていない時はログイン画面or新規登録画面へのナビを表示 -->
       @if(Auth::check())
       <div class="header-right">
-      <a href="../user/profile?id={{$user->id}}">
-        @if(is_null($user->picture))
-          <img src="../../public/images/default.png" alt="画像" class="user-picture">
-        @else
-          <img src="../../public/storage/{{$user->picture}}" alt="画像" class="user-picture">
-        @endif
-        </a>
+        <div class="login-user">
+          <a href="../user/profile?id={{$user->id}}">
+            <!-- ユーザー写真の登録があれば登録された写真、なければデフォルト画像表示 -->
+            @if(is_null($user->picture))
+            <img src="../../public/images/default.png" alt="画像" class="login-user_picture">
+            @else
+            <img src="../../public/storage/{{$user->picture}}" alt="画像" class="login-user_picture">
+            @endif
+          </a>
+        </div>
       </div>
       @else
       <div class="header-right">
-        <a href="../login" class="login">ログイン</a>
-        <span> / </span>
-        <a href="../register" class="register">新規登録</a>
+        <div class="utility">
+          <ul class="utility-item">
+            <li><a href="../login" class="utility-item_login">ログイン /</a></li>
+            <li><a href="../register" class="utility-item_register">新規登録</a></li>
+          </ul>   
+        </div>
       </div>
       @endif
     </div>

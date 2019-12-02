@@ -49,7 +49,6 @@ body {
   padding: 50px;
   border: 1px solid #a9a9a9;
 }
-
 a {
   text-decoration: none;
   color: #333;
@@ -68,6 +67,10 @@ input {
   font-size: 1.4rem;
   padding: 10px;
 }
+ul {
+  list-style: none;
+}
+
 //ヘッダーレイアウト
 header {
   background-color: #fff;
@@ -81,70 +84,66 @@ header {
     .header-logo {
       font-size: 2.4rem;
       font-weight: bold;
-      display: block;
       padding: 15px 0;
+      margin: 0;
     }
-    .back {
+    .header-back {
       display: block;
       font-weight: bold;
       font-size: 2.4rem;
-      padding: 5px 20px;
     }
-    .back2 {
-      display: block;
-      font-weight: bold;
-      font-size: 2.4rem;
-      padding: 10px 0 10px 120px;
+    .header-back_profile {
+      margin: 10px 0 10px 120px;
     }
-    .back3 {
-      display: block;
-      font-weight: bold;
-      font-size: 2.4rem;
-      padding: 10px 0 10px 170px;
+    .header-back_edit, .header-back_delete {
+      margin: 10px 0 10px 170px;
+    }
+    .header-back_show, .header-back_create {
+      margin: 10px 20px;
     }
   } 
   .header-right {
-    a {
-      display: inline-block;
+    .utility-item {
+      display: flex;
+      .utility-item_login {
+        display: inline-block;
+        padding: 20px 10px;
+      }
+      .utility-item_register {
+        display: inline-block;
+        padding: 20px 0px;
+      }
+      .utility-item_config {
+        font-size: 2.4rem;
+        margin: 11px 100px 0;
+      }
+      .utility-button {
+        background-color: #38b48b;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 3px;
+      }
+      .utility-item_edit {
+        margin: 12px 170px 0 0;
+      }
+      .utility-item_post {
+        margin: 10px 5px;
+      }
+      .utility-item_trash {
+        font-size: 2.2rem;
+        margin: 14px 35px 0 0;
+      }
     }
-    .post {
-      background-color: #38b48b;
-      color: #fff;
-      margin-top: 6px;
-      margin-right: 5px;
-      padding: 5px 10px;
-      border-radius: 3px;
-    }
-    .check {
-      font-size: 2.2rem;
-      padding-top: 8px;
-      padding-right: 35px;
-    }
-    .config {
-      font-size: 2.4rem;
-      padding-right: 100px;
-      padding-top: 10px;
-    }
-    .edit {
-      margin-right: 170px;
-      background-color: #38b48b;
-      color: #fff;
-      margin-top: 12px;
-      padding: 5px 10px;
-      border-radius: 3px;
-    }
-    .user-picture {
+    .login-user_picture {
       width: 40px;
       height: 40px;  
       border: 1px solid #696969;
       border-radius: 30px; 
       margin-top: 14px;
     }
-    .login, .register {
-      padding: 20px 0;
-    }
   }
 }
+
 //コンテナレイアウト
 .container {
   margin: 0 auto;
@@ -212,7 +211,7 @@ header {
     padding-bottom: 20px;
     text-align: center;
     .post-title {
-      width: 950px;
+      width: 930px;
       @include title-style;
       p {
         text-align: left;
@@ -220,7 +219,7 @@ header {
     }
   }
   .user-area {
-    width: 950px;
+    width: 930px;
     margin: 0 auto;
     padding:  15px 10px 5px;
     text-align: left;
@@ -239,8 +238,8 @@ header {
     display: none;
   }
   .post-picture {
-    width: 950px;
-    height: 600px;
+    width: 930px;
+    height: 580px;
   }
   .title {
     border: none;
@@ -249,7 +248,7 @@ header {
     outline: 0;
   }
   .date {
-    width: 950px;
+    width: 930px;
     margin: 0 auto;
     font-size: 1.2rem;
     text-align: left;
@@ -668,6 +667,11 @@ footer {
     }
   }
 }
+
+
+
+
+
 //レスポンシブデザイン
 @media (max-width: 575px) {
   body {
@@ -676,66 +680,54 @@ footer {
   input {
     font-size: 0.8rem;
   }
+
+  //ヘッダーデザイン
   header {
     .header-left {
       .header-logo {
         font-size: 1.4rem;
         padding: 10px 0;
       }
-      .back {
-        font-weight: bold;
-        font-size: 1.4rem;
-        padding: 10px 0px;
-      }
-      .back2 {
-        font-size: 1.2rem;
-        padding: 10px 0 10px 0;
-      }
-      .back3 {
-        font-size: 1.2rem;
-        padding: 10px 0 10px 10px;
+      .header-back {
+        margin: 10px 0;
+        font-size: 1.2rem
       }
     } 
     .header-right {
-      a {
-        display: inline-block;
-        padding: 12px 0;
+      .utility-item {
+        .utility-item_login {
+          padding: 13px 5px;
+        }
+        .utility-item_register {
+          padding: 13px 0;
+        }
+        .utility-item_config {
+          font-size: 1.2rem;
+          margin: 10px 10px 0;
+        }
+        .utility-button {
+          padding: 2px 5px;
+          font-size: 1.2rem;
+        }
+        .utility-item_edit {
+          margin: 8px 0;
+        }
+        .utility-item_post {
+          margin: 9px 0;
+        }
+        .utility-item_trash {
+          font-size: 1.2rem;
+          margin: 9px 0 0;
+        }
       }
-      .post {
-        margin-top: 9px;
-        margin-right: 0px;
-        padding: 5px 5px;
-        font-size: 0.8rem;
-      }
-      .check {
-        font-size: 1.2rem;
-        padding-top: 11px;
-        padding-right: 0px;
-      }
-      .config {
-        font-size: 1.6rem;
-        padding: 8px 10px 0;
-      }
-      .edit {
-        margin-right: 0px;
-        margin-top: 8px;
-        padding: 2px 5px;
-        font-size: 1.2rem;
-      }
-      .user-picture {
+      .login-user_picture {
         width: 30px;
-        height: 30px;
-        padding: 0;
-        margin-top: 6px;
-      }
-      a {
-        padding: 0;
-      }
-      .login, .register {
-        padding: 12px 0;
+        height: 30px;  
+        margin-top: 5px;
       }
     }
   }
+  
   .container {
     max-width: 540px;
     .contents {
@@ -981,25 +973,30 @@ footer {
       }
     }
   }
-  
 }
+
+
+
+
+
 @media (min-width: 768px) and (max-width: 1024px) {
   header {
     .header-left {
-      .back2 {
-        padding: 10px 0 10px 50px;
+      .header-back_profile {
+        margin: 10px 0 10px 50px;
       }
-      .back3 {
-        padding: 20px 0 20px 40px;
+      .header-back_edit, .header-back_delete {
+        margin: 20px 0 20px 40px;
       }
     } 
     .header-right {
-      .edit {
-        margin-right: 40px;
-        margin-top: 20px;
-      }
-      .config {
-        padding-right: 30px;
+      .utility-item {
+        .utility-item_config {
+          margin: 10px 30px 0;
+        }
+        .utility-item_edit {
+          margin: 20px 40px 0 0;
+        }
       }
     }
   }

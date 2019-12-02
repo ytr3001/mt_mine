@@ -14,15 +14,18 @@
   <header>
     <div class="header-inner">
       <div class="header-left">
-        <button class="back" onclick="history.back()">&lt</button>
+        <button class="header-back header-back_show" onclick="history.back()">&lt</button>
       </div>
+      <!-- ログインユーザーとリクエストユーザーのidが同じであればデリートアイコンの表示 -->
+      @if($user->id === $auth->id)
       <div class="header-right">
-        @if(Auth::check())
-          @if($user->id === $auth->id)
-          <button id="check" class="check"><i class="far fa-trash-alt"></i></button>
-          @endif
-        @endif
+        <div class="utility">
+          <div class="utility-item">
+            <button id="utility-item_trash" class="utility-item_trash"><i class="far fa-trash-alt"></i></button>
+          <div>
+        </div>
       </div>
+      @endif
     </div>
   </header>
 

@@ -14,15 +14,18 @@
   <header>
     <div class="header-inner">
       <div class="header-left">
-        <a href="../post/index" class="back2" >&lt</a>
+        <a href="../post/index" class="header-back header-back_profile" >&lt</a>
       </div>
+      <!-- ログインユーザーとリクエストユーザーのidが同じであれば設定アイコンの表示 -->
+      @if($user->id === $auth->id)
       <div class="header-right">
-        @if(Auth::check())
-          @if($user->id === $auth->id)
-          <a href="edit" class="config"><i class="fas fa-cog"></i></a>
-          @endif
-        @endif
+        <div class="utility">
+          <div class="utility-item">
+            <a href="edit" class="utility-item_config"><i class="fas fa-cog"></i></a>
+          <div>
+        </div>
       </div>
+      @endif
     </div>
   </header>
 

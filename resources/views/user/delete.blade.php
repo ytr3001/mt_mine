@@ -14,7 +14,7 @@
   <header>
     <div class="header-inner">
       <div class="header-left">
-        <a href="../user/edit" class="back3" >&lt</a>
+        <a href="../user/edit" class="header-back header-back_delete" >&lt</a>
       </div>
     </div>
   </header>

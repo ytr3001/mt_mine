@@ -14,12 +14,16 @@
   <header>
     <div class="header-inner">
       <div class="header-left">
-        <a href="../user/profile" class="back3" >&lt</a>
+        <a href="../user/profile" class="header-back header-back_edit" >&lt</a>
       </div>
       <div class="header-right">
-        <button id="edit" class="edit">保存</button>
+        <div class="utility">
+          <div class="utility-item">
+            <button id="utility-item_edit" class="utility-button utility-item_edit">保存</button>
+          </div>
+        </div>
       </div>
-    </div>
+     </div>
   </header>
 
   <div class="container">

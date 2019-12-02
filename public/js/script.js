@@ -1,7 +1,7 @@
 $(function() {
   // show.php 
   //削除ボタンクリック時にモーダルの表示
-  $('#check').click(function() { 
+  $('#utility-item_trash').click(function() { 
       $('#check-modal').fadeIn();
   });
 
@@ -17,7 +17,7 @@ $(function() {
 
   //create.php
   //投稿ボタンクリック時に投稿内容をsubmit
-  $('#post').click(function() {
+  $('#utility-item_post').click(function() {
     $('#create-post').submit();
   })
 
@@ -63,7 +63,7 @@ $(function() {
   });
 
   //保存ボタンクリック時にプロフィール編集内容をsubmit
-  $('#edit').click(function() {
+  $('#utility-item_edit').click(function() {
     $('#edit-user').submit();
   })
 })

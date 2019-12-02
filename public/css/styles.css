@@ -85,6 +85,10 @@ input {
   padding: 10px;
 }
 
+ul {
+  list-style: none;
+}
+
 header {
   background-color: #fff;
   border-bottom: 1px solid #a9a9a9;
@@ -101,76 +105,76 @@ header .header-inner {
 header .header-left .header-logo {
   font-size: 2.4rem;
   font-weight: bold;
-  display: block;
   padding: 15px 0;
+  margin: 0;
 }
 
-header .header-left .back {
+header .header-left .header-back {
   display: block;
   font-weight: bold;
   font-size: 2.4rem;
-  padding: 5px 20px;
 }
 
-header .header-left .back2 {
-  display: block;
-  font-weight: bold;
-  font-size: 2.4rem;
-  padding: 10px 0 10px 120px;
+header .header-left .header-back_profile {
+  margin: 10px 0 10px 120px;
 }
 
-header .header-left .back3 {
-  display: block;
-  font-weight: bold;
-  font-size: 2.4rem;
-  padding: 10px 0 10px 170px;
+header .header-left .header-back_edit,
+header .header-left .header-back_delete {
+  margin: 10px 0 10px 170px;
 }
 
-header .header-right a {
+header .header-left .header-back_show,
+header .header-left .header-back_create {
+  margin: 10px 20px;
+}
+
+header .header-right .utility-item {
+  display: -webkit-box;
+  display: flex;
+}
+
+header .header-right .utility-item .utility-item_login {
   display: inline-block;
+  padding: 20px 10px;
 }
 
-header .header-right .post {
-  background-color: #38b48b;
-  color: #fff;
-  margin-top: 6px;
-  margin-right: 5px;
-  padding: 5px 10px;
-  border-radius: 3px;
+header .header-right .utility-item .utility-item_register {
+  display: inline-block;
+  padding: 20px 0px;
 }
 
-header .header-right .check {
-  font-size: 2.2rem;
-  padding-top: 8px;
-  padding-right: 35px;
-}
-
-header .header-right .config {
+header .header-right .utility-item .utility-item_config {
   font-size: 2.4rem;
-  padding-right: 100px;
-  padding-top: 10px;
+  margin: 11px 100px 0;
 }
 
-header .header-right .edit {
-  margin-right: 170px;
+header .header-right .utility-item .utility-button {
   background-color: #38b48b;
   color: #fff;
-  margin-top: 12px;
   padding: 5px 10px;
   border-radius: 3px;
 }
 
-header .header-right .user-picture {
+header .header-right .utility-item .utility-item_edit {
+  margin: 12px 170px 0 0;
+}
+
+header .header-right .utility-item .utility-item_post {
+  margin: 10px 5px;
+}
+
+header .header-right .utility-item .utility-item_trash {
+  font-size: 2.2rem;
+  margin: 14px 35px 0 0;
+}
+
+header .header-right .login-user_picture {
   width: 40px;
   height: 40px;
   border: 1px solid #696969;
   border-radius: 30px;
   margin-top: 14px;
-}
-
-header .header-right .login,
-header .header-right .register {
-  padding: 20px 0;
 }
 
 .container {
@@ -248,7 +252,7 @@ header .header-right .register {
 }
 
 .container .show-contents .post-title {
-  width: 950px;
+  width: 930px;
   border-bottom: 1px solid #333;
   margin: 0 auto;
   padding: 10px 10px 5px;
@@ -262,7 +266,7 @@ header .header-right .register {
 }
 
 .container .user-area {
-  width: 950px;
+  width: 930px;
   margin: 0 auto;
   padding: 15px 10px 5px;
   text-align: left;
@@ -284,8 +288,8 @@ header .header-right .register {
 }
 
 .container .post-picture {
-  width: 950px;
-  height: 600px;
+  width: 930px;
+  height: 580px;
 }
 
 .container .title {
@@ -296,7 +300,7 @@ header .header-right .register {
 }
 
 .container .date {
-  width: 950px;
+  width: 930px;
   margin: 0 auto;
   font-size: 1.2rem;
   text-align: left;
@@ -846,66 +850,46 @@ footer .footer-inner {
     padding: 10px 0;
   }
 
-  header .header-left .back {
-    font-weight: bold;
-    font-size: 1.4rem;
-    padding: 10px 0px;
-  }
-
-  header .header-left .back2 {
+  header .header-left .header-back {
+    margin: 10px 0;
     font-size: 1.2rem;
-    padding: 10px 0 10px 0;
   }
 
-  header .header-left .back3 {
+  header .header-right .utility-item .utility-item_login {
+    padding: 13px 5px;
+  }
+
+  header .header-right .utility-item .utility-item_register {
+    padding: 13px 0;
+  }
+
+  header .header-right .utility-item .utility-item_config {
     font-size: 1.2rem;
-    padding: 10px 0 10px 10px;
+    margin: 10px 10px 0;
   }
 
-  header .header-right a {
-    display: inline-block;
-    padding: 12px 0;
-  }
-
-  header .header-right .post {
-    margin-top: 9px;
-    margin-right: 0px;
-    padding: 5px 5px;
-    font-size: 0.8rem;
-  }
-
-  header .header-right .check {
-    font-size: 1.2rem;
-    padding-top: 11px;
-    padding-right: 0px;
-  }
-
-  header .header-right .config {
-    font-size: 1.6rem;
-    padding: 8px 10px 0;
-  }
-
-  header .header-right .edit {
-    margin-right: 0px;
-    margin-top: 8px;
+  header .header-right .utility-item .utility-button {
     padding: 2px 5px;
     font-size: 1.2rem;
   }
 
-  header .header-right .user-picture {
+  header .header-right .utility-item .utility-item_edit {
+    margin: 8px 0;
+  }
+
+  header .header-right .utility-item .utility-item_post {
+    margin: 9px 0;
+  }
+
+  header .header-right .utility-item .utility-item_trash {
+    font-size: 1.2rem;
+    margin: 9px 0 0;
+  }
+
+  header .header-right .login-user_picture {
     width: 30px;
     height: 30px;
-    padding: 0;
-    margin-top: 6px;
-  }
-
-  header .header-right a {
-    padding: 0;
-  }
-
-  header .header-right .login,
-  header .header-right .register {
-    padding: 12px 0;
+    margin-top: 5px;
   }
 
   .container {
@@ -1219,21 +1203,21 @@ footer .footer-inner {
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  header .header-left .back2 {
-    padding: 10px 0 10px 50px;
+  header .header-left .header-back_profile {
+    margin: 10px 0 10px 50px;
   }
 
-  header .header-left .back3 {
-    padding: 20px 0 20px 40px;
+  header .header-left .header-back_edit,
+  header .header-left .header-back_delete {
+    margin: 20px 0 20px 40px;
   }
 
-  header .header-right .edit {
-    margin-right: 40px;
-    margin-top: 20px;
+  header .header-right .utility-item .utility-item_config {
+    margin: 10px 30px 0;
   }
 
-  header .header-right .config {
-    padding-right: 30px;
+  header .header-right .utility-item .utility-item_edit {
+    margin: 20px 40px 0 0;
   }
 
   .container {
