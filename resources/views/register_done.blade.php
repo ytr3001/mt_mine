@@ -32,10 +32,10 @@
   </header>
 
   <div class="container">
-    <div class="register-done-contents">
-      <p class="done-message">アカウント登録が完了しました。<br/></p>
-      <img src="../public/images/mountain.png" alt="画像" class="img1">
-      <a href="post/index" class="btn">さっそく山を探す</a>
+    <div class="register-done">
+      <p class="register-done_message">アカウント登録が完了しました。<br/></p>
+      <img src="../public/images/mountain.png" alt="画像" class="register-done_picture">
+      <a href="post/index" class="link">さっそく山を探す</a>
     </div>
   </div>
 

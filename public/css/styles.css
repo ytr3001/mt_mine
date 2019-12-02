@@ -86,74 +86,74 @@ header .header-inner {
   padding: 0px 25px;
 }
 
-header .header-left .header-logo {
+header .header-inner .header-left .header-logo {
   font-size: 2.4rem;
   font-weight: bold;
   padding: 15px 0;
   margin: 0;
 }
 
-header .header-left .header-back {
+header .header-inner .header-left .header-back {
   display: block;
   font-weight: bold;
   font-size: 2.4rem;
 }
 
-header .header-left .header-back_profile {
+header .header-inner .header-left .header-back_profile {
   margin: 10px 0 10px 120px;
 }
 
-header .header-left .header-back_edit,
-header .header-left .header-back_delete {
+header .header-inner .header-left .header-back_edit,
+header .header-inner .header-left .header-back_delete {
   margin: 10px 0 10px 170px;
 }
 
-header .header-left .header-back_show,
-header .header-left .header-back_create {
+header .header-inner .header-left .header-back_show,
+header .header-inner .header-left .header-back_create {
   margin: 10px 20px;
 }
 
-header .header-right .utility-item {
+header .header-inner .header-right .utility-item {
   display: -webkit-box;
   display: flex;
 }
 
-header .header-right .utility-item .utility-item_login {
+header .header-inner .header-right .utility-item .utility-item_login {
   display: inline-block;
   padding: 20px 10px;
 }
 
-header .header-right .utility-item .utility-item_register {
+header .header-inner .header-right .utility-item .utility-item_register {
   display: inline-block;
   padding: 20px 0px;
 }
 
-header .header-right .utility-item .utility-item_config {
+header .header-inner .header-right .utility-item .utility-item_config {
   font-size: 2.4rem;
   margin: 11px 100px 0;
 }
 
-header .header-right .utility-item .utility-button {
+header .header-inner .header-right .utility-item .utility-button {
   background-color: #38b48b;
   color: #fff;
   padding: 5px 10px;
   border-radius: 3px;
 }
 
-header .header-right .utility-item .utility-item_edit {
+header .header-inner .header-right .utility-item .utility-item_edit {
   margin: 12px 170px 0 0;
 }
 
-header .header-right .utility-item .utility-item_post {
+header .header-inner .header-right .utility-item .utility-item_post {
   margin: 10px 5px;
 }
 
-header .header-right .utility-item .utility-item_trash {
+header .header-inner .header-right .utility-item .utility-item_trash {
   font-size: 2.2rem;
   margin: 14px 35px 0 0;
 }
 
-header .header-right .login-user_picture {
+header .header-inner .header-right .login-user_picture {
   width: 40px;
   height: 40px;
   border: 1px solid #696969;
@@ -217,9 +217,39 @@ header .header-right .login-user_picture {
   background-color: #c4972f;
 }
 
-.container .register .local-nav,
-.container .login .local-nav {
+.container .register .link,
+.container .login .link {
   color: royalblue;
+}
+
+.container .register-done {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 110px 0 120px;
+}
+
+.container .register-done .register-done_message {
+  margin-bottom: 10px;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #38b48b;
+}
+
+.container .register-done .register-done_picture {
+  border-radius: 200px;
+  height: 250px;
+  width: 250px;
+}
+
+.container .register-done .link {
+  display: block;
+  width: 150px;
+  padding: 5px 10px;
+  background-color: #38b48b;
+  color: #fff;
+  border-radius: 20px;
+  margin: 30px auto 0;
 }
 
 .container .contents {
@@ -351,36 +381,6 @@ header .header-right .login-user_picture {
 .container .image img {
   width: 800px;
   height: 500px;
-}
-
-.register-done-contents {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 110px 0 120px;
-}
-
-.register-done-contents .done-message {
-  margin-bottom: 10px;
-  font-size: 3rem;
-  font-weight: bold;
-  color: #38b48b;
-}
-
-.register-done-contents .img1 {
-  border-radius: 200px;
-  height: 250px;
-  width: 250px;
-}
-
-.register-done-contents .btn {
-  display: block;
-  width: 150px;
-  padding: 5px 10px;
-  background-color: #38b48b;
-  color: #fff;
-  border-radius: 20px;
-  margin: 30px auto 0;
 }
 
 footer {
@@ -893,6 +893,10 @@ footer .footer-inner {
     padding: 30px;
   }
 
+  .container .register-done .register-done_message {
+    font-size: 2rem;
+  }
+
   .container .contents {
     padding: 20px 0;
     text-align: center;
@@ -1135,10 +1139,6 @@ footer .footer-inner {
   .delete-user-contents .delete-area .delete-btn {
     font-size: 0.8rem;
     padding: 3px 7px;
-  }
-
-  .register-done-contents .done-message {
-    font-size: 2rem;
   }
 
   .top-contents {

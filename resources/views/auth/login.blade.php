@@ -51,7 +51,7 @@
 
         <input type="submit" class="form-input form-submit form-submit_login" value="ログイン">
       </form>
-      <a href="register" class=local-nav>新規会員登録はこちら</a>
+      <a href="register" class=link>新規会員登録はこちら</a>
     </div>
   </div>
 

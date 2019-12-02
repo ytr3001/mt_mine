@@ -60,7 +60,7 @@
         
         <input type="submit" class="form-input form-submit form-submit_register" value="登録する">
       </form>
-      <a href="login" class=local-nav>ログインはこちら</a>
+      <a href="login" class=link>ログインはこちら</a>
     </div>
   </div>
   
