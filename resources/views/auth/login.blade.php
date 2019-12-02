@@ -28,26 +28,30 @@
   </header>
 
   <div class="container">
-    <div class="login-contents">
-      <form action="{{ route('login') }}" method="post" class="login-user">
+    <div class="login">
+      <form action="{{ route('login') }}" method="post" class="form">
         {{ csrf_field() }}
-        <p class="title">ログイン</p>
-        <input type="email" class="email" name="email" placeholder="メールアドレス" value="{{old('email')}}" required autocomplete="email" autofocus>
-        <input type="password" class="password" name="password" placeholder="パスワード" required autocomplete="current-password">
+        <p class="form-title">ログイン</p>
+
+        <input type="email" class="form-input" name="email" placeholder="メールアドレス" value="{{old('email')}}" required autocomplete="email" autofocus>
+        <!-- emailの入力がバリデーションに該当する場合はエラーメッセージの表示 -->
         @error('email')
-          <span class="invalid-feedback" role="alert">
-              <strong>{{ $message }}</strong>
-          </span>
-        @enderror
-        @error('password')
-          <span class="invalid-feedback" role="alert">
-              <strong>{{ $message }}</strong>
-          </span>
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
         @enderror
 
-        <input type="submit" class="login" value="ログイン">
+        <input type="password" class="form-input" name="password" placeholder="パスワード" required autocomplete="current-password">
+        <!-- passwordの入力がバリデーションに該当する場合はエラーメッセージの表示 -->
+        @error('password')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+        @enderror
+
+        <input type="submit" class="form-input form-submit form-submit_login" value="ログイン">
       </form>
-      <a href="register" class=register-nav>新規会員登録はこちら</a>
+      <a href="register" class=local-nav>新規会員登録はこちら</a>
     </div>
   </div>
 
@@ -60,31 +64,3 @@
   <script src="js/script.js"></script>
 </body>
 </html>
-
-
-
-<!-- <div class="form-group row">
-    <div class="col-md-6 offset-md-4">
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-            <label class="form-check-label" for="remember">
-                {{ __('Remember Me') }}
-            </label>
-        </div>
-    </div>
-</div>
-
-<div class="form-group row mb-0">
-    <div class="col-md-8 offset-md-4">
-        <button type="submit" class="btn btn-primary">
-            {{ __('Login') }}
-        </button>
-
-        @if (Route::has('password.request'))
-            <a class="btn btn-link" href="{{ route('password.request') }}">
-                {{ __('Forgot Your Password?') }}
-            </a>
-        @endif
-    </div>
-</div> -->

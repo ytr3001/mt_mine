@@ -1,5 +1,4 @@
 @charset "UTF-8";
-// Variables
 @import 'variables';
 //共通レイアウト
 *{
@@ -35,20 +34,6 @@ body {
 .user-contents {
   max-width: 800px;
 }
-.register-contents {
-  max-width: 500px;
-  margin: 70px auto;
-  background-color: #fff;
-  padding: 50px 80px;
-  border: 1px solid #a9a9a9;
-}
-.login-contents {
-  max-width: 400px;
-  margin: 90px auto 150px;
-  background-color: #fff;
-  padding: 50px;
-  border: 1px solid #a9a9a9;
-}
 a {
   text-decoration: none;
   color: #333;
@@ -75,11 +60,13 @@ ul {
 header {
   background-color: #fff;
   border-bottom: 1px solid #a9a9a9;
+
   .header-inner {
     display: flex;
     justify-content : space-between;
     padding: 0px 25px;
   }
+
   .header-left {
     .header-logo {
       font-size: 2.4rem;
@@ -102,6 +89,7 @@ header {
       margin: 10px 20px;
     }
   } 
+
   .header-right {
     .utility-item {
       display: flex;
@@ -147,6 +135,60 @@ header {
 //コンテナレイアウト
 .container {
   margin: 0 auto;
+  //新規登録画面,ログイン画面レイアウト
+  .register {
+    max-width: 500px;
+    margin: 70px auto;
+    padding: 50px 80px;
+  }
+
+  .login {
+    max-width: 400px;
+    margin: 90px auto 150px;
+    padding: 50px;
+  }
+
+  .register, .login {
+    text-align: center;
+    border: 1px solid #a9a9a9;
+    background-color: #fff;
+    .form {
+      .form-title {
+        border-bottom: 1px solid #a9a9a9;
+        font-weight: bold;
+        padding-bottom: 5px;
+        margin-bottom: 20px;
+      }
+      .form-input {
+        display: block;
+        width: 100%;
+        margin: 15px 0;
+      }
+      .form-submit {
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        margin-bottom: 30px;
+      }
+      .form-submit_register {
+        background-color: #38b48b;
+      }
+      .form-submit_login {
+        background-color: #c4972f;
+      }
+    } 
+    .local-nav {
+      color: royalblue;
+    }
+  }
+
+
+
+
+
+
+
+
   @mixin title-style {
     border-bottom: 1px solid #333;
     margin: 0 auto;
@@ -559,35 +601,7 @@ footer {
     }
   }
 }
-.register-contents, .login-contents {
-  text-align: center;
-  .register-user, .login-user {
-    input {
-      display: block;
-      width: 100%;
-      margin: 15px 0;
-    }
-    .title {
-      border-bottom: 1px solid #a9a9a9;
-      font-weight: bold;
-      padding-bottom: 5px;
-      margin-bottom: 20px;
-    }
-    .register, .login {
-      background-color: #38b48b;
-      color: #fff;
-      border: none;
-      border-radius: 3px;
-      margin-bottom: 30px;
-    }
-    .login {
-      background-color: #c4972f;
-    }
-  }
-  a {
-    color: royalblue;
-  }
-}
+
 //ペジネーション
 .pagination {
   display: flex;
@@ -727,9 +741,19 @@ footer {
       }
     }
   }
-  
+
   .container {
     max-width: 540px;
+    //新規登録画面、ログイン画面レイアウト
+    .register, .login {
+      max-width: 300px;
+      margin: 40px auto 50px;
+      padding: 30px;
+    }
+
+
+
+
     .contents {
         padding: 20px 0;
         text-align: center;
@@ -923,11 +947,6 @@ footer {
         padding: 3px 7px;
       }
     }
-  }
-  .register-contents, .login-contents {
-    max-width: 300px;
-    margin: 40px auto 50px;
-    padding: 30px;
   }
   .register-done-contents {
     .done-message {

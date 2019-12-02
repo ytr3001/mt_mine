@@ -28,36 +28,39 @@
   </header>
 
   <div class="container">
-    <div class="register-contents">
-      <form action="{{ route('register') }}" method="post" class="register-user">
+    <div class="register">
+      <form action="{{ route('register') }}" method="post" class="form">
         {{ csrf_field() }}
-        <p class="title">新規会員登録</p>
+        <p class="form-title">新規会員登録</p>
 
-        <input type="text" class="name" name="name" placeholder="ユーザー名" value="{{ old('name') }}" required autocomplete="name" autofocus>
+        <input type="text" class="form-input" name="name" placeholder="ユーザー名" value="{{ old('name') }}" required autocomplete="name" autofocus>
+        <!-- ユーザー名の入力がバリデーションに該当する場合はエラーメッセージの表示 -->
         @error('name')
-          <span class="invalid-feedback" role="alert">
-              <strong>{{ $message }}</strong>
-          </span>
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
         @enderror
 
-        <input type="email" class="email" name="email" placeholder="メールアドレス" value="{{ old('email') }}" required autocomplete="email">
+        <input type="email" class="form-input" name="email" placeholder="メールアドレス" value="{{ old('email') }}" required autocomplete="email">
+        <!-- emailの入力がバリデーションに該当する場合はエラーメッセージの表示 -->
         @error('email')
-          <span class="invalid-feedback" role="alert">
-              <strong>{{ $message }}</strong>
-          </span>
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
         @enderror
 
-        <input type="password" class="password" name="password" placeholder="パスワード" required autocomplete="new-password">
-        <input type="password" class="password" name="password_confirmation" placeholder="パスワード確認" required autocomplete="new-password">
+        <input type="password" class="form-input" name="password" placeholder="パスワード" required autocomplete="new-password">
+        <input type="password" class="form-input" name="password_confirmation" placeholder="パスワード確認" required autocomplete="new-password">
+        <!-- パスワードの入力がバリデーションに該当する場合はエラーメッセージの表示 -->
         @error('password')
-          <span class="invalid-feedback" role="alert">
-              <strong>{{ $message }}</strong>
-          </span>
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
         @enderror
         
-        <input type="submit" class="register" value="登録する">
+        <input type="submit" class="form-input form-submit form-submit_register" value="登録する">
       </form>
-      <a href="login" class=login-nav>ログインはこちら</a>
+      <a href="login" class=local-nav>ログインはこちら</a>
     </div>
   </div>
   

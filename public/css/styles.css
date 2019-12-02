@@ -46,22 +46,6 @@ body {
   max-width: 800px;
 }
 
-.register-contents {
-  max-width: 500px;
-  margin: 70px auto;
-  background-color: #fff;
-  padding: 50px 80px;
-  border: 1px solid #a9a9a9;
-}
-
-.login-contents {
-  max-width: 400px;
-  margin: 90px auto 150px;
-  background-color: #fff;
-  padding: 50px;
-  border: 1px solid #a9a9a9;
-}
-
 a {
   text-decoration: none;
   color: #333;
@@ -179,6 +163,63 @@ header .header-right .login-user_picture {
 
 .container {
   margin: 0 auto;
+}
+
+.container .register {
+  max-width: 500px;
+  margin: 70px auto;
+  padding: 50px 80px;
+}
+
+.container .login {
+  max-width: 400px;
+  margin: 90px auto 150px;
+  padding: 50px;
+}
+
+.container .register,
+.container .login {
+  text-align: center;
+  border: 1px solid #a9a9a9;
+  background-color: #fff;
+}
+
+.container .register .form .form-title,
+.container .login .form .form-title {
+  border-bottom: 1px solid #a9a9a9;
+  font-weight: bold;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+.container .register .form .form-input,
+.container .login .form .form-input {
+  display: block;
+  width: 100%;
+  margin: 15px 0;
+}
+
+.container .register .form .form-submit,
+.container .login .form .form-submit {
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  margin-bottom: 30px;
+}
+
+.container .register .form .form-submit_register,
+.container .login .form .form-submit_register {
+  background-color: #38b48b;
+}
+
+.container .register .form .form-submit_login,
+.container .login .form .form-submit_login {
+  background-color: #c4972f;
+}
+
+.container .register .local-nav,
+.container .login .local-nav {
+  color: royalblue;
 }
 
 .container .contents {
@@ -694,57 +735,6 @@ footer .footer-inner {
   margin: 30px 0 150px;
 }
 
-.register-contents,
-.login-contents {
-  text-align: center;
-}
-
-.register-contents .register-user input,
-.register-contents .login-user input,
-.login-contents .register-user input,
-.login-contents .login-user input {
-  display: block;
-  width: 100%;
-  margin: 15px 0;
-}
-
-.register-contents .register-user .title,
-.register-contents .login-user .title,
-.login-contents .register-user .title,
-.login-contents .login-user .title {
-  border-bottom: 1px solid #a9a9a9;
-  font-weight: bold;
-  padding-bottom: 5px;
-  margin-bottom: 20px;
-}
-
-.register-contents .register-user .register,
-.register-contents .register-user .login,
-.register-contents .login-user .register,
-.register-contents .login-user .login,
-.login-contents .register-user .register,
-.login-contents .register-user .login,
-.login-contents .login-user .register,
-.login-contents .login-user .login {
-  background-color: #38b48b;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  margin-bottom: 30px;
-}
-
-.register-contents .register-user .login,
-.register-contents .login-user .login,
-.login-contents .register-user .login,
-.login-contents .login-user .login {
-  background-color: #c4972f;
-}
-
-.register-contents a,
-.login-contents a {
-  color: royalblue;
-}
-
 .pagination {
   display: -webkit-box;
   display: flex;
@@ -894,6 +884,13 @@ footer .footer-inner {
 
   .container {
     max-width: 540px;
+  }
+
+  .container .register,
+  .container .login {
+    max-width: 300px;
+    margin: 40px auto 50px;
+    padding: 30px;
   }
 
   .container .contents {
@@ -1138,13 +1135,6 @@ footer .footer-inner {
   .delete-user-contents .delete-area .delete-btn {
     font-size: 0.8rem;
     padding: 3px 7px;
-  }
-
-  .register-contents,
-  .login-contents {
-    max-width: 300px;
-    margin: 40px auto 50px;
-    padding: 30px;
   }
 
   .register-done-contents .done-message {
