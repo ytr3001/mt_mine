@@ -165,6 +165,63 @@ header .header-inner .header-right .login-user_picture {
   margin: 0 auto;
 }
 
+.container .main-view {
+  width: 100%;
+  height: 650px;
+  text-align: center;
+  background-size: cover;
+}
+
+.container .main-view .catch-copy {
+  font-weight: bold;
+  color: #fff;
+  font-size: 4.8rem;
+  padding-top: 220px;
+}
+
+.container .main-view .link {
+  font-weight: bold;
+  color: #fff;
+  font-size: 2.4rem;
+  display: inline-block;
+  margin-top: 50px;
+  background-color: #f8b500;
+  padding: 5px 50px;
+  border-radius: 5px;
+}
+
+.container .service-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+.container .service-wrapper .service-description {
+  font-weight: bold;
+  font-size: 2.4rem;
+  margin: 30px 0;
+}
+
+.container .service-wrapper .service-contents .service-content {
+  display: -webkit-box;
+  display: flex;
+  justify-content: space-around;
+  padding: 30px 80px;
+}
+
+.container .service-wrapper .service-contents .service-content .service-concept,
+.container .service-wrapper .service-contents .service-content .service-image {
+  height: 300px;
+  width: 450px;
+  text-align: left;
+}
+
+.container .service-wrapper .service-contents .service-content .reverce1 {
+  -webkit-box-ordinal-group: 2;
+          order: 1;
+}
+
 .container .register {
   max-width: 500px;
   margin: 70px auto;
@@ -769,63 +826,6 @@ footer .footer-inner {
   color: #e3342f;
 }
 
-.top-contents {
-  width: 100%;
-  height: 650px;
-  text-align: center;
-  background-size: cover;
-}
-
-.top-contents .catch-copy {
-  font-weight: bold;
-  color: #fff;
-  font-size: 4.8rem;
-  padding-top: 220px;
-}
-
-.top-contents .btn {
-  font-weight: bold;
-  color: #fff;
-  font-size: 2.4rem;
-  display: inline-block;
-  margin-top: 50px;
-  background-color: #f8b500;
-  padding: 5px 50px;
-  border-radius: 5px;
-}
-
-.service-contents {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-  padding-bottom: 100px;
-}
-
-.service-contents .description {
-  font-weight: bold;
-  font-size: 2.4rem;
-  margin: 30px 0;
-}
-
-.service-contents .services .service {
-  display: -webkit-box;
-  display: flex;
-  justify-content: space-around;
-  padding: 30px 80px;
-}
-
-.service-contents .services .service .text-content,
-.service-contents .services .service .service-image {
-  height: 300px;
-  width: 450px;
-  text-align: left;
-}
-
-.service-contents .services .service .reverce2 {
-  -webkit-box-ordinal-group: 2;
-          order: 1;
-}
-
 @media (max-width: 575px) {
   body {
     font-size: 0.8rem;
@@ -835,48 +835,48 @@ footer .footer-inner {
     font-size: 0.8rem;
   }
 
-  header .header-left .header-logo {
+  header .header-inner .header-left .header-logo {
     font-size: 1.4rem;
     padding: 10px 0;
   }
 
-  header .header-left .header-back {
+  header .header-inner .header-left .header-back {
     margin: 10px 0;
     font-size: 1.2rem;
   }
 
-  header .header-right .utility-item .utility-item_login {
+  header .header-inner .header-right .utility-item .utility-item_login {
     padding: 13px 5px;
   }
 
-  header .header-right .utility-item .utility-item_register {
+  header .header-inner .header-right .utility-item .utility-item_register {
     padding: 13px 0;
   }
 
-  header .header-right .utility-item .utility-item_config {
+  header .header-inner .header-right .utility-item .utility-item_config {
     font-size: 1.2rem;
     margin: 10px 10px 0;
   }
 
-  header .header-right .utility-item .utility-button {
+  header .header-inner .header-right .utility-item .utility-button {
     padding: 2px 5px;
     font-size: 1.2rem;
   }
 
-  header .header-right .utility-item .utility-item_edit {
+  header .header-inner .header-right .utility-item .utility-item_edit {
     margin: 8px 0;
   }
 
-  header .header-right .utility-item .utility-item_post {
+  header .header-inner .header-right .utility-item .utility-item_post {
     margin: 9px 0;
   }
 
-  header .header-right .utility-item .utility-item_trash {
+  header .header-inner .header-right .utility-item .utility-item_trash {
     font-size: 1.2rem;
     margin: 9px 0 0;
   }
 
-  header .header-right .login-user_picture {
+  header .header-inner .header-right .login-user_picture {
     width: 30px;
     height: 30px;
     margin-top: 5px;
@@ -884,6 +884,50 @@ footer .footer-inner {
 
   .container {
     max-width: 540px;
+  }
+
+  .container .main-view {
+    width: 100%;
+    height: 300px;
+  }
+
+  .container .main-view .catch-copy {
+    font-size: 2.2rem;
+    padding-top: 100px;
+  }
+
+  .container .main-view .link {
+    font-size: 1.2rem;
+    margin-top: 30px;
+    padding: 5px 30px;
+  }
+
+  .container .service-wrapper {
+    padding-bottom: 30px;
+  }
+
+  .container .service-wrapper .service-description {
+    font-size: 1.2rem;
+    margin: 30px 0;
+  }
+
+  .container .service-wrapper .service-contents .service-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    padding: 0px;
+  }
+
+  .container .service-wrapper .service-contents .service-content .service-concept,
+  .container .service-wrapper .service-contents .service-content .service-image {
+    height: 180px;
+    width: 300px;
+    margin: 0 auto 10px;
+  }
+
+  .container .service-wrapper .service-contents .service-content .reverce {
+    -webkit-box-ordinal-group: 2;
+            order: 1;
   }
 
   .container .register,
@@ -1140,78 +1184,39 @@ footer .footer-inner {
     font-size: 0.8rem;
     padding: 3px 7px;
   }
-
-  .top-contents {
-    width: 100%;
-    height: 300px;
-  }
-
-  .top-contents .catch-copy {
-    font-size: 2.2rem;
-    padding-top: 100px;
-  }
-
-  .top-contents .btn {
-    font-size: 1.2rem;
-    margin-top: 30px;
-    background-color: #f8b500;
-    padding: 5px 30px;
-  }
-
-  .service-contents {
-    padding-bottom: 30px;
-  }
-
-  .service-contents .description {
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin: 30px 0;
-  }
-
-  .service-contents .services .service {
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-            flex-direction: column;
-    padding: 0px;
-  }
-
-  .service-contents .services .service .text-content,
-  .service-contents .services .service .service-image {
-    height: 180px;
-    width: 300px;
-    margin: 0 auto 10px;
-    -webkit-box-pack: center;
-            justify-content: center;
-  }
-
-  .service-contents .services .service .reverce1 {
-    -webkit-box-ordinal-group: 2;
-            order: 1;
-  }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  header .header-left .header-back_profile {
+  header .header-inner .header-left .header-back_profile {
     margin: 10px 0 10px 50px;
   }
 
-  header .header-left .header-back_edit,
-  header .header-left .header-back_delete {
+  header .header-inner .header-left .header-back_edit,
+  header .header-inner .header-left .header-back_delete {
     margin: 20px 0 20px 40px;
   }
 
-  header .header-right .utility-item .utility-item_config {
+  header .header-inner .header-right .utility-item .utility-item_config {
     margin: 10px 30px 0;
   }
 
-  header .header-right .utility-item .utility-item_edit {
+  header .header-inner .header-right .utility-item .utility-item_edit {
     margin: 20px 40px 0 0;
   }
 
   .container {
     max-width: 768px;
+  }
+
+  .container .service-wrapper .service-contents .service-content {
+    padding: 30px 50px;
+  }
+
+  .container .service-wrapper .service-contents .service-content .service-concept,
+  .container .service-wrapper .service-contents .service-content .service-image {
+    height: 200px;
+    width: 300px;
+    overflow: hidden;
   }
 
   .container .contents {
@@ -1282,28 +1287,17 @@ footer .footer-inner {
     margin-left: 300px;
   }
 
-  .top-contents {
+  .main-view {
     height: 450px;
   }
 
-  .top-contents .catch-copy {
+  .main-view .catch-copy {
     font-size: 3.6rem;
     padding-top: 150px;
   }
 
-  .top-contents .btn {
+  .main-view .btn {
     font-size: 1.8rem;
-  }
-
-  .service-contents .services .service {
-    padding: 30px 50px;
-  }
-
-  .service-contents .services .service .text-content,
-  .service-contents .services .service .service-image {
-    height: 200px;
-    width: 300px;
-    overflow: hidden;
   }
 }
 

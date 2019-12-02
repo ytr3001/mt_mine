@@ -137,6 +137,57 @@ header {
 .container {
   margin: 0 auto;
 
+  //トップ画面レイアウト
+  .main-view {
+    width: 100%;
+    height: 650px;
+    text-align: center;
+    background-size: cover;
+    .catch-copy {
+      font-weight: bold;
+      color:#fff;
+      font-size: 4.8rem;
+      padding-top: 220px;
+    }
+    .link {
+      font-weight: bold;
+      color:#fff;
+      font-size: 2.4rem;
+      display: inline-block;
+      margin-top: 50px;
+      background-color:#f8b500;
+      padding: 5px 50px;
+      border-radius: 5px;
+    }
+  }
+
+  .service-wrapper {
+    max-width: 1200px;
+    margin:0 auto;
+    text-align:center;
+    padding-bottom: 100px;
+    .service-description {
+      font-weight: bold;
+      font-size: 2.4rem;
+      margin: 30px 0;
+    }
+    .service-contents {
+      .service-content {
+        display: flex;
+        justify-content:space-around;
+        padding: 30px 80px;
+        .service-concept, .service-image{
+          height:300px;
+          width:450px;
+          text-align: left;
+        }
+        .reverce1 {
+          order: 1;
+        }
+      }
+    }
+  }
+
   //新規登録画面,ログイン画面レイアウト
   .register {
     max-width: 500px;
@@ -637,55 +688,8 @@ footer {
   font-size: 75%;
   color: #e3342f;
 }
-//トップページ
-.top-contents {
-  width: 100%;
-  height: 650px;
-  text-align: center;
-  background-size: cover;
-  .catch-copy {
-    font-weight: bold;
-    color:#fff;
-    font-size: 4.8rem;
-    padding-top: 220px;
-  }
-  .btn {
-    font-weight: bold;
-    color:#fff;
-    font-size: 2.4rem;
-    display: inline-block;
-    margin-top: 50px;
-    background-color:#f8b500;
-    padding: 5px 50px;
-    border-radius: 5px;
-  }
-}
-.service-contents {
-  max-width: 1200px;
-  margin:0 auto;
-  text-align:center;
-  padding-bottom: 100px;
-  .description {
-    font-weight: bold;
-    font-size: 2.4rem;
-    margin: 30px 0;
-  }
-  .services {
-    .service {
-      display: flex;
-      justify-content:space-around;
-      padding: 30px 80px;
-      .text-content, .service-image{
-        height:300px;
-        width:450px;
-        text-align: left;
-      }
-      .reverce2 {
-        order: 1;
-      }
-    }
-  }
-}
+
+
 
 
 
@@ -700,56 +704,98 @@ footer {
     font-size: 0.8rem;
   }
 
-  //ヘッダーデザイン
+  //ヘッダーレイアウト
   header {
-    .header-left {
-      .header-logo {
-        font-size: 1.4rem;
-        padding: 10px 0;
-      }
-      .header-back {
-        margin: 10px 0;
-        font-size: 1.2rem
-      }
-    } 
-    .header-right {
-      .utility-item {
-        .utility-item_login {
-          padding: 13px 5px;
+    .header-inner {
+      
+      .header-left {
+        .header-logo {
+          font-size: 1.4rem;
+          padding: 10px 0;
         }
-        .utility-item_register {
-          padding: 13px 0;
-        }
-        .utility-item_config {
-          font-size: 1.2rem;
-          margin: 10px 10px 0;
-        }
-        .utility-button {
-          padding: 2px 5px;
+        .header-back {
+          margin: 10px 0;
           font-size: 1.2rem;
         }
-        .utility-item_edit {
-          margin: 8px 0;
+      } 
+  
+      .header-right {
+        .utility-item {
+          .utility-item_login {
+            padding: 13px 5px;
+          }
+          .utility-item_register {
+            padding: 13px 0;
+          }
+          .utility-item_config {
+            font-size: 1.2rem;
+            margin: 10px 10px 0;
+          }
+          .utility-button {
+            padding: 2px 5px;
+            font-size: 1.2rem;
+          }
+          .utility-item_edit {
+            margin: 8px 0;
+          }
+          .utility-item_post {
+            margin: 9px 0;
+          }
+          .utility-item_trash {
+            font-size: 1.2rem;
+            margin: 9px 0 0;
+          }
         }
-        .utility-item_post {
-          margin: 9px 0;
-        }
-        .utility-item_trash {
-          font-size: 1.2rem;
-          margin: 9px 0 0;
-        }
+        .login-user_picture {
+          width: 30px;
+          height: 30px;  
+          margin-top: 5px;
+        }    
       }
-      .login-user_picture {
-        width: 30px;
-        height: 30px;  
-        margin-top: 5px;
-      }
+
     }
   }
 
   //コンテナレイアウト
   .container {
     max-width: 540px;
+
+    //トップ画面レイアウト
+    .main-view {
+      width: 100%;
+      height: 300px;
+      .catch-copy {
+        font-size: 2.2rem;
+        padding-top: 100px;
+      }
+      .link {
+        font-size: 1.2rem;
+        margin-top: 30px;
+        padding: 5px 30px;
+      }
+    }
+
+    .service-wrapper {
+      padding-bottom: 30px;
+      .service-description {
+        font-size: 1.2rem;
+        margin: 30px 0;
+      }
+      .service-contents {
+        .service-content {
+          flex-direction: column;
+          padding: 0px;
+          .service-concept, .service-image{
+            height:180px;
+            width:300px;
+            margin: 0 auto 10px;
+          }
+          .reverce {
+            order: 1;
+          }
+        }
+      }
+    }
 
     //新規登録画面、ログイン画面レイアウト
     .register, .login {
@@ -962,76 +1008,67 @@ footer {
       }
     }
   }
-  .top-contents {
-    width: 100%;
-    height: 300px;
-    .catch-copy {
-      font-size: 2.2rem;
-      padding-top: 100px;
-    }
-    .btn {
-      font-size: 1.2rem;
-      margin-top: 30px;
-      background-color:#f8b500;
-      padding: 5px 30px;
-    }
-  }
-  .service-contents {
-    padding-bottom: 30px;
-    .description {
-      font-weight: bold;
-      font-size: 1.2rem;
-      margin: 30px 0;
-    }
-    .services {
-      .service {
-        display: flex;
-        flex-direction: column;
-        padding: 0px;
-        .text-content, .service-image{
-          height:180px;
-          width:300px;
-          margin: 0 auto 10px;
-          justify-content: center;
-
-        }
-        .reverce1 {
-          order: 1;
-        }
-      }
-    }
-  }
+  
 }
+
 
 
 
 
 //ipadレスポンシブデザイン
 @media (min-width: 768px) and (max-width: 1024px) {
+
   //ヘッダーレイアウト
   header {
-    .header-left {
-      .header-back_profile {
-        margin: 10px 0 10px 50px;
-      }
-      .header-back_edit, .header-back_delete {
-        margin: 20px 0 20px 40px;
-      }
-    } 
-    .header-right {
-      .utility-item {
-        .utility-item_config {
-          margin: 10px 30px 0;
+    .header-inner {
+
+      .header-left {
+        .header-back_profile {
+          margin: 10px 0 10px 50px;
         }
-        .utility-item_edit {
-          margin: 20px 40px 0 0;
+        .header-back_edit, .header-back_delete {
+          margin: 20px 0 20px 40px;
+        }
+      } 
+  
+      .header-right {
+        .utility-item {
+          .utility-item_config {
+            margin: 10px 30px 0;
+          }
+          .utility-item_edit {
+            margin: 20px 40px 0 0;
+          }
         }
       }
+
     }
   }
+
   //コンテナレイアウト
   .container {
     max-width: 768px;
+
+    // トップ画面レイアウト
+    .service-wrapper {
+      .service-contents {
+        .service-content {
+          padding: 30px 50px;
+          .service-concept, .service-image{
+            height:200px;
+            width:300px;
+            overflow: hidden;
+          }
+        }
+      }
+    }
+
+
+
+
+
+
+
     .contents {
       padding: 20px 0;
       height: auto;
@@ -1093,7 +1130,7 @@ footer {
       }
     }
   }
-  .top-contents {
+  .main-view {
     height: 450px;
     .catch-copy {
       font-size: 3.6rem;
@@ -1101,18 +1138,6 @@ footer {
     }
     .btn {
       font-size: 1.8rem;
-    }
-  }
-  .service-contents {
-    .services {
-      .service {
-        padding: 30px 50px;
-        .text-content, .service-image{
-          height:200px;
-          width:300px;
-          overflow: hidden;
-        }
-      }
     }
   }
   
