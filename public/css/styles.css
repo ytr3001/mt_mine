@@ -130,7 +130,7 @@ header .header-right a {
   display: inline-block;
 }
 
-header .header-right #post {
+header .header-right .post {
   background-color: #38b48b;
   color: #fff;
   margin-top: 6px;
@@ -139,7 +139,7 @@ header .header-right #post {
   border-radius: 3px;
 }
 
-header .header-right #check {
+header .header-right .check {
   font-size: 2.2rem;
   padding-top: 8px;
   padding-right: 35px;
@@ -151,7 +151,7 @@ header .header-right .config {
   padding-top: 10px;
 }
 
-header .header-right #edit {
+header .header-right .edit {
   margin-right: 170px;
   background-color: #38b48b;
   color: #fff;
@@ -224,7 +224,7 @@ header .header-right .register {
   margin: 30px 0;
 }
 
-.container .create-contents #picture {
+.container .create-contents .picture {
   width: 800px;
   height: 500px;
   padding-top: 110px;
@@ -237,7 +237,7 @@ header .header-right .register {
   background-color: #f5f5f5;
 }
 
-.container .create-contents #picture .my-big1 {
+.container .create-contents .picture .my-big1 {
   color: #fff;
   font-size: 24rem;
 }
@@ -303,32 +303,32 @@ header .header-right .register {
   padding: 10px 10px 0;
 }
 
-.container #image img {
+.container .image img {
   width: 800px;
   height: 500px;
 }
 
-.top-contents {
+.register-done-contents {
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
   padding: 110px 0 120px;
 }
 
-.top-contents .done-message {
+.register-done-contents .done-message {
   margin-bottom: 10px;
   font-size: 3rem;
   font-weight: bold;
   color: #38b48b;
 }
 
-.top-contents .img1 {
+.register-done-contents .img1 {
   border-radius: 200px;
   height: 250px;
   width: 250px;
 }
 
-.top-contents .btn {
+.register-done-contents .btn {
   display: block;
   width: 150px;
   padding: 5px 10px;
@@ -339,7 +339,7 @@ header .header-right .register {
 }
 
 footer {
-  padding: 50px;
+  padding: 70px;
   background-color: #696969;
   display: -webkit-box;
   display: flex;
@@ -351,7 +351,7 @@ footer .footer-inner {
   background-color: #696969;
 }
 
-#check-modal {
+.check-modal {
   position: fixed;
   top: 0;
   right: 0;
@@ -496,7 +496,7 @@ footer .footer-inner {
   margin: 0 auto;
 }
 
-.user-contents .posts-area2 #picture {
+.user-contents .posts-area2 .picture {
   display: block;
   border: 1px solid #a9a9a9;
   border-radius: 5px;
@@ -553,8 +553,8 @@ footer .footer-inner {
   border-left: 1px solid #a9a9a9;
 }
 
-.edit-user-contents .picture-flie #user-picture,
-.delete-user-contents .picture-flie #user-picture {
+.edit-user-contents .picture-flie .user-picture,
+.delete-user-contents .picture-flie .user-picture {
   margin-left: 30px;
   margin-bottom: 20px;
   display: block;
@@ -568,14 +568,14 @@ footer .footer-inner {
   padding: 0 18px;
 }
 
-.edit-user-contents .picture-flie #user-picture .my-big3,
-.delete-user-contents .picture-flie #user-picture .my-big3 {
+.edit-user-contents .picture-flie .user-picture .my-big3,
+.delete-user-contents .picture-flie .user-picture .my-big3 {
   padding-top: 13px;
   font-size: 5.2rem;
 }
 
-.edit-user-contents .picture-flie #user-image img,
-.delete-user-contents .picture-flie #user-image img {
+.edit-user-contents .picture-flie .user-image img,
+.delete-user-contents .picture-flie .user-image img {
   margin-left: 30px;
   margin-bottom: 20px;
   display: block;
@@ -775,6 +775,63 @@ footer .footer-inner {
   color: #e3342f;
 }
 
+.top-contents {
+  width: 100%;
+  height: 650px;
+  text-align: center;
+  background-size: cover;
+}
+
+.top-contents .catch-copy {
+  font-weight: bold;
+  color: #fff;
+  font-size: 4.8rem;
+  padding-top: 220px;
+}
+
+.top-contents .btn {
+  font-weight: bold;
+  color: #fff;
+  font-size: 2.4rem;
+  display: inline-block;
+  margin-top: 50px;
+  background-color: #f8b500;
+  padding: 5px 50px;
+  border-radius: 5px;
+}
+
+.service-contents {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+.service-contents .description {
+  font-weight: bold;
+  font-size: 2.4rem;
+  margin: 30px 0;
+}
+
+.service-contents .services .service {
+  display: -webkit-box;
+  display: flex;
+  justify-content: space-around;
+  padding: 30px 80px;
+}
+
+.service-contents .services .service .text-content,
+.service-contents .services .service .service-image {
+  height: 300px;
+  width: 450px;
+  text-align: left;
+}
+
+.service-contents .services .service .reverce2 {
+  -webkit-box-ordinal-group: 2;
+          order: 1;
+}
+
 @media (max-width: 575px) {
   body {
     font-size: 0.8rem;
@@ -810,14 +867,14 @@ footer .footer-inner {
     padding: 12px 0;
   }
 
-  header .header-right #post {
+  header .header-right .post {
     margin-top: 9px;
     margin-right: 0px;
     padding: 5px 5px;
     font-size: 0.8rem;
   }
 
-  header .header-right #check {
+  header .header-right .check {
     font-size: 1.2rem;
     padding-top: 11px;
     padding-right: 0px;
@@ -828,7 +885,7 @@ footer .footer-inner {
     padding: 8px 10px 0;
   }
 
-  header .header-right #edit {
+  header .header-right .edit {
     margin-right: 0px;
     margin-top: 8px;
     padding: 2px 5px;
@@ -904,14 +961,14 @@ footer .footer-inner {
     width: 350px;
   }
 
-  .container .create-contents #picture {
+  .container .create-contents .picture {
     width: 350px;
     height: 200px;
     padding-top: 50px;
     font-size: 0.8rem;
   }
 
-  .container .create-contents #picture .my-big1 {
+  .container .create-contents .picture .my-big1 {
     font-size: 8rem;
   }
 
@@ -919,7 +976,7 @@ footer .footer-inner {
     font-size: 0.8rem;
   }
 
-  .container #image img {
+  .container .image img {
     width: 350px;
     height: 200px;
   }
@@ -984,7 +1041,7 @@ footer .footer-inner {
     font-size: 1.2rem;
   }
 
-  .user-contents .posts-area2 #picture {
+  .user-contents .posts-area2 .picture {
     width: 250px;
     height: 150px;
     padding-top: 25px;
@@ -1018,22 +1075,22 @@ footer .footer-inner {
     padding-top: 20px;
   }
 
-  .edit-user-contents .picture-flie #user-picture,
-  .delete-user-contents .picture-flie #user-picture {
+  .edit-user-contents .picture-flie .user-picture,
+  .delete-user-contents .picture-flie .user-picture {
     width: 50px;
     height: 50px;
     padding: 0 15px;
     margin: 0px 15px 10px;
   }
 
-  .edit-user-contents .picture-flie #user-picture .my-big3,
-  .delete-user-contents .picture-flie #user-picture .my-big3 {
+  .edit-user-contents .picture-flie .user-picture .my-big3,
+  .delete-user-contents .picture-flie .user-picture .my-big3 {
     padding-top: 13px;
     font-size: 2.3rem;
   }
 
-  .edit-user-contents .picture-flie #user-image img,
-  .delete-user-contents .picture-flie #user-image img {
+  .edit-user-contents .picture-flie .user-image img,
+  .delete-user-contents .picture-flie .user-image img {
     width: 50px;
     height: 50px;
     margin: 0px 15px 10px;
@@ -1105,6 +1162,60 @@ footer .footer-inner {
     margin: 40px auto 50px;
     padding: 30px;
   }
+
+  .register-done-contents .done-message {
+    font-size: 2rem;
+  }
+
+  .top-contents {
+    width: 100%;
+    height: 300px;
+  }
+
+  .top-contents .catch-copy {
+    font-size: 2.2rem;
+    padding-top: 100px;
+  }
+
+  .top-contents .btn {
+    font-size: 1.2rem;
+    margin-top: 30px;
+    background-color: #f8b500;
+    padding: 5px 30px;
+  }
+
+  .service-contents {
+    padding-bottom: 30px;
+  }
+
+  .service-contents .description {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 30px 0;
+  }
+
+  .service-contents .services .service {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    padding: 0px;
+  }
+
+  .service-contents .services .service .text-content,
+  .service-contents .services .service .service-image {
+    height: 180px;
+    width: 300px;
+    margin: 0 auto 10px;
+    -webkit-box-pack: center;
+            justify-content: center;
+  }
+
+  .service-contents .services .service .reverce1 {
+    -webkit-box-ordinal-group: 2;
+            order: 1;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -1116,9 +1227,9 @@ footer .footer-inner {
     padding: 20px 0 20px 40px;
   }
 
-  header .header-right #edit {
+  header .header-right .edit {
     margin-right: 40px;
-    margin-top: 12px;
+    margin-top: 20px;
   }
 
   header .header-right .config {
@@ -1172,7 +1283,7 @@ footer .footer-inner {
     width: 700px;
   }
 
-  .container #image img {
+  .container .image img {
     width: 700px;
     height: 400px;
   }
@@ -1182,19 +1293,43 @@ footer .footer-inner {
     left: 18%;
   }
 
-  .user-contents #picture {
+  .user-contents .picture {
     width: 700px;
     height: 400px;
     padding-top: 80px;
     font-size: 0.8rem;
   }
 
-  .user-contents #picture .my-big1 {
+  .user-contents .picture .my-big1 {
     font-size: 20rem;
   }
 
   .user-contents .user-area .my-big2 {
     margin-left: 300px;
+  }
+
+  .top-contents {
+    height: 450px;
+  }
+
+  .top-contents .catch-copy {
+    font-size: 3.6rem;
+    padding-top: 150px;
+  }
+
+  .top-contents .btn {
+    font-size: 1.8rem;
+  }
+
+  .service-contents .services .service {
+    padding: 30px 50px;
+  }
+
+  .service-contents .services .service .text-content,
+  .service-contents .services .service .service-image {
+    height: 200px;
+    width: 300px;
+    overflow: hidden;
   }
 }
 

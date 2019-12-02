@@ -13,9 +13,15 @@
 <body>
   <header>
     <div class="header-inner">
+      @if(Auth::check())
       <div class="header-left">
         <a href="#" class="header-logo">Mt.Mine</a>
       </div>
+      @else
+      <div class="header-left">
+        <a href="../top" class="header-logo">Mt.Mine</a>
+      </div>
+      @endif
       @if(Auth::check())
       <div class="header-right">
       <a href="../user/profile?id={{$user->id}}">

@@ -46,7 +46,7 @@
       @if(count($posts) <= 0 )
         @if($user->id !== $auth->id)
           <div class="posts-area1">
-            <p class=message1>※このアカウントはまだ投稿がありません。</p>
+            <p class="message1">※このアカウントはまだ投稿がありません。</p>
             <a href="../user/profile" class="btn">マイページへ</a>
           </div>
         @else
@@ -55,7 +55,7 @@
             <p class="message2">さっそくあなたの山の魅力を伝えてみましょう。</p>
             <div class="picture-flie">
             <a href="../post/create">
-            <label for="file" id="picture"style=""><i class="far fa-image my-big2" ></i><br></label>
+            <label for="file" id="picture" class="picture"><i class="far fa-image my-big2" ></i><br></label>
             </a>
             </div>
             <a href="../post/create" class="btn">投稿する</a>

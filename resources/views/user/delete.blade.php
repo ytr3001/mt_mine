@@ -25,9 +25,9 @@
       {{ csrf_field() }}
         <div class="picture-flie">
           @if(is_null($user->picture))
-          <label for="file" id="user-picture"><i class="fas fa-user my-big3"></i><br></label>
+          <label for="file" id="user-picture" class="user-picture"><i class="fas fa-user my-big3"></i><br></label>
           @else
-          <label for="file" id="user-image"><img src="../../public/storage/{{$user->picture}}" alt="画像"></label>
+          <label for="file" id="user-image" class="user-image"><img src="../../public/storage/{{$user->picture}}" alt="画像"></label>
           @endif
         </div>
         <div class="user-name">

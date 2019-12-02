@@ -17,7 +17,7 @@
         <a href="../user/profile" class="back3" >&lt</a>
       </div>
       <div class="header-right">
-        <button id="edit">保存</button>
+        <button id="edit" class="edit">保存</button>
       </div>
     </div>
   </header>
@@ -28,11 +28,11 @@
       {{ csrf_field() }}
         <div class="picture-flie">
           @if(is_null($user->picture))
-          <label for="file" id="user-picture"><i class="fas fa-user my-big3"></i><br></label>
+          <label for="file" id="user-picture" class="user-picture"><i class="fas fa-user my-big3"></i><br></label>
           @else
-          <label for="file" id="user-image"><img src="../../public/storage/{{$user->picture}}" alt="画像"></label>
+          <label for="file" id="user-image" class="user-image"><img src="../../public/storage/{{$user->picture}}" alt="画像"></label>
           @endif
-          <label for="file" id="user-image"></label>
+          <label for="file" id="user-image" class="user-image"></label>
           <input type="file" id="file" class="file" name="picture" accept="image/*" value="{{$user->picture}}">
           <input type="hidden" name="picture2" value="{{$user->picture}}">
           @if($errors->has('picture'))
@@ -55,7 +55,7 @@
           @endif
         </div>
         <div class="user-introduction">
-          <label for="introduction">自己紹介</label><textarea name="introduction" id="introduction"
+          <label for="introduction">自己紹介</label><textarea name="introduction" class="introduction"
            placeholder="自己紹介を追加" cols="30" rows="5">{{$user->introduction}}</textarea>
            @if($errors->has('introduction'))
            <div class="error-message">

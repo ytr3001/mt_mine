@@ -14,7 +14,7 @@
   <header>
     <div class="header-inner">
       <div class="header-left">
-        <a href="#" class="header-logo">Mt.Mine</a>
+        <a href="post/index" class="header-logo">Mt.Mine</a>
       </div>
       <div class="header-right">
         <a href="user/profile?id={{$user->id}}">
@@ -29,7 +29,7 @@
   </header>
 
   <div class="container">
-    <div class="top-contents">
+    <div class="register-done-contents">
       <p class="done-message">アカウント登録が完了しました。<br/></p>
       <img src="../public/images/mountain.png" alt="画像" class="img1">
       <a href="post/index" class="btn">さっそく山を探す</a>

@@ -17,7 +17,7 @@
         <a href="../user/profile" class="back" >&lt</a>
       </div>
       <div class="header-right">
-        <button id="post">投稿する</button>
+        <button id="post" class="post">投稿する</button>
       </div>
     </div>
   </header>

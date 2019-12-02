@@ -19,7 +19,7 @@
       <div class="header-right">
         @if(Auth::check())
           @if($user->id === $auth->id)
-          <button id="check"><i class="far fa-trash-alt"></i></button>
+          <button id="check" class="check"><i class="far fa-trash-alt"></i></button>
           @endif
         @endif
       </div>
@@ -58,7 +58,7 @@
       </form>
     </div>
 
-    <div id=check-modal>
+    <div id=check-modal class="check-modal">
       <div class="modal">
         <div class="msg-area">
           <p class="modal-title">投稿削除</p>
