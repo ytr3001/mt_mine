@@ -25,7 +25,7 @@ body {
   padding: 0;
   background-color: #f5f5f5;
 }
-.header-inner, .create, .show-contents, .user-contents, .edit-user-contents, .delete-user-contents, .footer-inner {
+.header-inner, .create, .show, .user-contents, .edit-user-contents, .delete-user-contents, .footer-inner {
   max-width: 1000px;
   margin-right: auto;
   margin-left: auto;
@@ -345,129 +345,115 @@ header {
 
   }
 
-
-
-
-
-
-
-
-
-
-
-  .show-contents {
+  // 投稿詳細画面レイアウト
+  .show {
     padding-bottom: 20px;
     text-align: center;
-    .post-title {
+
+    .user-area {
       width: 930px;
-      @include title-style;
-      p {
+      margin: 0 auto;
+      padding:  15px 10px 5px;
+      text-align: left;
+      .user-picture {
+        width: 40px;
+        height: 40px;  
+        border: 1px solid #696969;
+        border-radius: 30px; 
+      }
+      .user-name {
+        padding: 20px 10px;
+      }
+    }
+
+    .post-area {
+      .post-picture_large {
+        width: 930px;
+        height: 580px;
+      }
+      .post-title {
+        width: 930px;
+        @include title-style;
+        p {
+          text-align: left;
+        }
+      }
+      .post-date {
+        width: 930px;
+        margin: 0 auto;
+        font-size: 1.2rem;
         text-align: left;
+        padding: 10px 10px 0; 
       }
     }
   }
-  .user-area {
-    width: 930px;
-    margin: 0 auto;
-    padding:  15px 10px 5px;
-    text-align: left;
-    .user-picture {
-      width: 40px;
-      height: 40px;  
-      border: 1px solid #696969;
-      border-radius: 30px; 
-    }
-    .user-name {
-      padding: 20px 10px;
-    }
-  }
 
-  .file {
+  //投稿詳細画面モーダルレイアウト
+  .check-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 100;
     display: none;
+
+    .modal {
+      position: absolute;
+      top: 33%;
+      left: 32%;
+      background-color: #e6ecf0;
+      border-radius: 10px;
+      width: 500px;
+      height: auto;
+      text-align: center;
+
+      .message-area {
+        border-bottom: 1px solid #a9a9a9;
+        padding: 30px 0 10px;
+        .modal-title {
+          display: inline-block;
+          font-weight: bold;
+          margin: 0;
+          padding: 0 8px;
+        }
+        .modal-message {
+          margin-top: 5px;
+          margin-bottom: 20px;
+        }
+      }  
+
+      .button-area {
+        display: flex;
+        .cancell-button {
+          color: royalblue;
+          border-right: 1px solid#a9a9a9;
+          width: 50%;
+          padding: 15px 0;
+        }
+        .delete-button {
+          color: red;
+          width: 50%;
+          padding: 15px 0;
+        }
+      }      
+    }
   }
-  .post-picture {
-    width: 930px;
-    height: 580px;
-  }
-  .title {
-    border: none;
-    width: 100%;
-    font-size: 1.6rem;
-    outline: 0;
-  }
-  .date {
-    width: 930px;
-    margin: 0 auto;
-    font-size: 1.2rem;
-    text-align: left;
-    padding: 10px 10px 0; 
-  }
-  .image img {
-    width: 800px;
-    height: 500px;
-  }
+
+
+
+
+
+
+
+
 }
 
-//フッターレイアウト
-footer {
-  padding: 70px;
-  background-color: #696969;
-  display: flex;
-  .footer-inner {
-    text-align: center;
-    color: #fff;
-    background-color: #696969;
-  }
-}
-//モーダルレイアウト
-.check-modal {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0,0,0,0.6);
-  z-index: 100;
-  display: none;
-}
-.modal {
-  position: absolute;
-  top: 33%;
-  left: 32%;
-  background-color: #e6ecf0;
-  border-radius: 10px;
-  width: 500px;
-  height: auto;
-  text-align: center;
-}
-.msg-area {
-  border-bottom: 1px solid #a9a9a9;
-  padding: 30px 0 10px;
-}
-.modal-title {
-  display: inline-block;
-  font-weight: bold;
-  margin: 0;
-  padding: 0 8px;
-}
-.modal-msg {
-  margin-top: 5px;
-  margin-bottom: 20px;
-}
-.btn-area {
-  display: flex;
-  .back {
-    color: royalblue;
-    border-right: 1px solid#a9a9a9;
-    width: 50%;
-    padding: 15px 0;
-  }
-  .delete {
-    color: red;
-    width: 50%;
-    padding: 15px 0;
-  }
-}
+
+
+
+
 //user関連レイアウト
 .user-contents {
   padding-bottom: 50px;
@@ -714,6 +700,18 @@ footer {
   color: #e3342f;
 }
 
+//フッターレイアウト
+footer {
+  padding: 70px;
+  background-color: #696969;
+  display: flex;
+  .footer-inner {
+    text-align: center;
+    color: #fff;
+    background-color: #696969;
+  }
+}
+
 
 
 
@@ -894,6 +892,65 @@ footer {
 
     }
 
+    // 投稿詳細画面レイアウト
+    .show {
+      .user-area {
+        width: 100%;
+        padding:  15px 10px 5px;
+        .user-picture {
+          width: 40px;
+          height: 40px;  
+          border: 1px solid #696969;
+          border-radius: 30px; 
+        }
+        .user-name {
+          padding: 20px 10px;
+        }
+      }
+
+      .post-area {
+        .post-picture_large {
+          width: 100%;
+          height: 250px;
+        }
+        .post-title {
+          width: 100%;
+          padding: 10px 10px 5px;
+          font-size: 0.8rem;
+        }
+        .post-date {
+          width: 100%;
+          font-size: 0.8rem;
+          padding: 5px 10px 0; 
+        }
+      }
+    }
+    
+    //投稿詳細画面モーダルレイアウト
+    .check-modal {
+      .modal {
+        top: 25%;
+        left: 11%;
+        border-radius: 5px;
+        width: 300px;
+
+        .message-area {
+          padding: 20px 0 0;
+        }  
+
+        .button-area {
+          display: flex;
+          .cancell-button {
+            padding: 10px 0;
+            font-size: 0.8rem;
+          }
+          .delete-button {
+            font-size: 0.8rem;
+          }
+        }      
+      }
+    }
+
   
 
 
@@ -902,73 +959,9 @@ footer {
 
 
 
+  }
 
 
-
-    .show-contents {
-      .post-title {
-        width: 100%;
-        padding: 10px 10px 5px;
-      }
-    }
-    .user-area {
-      width: 100%;
-    }
-    .post-picture {
-      width: 100%;
-      height: 250px;
-    }
-    .date {
-      width: 100%;
-      font-size: 0.8rem;
-      padding: 5px 10px 0; 
-    }
-    .create {
-      padding: 30px 0;
-      .post-title {
-        width: 350px;
-      }
-      .picture { 
-        width: 350px;
-        height: 200px;
-        padding-top: 50px;
-        font-size: 0.8rem;
-        .my-big1 {
-          font-size: 8.0rem;
-        }
-      }
-    }
-    .title {
-      font-size: 0.8rem;
-    }
-    .image img {
-      width: 350px;
-      height: 200px;
-    }
-  }
-  .modal {
-    top: 25%;
-    left: 11%;
-    border-radius: 5px;
-    width: 300px;
-  }
-  .msg-area {
-    border-bottom: 1px solid #a9a9a9;
-    padding: 20px 0 0;
-  }
-  .modal-msg {
-    margin-top: 5px;
-    margin-bottom: 10px;
-  }
-  .btn-area {
-    .back {
-      padding: 10px 0;
-      font-size: 0.8rem;
-    }
-    .delete {
-      font-size: 0.8rem;
-    }
-  }
   .user-contents {
     padding-bottom: 40px;
     .user-area {
@@ -1194,40 +1187,53 @@ footer {
 
     }
 
-
-
-
-
-
-
-
-    .show-contents {
-      .post-title {
+    // 投稿詳細画面レイアウト
+    .show {
+      .user-area {
         width: 100%;
-        padding: 10px 10px 5px;
+      }
+
+      .post-area {
+        .post-picture_large {
+          width: 100%;
+          height: 500px;
+        }
+        .post-title {
+          width: 100%;
+          padding: 10px 10px 5px;
+        }
+        .post-date {
+          width: 100%;
+          font-size: 0.8rem;
+          padding: 5px 10px 0; 
+        }
       }
     }
-    .user-area {
-      width: 100%;
+    
+    //投稿詳細画面モーダルレイアウト
+    .check-modal {
+      .modal {
+        top: 25%;
+        left: 18%;
+      }
     }
-    .post-picture {
-      width: 100%;
-      height: 500px;
-    }
-    .date {
-      width: 100%;
-      font-size: 0.8rem;
-      padding: 5px 10px 0; 
-    }
-    .image img {
-      width: 700px;
-      height: 400px;
-    }
-    .modal {
-      top: 25%;
-      left: 18%;
-    }
+    
+      
+    
+    
+
+
+
+
+
+
+
+
+
   }
+
+
+
   .user-contents {
     .picture { 
       width: 700px;

@@ -18,21 +18,23 @@
       </div>
       <!-- ログインユーザーとリクエストユーザーのidが同じであればデリートアイコンの表示 -->
       @if($user->id === $auth->id)
-      <div class="header-right">
-        <div class="utility">
-          <div class="utility-item">
-            <button id="utility-item_trash" class="utility-item_trash"><i class="far fa-trash-alt"></i></button>
-          <div>
+        <div class="header-right">
+          <div class="utility">
+            <div class="utility-item">
+              <button id="utility-item_trash" class="utility-item_trash"><i class="far fa-trash-alt"></i></button>
+            <div>
+          </div>
         </div>
-      </div>
       @endif
     </div>
   </header>
 
-  <div class="container">
-    <div class="show-contents">
+  <div class="container"> 
+    <div class="show">
+
       <div class="user-area">
         <a href="../user/profile?id={{$user->id}}">
+        <!-- ユーザー写真の登録があれば登録された写真、なければデフォルト画像表示 -->
         @if(is_null($user->picture))
           <img src="../../public/images/default.png" alt="画像" class="user-picture">
         @else
@@ -41,38 +43,43 @@
           <span class="user-name">{{$user->name}}</span>
         </a>
       </div>
-      <div class="picture-area">
-        <img src="../../public/storage/{{$post->picture}}" alt="画像" class="post-picture">
+
+      <div class="post-area">
+        <img src="../../public/storage/{{$post->picture}}" alt="画像" class="post-picture_large">
+        <div class="post-title">
+          <!-- 投稿にタイトルがあれば投稿タイトルの表示、なければ無題と表示 -->
+          @if(is_null($post->title))
+          <p>無題</p>
+          @else
+          <p>{{$post->title}}</p>
+          @endif
+        </div> 
+        <div class="post-date">
+          <pre>{{$date}}   {{$time}}</pre>
+        </div>
       </div>
-      <div class="post-title">
-      @if(is_null($post->title))
-        <p>無題</p>
-      @else
-        <p>{{$post->title}}</p>
-      @endif
-      </div> 
-      <div class="date">
-        <pre>{{$date}}   {{$time}}</pre>
-      </div>
+
       <form action="show" method="post" id="delete-post">
         {{ csrf_field() }}
         <input type="hidden" name="id" value="{{$post->id}}">
         <input type="hidden" name="no" value="<?= $_GET['no']; ?>">
       </form>
+
     </div>
 
     <div id=check-modal class="check-modal">
       <div class="modal">
-        <div class="msg-area">
+        <div class="message-area">
           <p class="modal-title">投稿削除</p>
-          <p class="modal-msg">本当にこの投稿の削除をしてよろしいですか？</p>
+          <p class="modal-message">本当にこの投稿の削除をしてよろしいですか？</p>
         </div>
-        <div class="btn-area">
-          <button id="back" class="back">キャンセル</button>
-          <button id="delete" class="delete">削除</button>
+        <div class="button-area">
+          <button id="cancell-button" class="cancell-button">キャンセル</button>
+          <button id="delete-button" class="delete-button">削除</button>
         </div>
       </div>
     </div>
+
   </div>
 
   <footer>

@@ -6,12 +6,12 @@ $(function() {
   });
 
   //モーダルの削除ボタンクリック時にpost-idをsubmit
-  $('#delete').click(function() {
+  $('#delete-button').click(function() {
     $('#delete-post').submit();
   }); 
 
   // キャンセルボタンクリック時にモーダルを消す
-  $('#back').click(function() {
+  $('#cancell-button').click(function() {
     $('#check-modal').fadeOut();
   })
 

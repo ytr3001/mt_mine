@@ -30,7 +30,7 @@ body {
 
 .header-inner,
 .create,
-.show-contents,
+.show,
 .user-contents,
 .edit-user-contents,
 .delete-user-contents,
@@ -404,12 +404,35 @@ header .header-inner .header-right .login-user_picture {
   margin: 0 100px;
 }
 
-.container .show-contents {
+.container .show {
   padding-bottom: 20px;
   text-align: center;
 }
 
-.container .show-contents .post-title {
+.container .show .user-area {
+  width: 930px;
+  margin: 0 auto;
+  padding: 15px 10px 5px;
+  text-align: left;
+}
+
+.container .show .user-area .user-picture {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #696969;
+  border-radius: 30px;
+}
+
+.container .show .user-area .user-name {
+  padding: 20px 10px;
+}
+
+.container .show .post-area .post-picture_large {
+  width: 930px;
+  height: 580px;
+}
+
+.container .show .post-area .post-title {
   width: 930px;
   border-bottom: 1px solid #333;
   margin: 0 auto;
@@ -419,45 +442,11 @@ header .header-inner .header-right .login-user_picture {
   text-align: center;
 }
 
-.container .show-contents .post-title p {
+.container .show .post-area .post-title p {
   text-align: left;
 }
 
-.container .user-area {
-  width: 930px;
-  margin: 0 auto;
-  padding: 15px 10px 5px;
-  text-align: left;
-}
-
-.container .user-area .user-picture {
-  width: 40px;
-  height: 40px;
-  border: 1px solid #696969;
-  border-radius: 30px;
-}
-
-.container .user-area .user-name {
-  padding: 20px 10px;
-}
-
-.container .file {
-  display: none;
-}
-
-.container .post-picture {
-  width: 930px;
-  height: 580px;
-}
-
-.container .title {
-  border: none;
-  width: 100%;
-  font-size: 1.6rem;
-  outline: 0;
-}
-
-.container .date {
+.container .show .post-area .post-date {
   width: 930px;
   margin: 0 auto;
   font-size: 1.2rem;
@@ -465,25 +454,7 @@ header .header-inner .header-right .login-user_picture {
   padding: 10px 10px 0;
 }
 
-.container .image img {
-  width: 800px;
-  height: 500px;
-}
-
-footer {
-  padding: 70px;
-  background-color: #696969;
-  display: -webkit-box;
-  display: flex;
-}
-
-footer .footer-inner {
-  text-align: center;
-  color: #fff;
-  background-color: #696969;
-}
-
-.check-modal {
+.container .check-modal {
   position: fixed;
   top: 0;
   right: 0;
@@ -494,7 +465,7 @@ footer .footer-inner {
   display: none;
 }
 
-.modal {
+.container .check-modal .modal {
   position: absolute;
   top: 33%;
   left: 32%;
@@ -505,36 +476,36 @@ footer .footer-inner {
   text-align: center;
 }
 
-.msg-area {
+.container .check-modal .modal .message-area {
   border-bottom: 1px solid #a9a9a9;
   padding: 30px 0 10px;
 }
 
-.modal-title {
+.container .check-modal .modal .message-area .modal-title {
   display: inline-block;
   font-weight: bold;
   margin: 0;
   padding: 0 8px;
 }
 
-.modal-msg {
+.container .check-modal .modal .message-area .modal-message {
   margin-top: 5px;
   margin-bottom: 20px;
 }
 
-.btn-area {
+.container .check-modal .modal .button-area {
   display: -webkit-box;
   display: flex;
 }
 
-.btn-area .back {
+.container .check-modal .modal .button-area .cancell-button {
   color: royalblue;
   border-right: 1px solid #a9a9a9;
   width: 50%;
   padding: 15px 0;
 }
 
-.btn-area .delete {
+.container .check-modal .modal .button-area .delete-button {
   color: red;
   width: 50%;
   padding: 15px 0;
@@ -856,6 +827,19 @@ footer .footer-inner {
   color: #e3342f;
 }
 
+footer {
+  padding: 70px;
+  background-color: #696969;
+  display: -webkit-box;
+  display: flex;
+}
+
+footer .footer-inner {
+  text-align: center;
+  color: #fff;
+  background-color: #696969;
+}
+
 @media (max-width: 575px) {
   body {
     font-size: 0.8rem;
@@ -1035,77 +1019,61 @@ footer .footer-inner {
     margin: 0 12px;
   }
 
-  .container .show-contents .post-title {
+  .container .show .user-area {
     width: 100%;
-    padding: 10px 10px 5px;
+    padding: 15px 10px 5px;
   }
 
-  .container .user-area {
-    width: 100%;
+  .container .show .user-area .user-picture {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #696969;
+    border-radius: 30px;
   }
 
-  .container .post-picture {
+  .container .show .user-area .user-name {
+    padding: 20px 10px;
+  }
+
+  .container .show .post-area .post-picture_large {
     width: 100%;
     height: 250px;
   }
 
-  .container .date {
+  .container .show .post-area .post-title {
+    width: 100%;
+    padding: 10px 10px 5px;
+    font-size: 0.8rem;
+  }
+
+  .container .show .post-area .post-date {
     width: 100%;
     font-size: 0.8rem;
     padding: 5px 10px 0;
   }
 
-  .container .create {
-    padding: 30px 0;
-  }
-
-  .container .create .post-title {
-    width: 350px;
-  }
-
-  .container .create .picture {
-    width: 350px;
-    height: 200px;
-    padding-top: 50px;
-    font-size: 0.8rem;
-  }
-
-  .container .create .picture .my-big1 {
-    font-size: 8rem;
-  }
-
-  .container .title {
-    font-size: 0.8rem;
-  }
-
-  .container .image img {
-    width: 350px;
-    height: 200px;
-  }
-
-  .modal {
+  .container .check-modal .modal {
     top: 25%;
     left: 11%;
     border-radius: 5px;
     width: 300px;
   }
 
-  .msg-area {
-    border-bottom: 1px solid #a9a9a9;
+  .container .check-modal .modal .message-area {
     padding: 20px 0 0;
   }
 
-  .modal-msg {
-    margin-top: 5px;
-    margin-bottom: 10px;
+  .container .check-modal .modal .button-area {
+    display: -webkit-box;
+    display: flex;
   }
 
-  .btn-area .back {
+  .container .check-modal .modal .button-area .cancell-button {
     padding: 10px 0;
     font-size: 0.8rem;
   }
 
-  .btn-area .delete {
+  .container .check-modal .modal .button-area .delete-button {
     font-size: 0.8rem;
   }
 
@@ -1351,32 +1319,27 @@ footer .footer-inner {
     margin: 0 33px;
   }
 
-  .container .show-contents .post-title {
-    width: 100%;
-    padding: 10px 10px 5px;
-  }
-
-  .container .user-area {
+  .container .show .user-area {
     width: 100%;
   }
 
-  .container .post-picture {
+  .container .show .post-area .post-picture_large {
     width: 100%;
     height: 500px;
   }
 
-  .container .date {
+  .container .show .post-area .post-title {
+    width: 100%;
+    padding: 10px 10px 5px;
+  }
+
+  .container .show .post-area .post-date {
     width: 100%;
     font-size: 0.8rem;
     padding: 5px 10px 0;
   }
 
-  .container .image img {
-    width: 700px;
-    height: 400px;
-  }
-
-  .container .modal {
+  .container .check-modal .modal {
     top: 25%;
     left: 18%;
   }
