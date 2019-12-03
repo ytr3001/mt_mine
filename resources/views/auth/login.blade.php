@@ -29,27 +29,27 @@
 
   <div class="container">
     <div class="login">
-      <form action="{{ route('login') }}" method="post" class="form">
+      <form action="{{ route('login') }}" method="post" class="login-form">
         {{ csrf_field() }}
         <p class="form-title">ログイン</p>
 
-        <input type="email" class="form-input" name="email" placeholder="メールアドレス" value="{{old('email')}}" required autocomplete="email" autofocus>
+        <input type="email" class="login-input" name="email" placeholder="メールアドレス" value="{{old('email')}}" required autocomplete="email" autofocus>
         <!-- emailの入力がバリデーションに該当する場合はエラーメッセージの表示 -->
         @error('email')
-        <span class="invalid-feedback" role="alert">
-          <strong>{{ $message }}</strong>
-        </span>
+          <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+          </span>
         @enderror
 
-        <input type="password" class="form-input" name="password" placeholder="パスワード" required autocomplete="current-password">
+        <input type="password" class="login-input" name="password" placeholder="パスワード" required autocomplete="current-password">
         <!-- passwordの入力がバリデーションに該当する場合はエラーメッセージの表示 -->
         @error('password')
-        <span class="invalid-feedback" role="alert">
-          <strong>{{ $message }}</strong>
-        </span>
+          <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+          </span>
         @enderror
 
-        <input type="submit" class="form-input form-submit form-submit_login" value="ログイン">
+        <input type="submit" class="login-input form-submit login-form_submit" value="ログイン">
       </form>
       <a href="register" class=link>新規会員登録はこちら</a>
     </div>

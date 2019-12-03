@@ -29,7 +29,7 @@ body {
 }
 
 .header-inner,
-.create-contents,
+.create,
 .show-contents,
 .user-contents,
 .edit-user-contents,
@@ -240,36 +240,50 @@ header .header-inner .header-right .login-user_picture {
   background-color: #fff;
 }
 
-.container .register .form .form-title,
-.container .login .form .form-title {
+.container .register .register-form .form-title,
+.container .register .login-form .form-title,
+.container .login .register-form .form-title,
+.container .login .login-form .form-title {
   border-bottom: 1px solid #a9a9a9;
   font-weight: bold;
   padding-bottom: 5px;
   margin-bottom: 20px;
 }
 
-.container .register .form .form-input,
-.container .login .form .form-input {
+.container .register .register-form .register-input,
+.container .register .register-form .login-input,
+.container .register .login-form .register-input,
+.container .register .login-form .login-input,
+.container .login .register-form .register-input,
+.container .login .register-form .login-input,
+.container .login .login-form .register-input,
+.container .login .login-form .login-input {
   display: block;
   width: 100%;
   margin: 15px 0;
 }
 
-.container .register .form .form-submit,
-.container .login .form .form-submit {
+.container .register .register-form .form-submit,
+.container .register .login-form .form-submit,
+.container .login .register-form .form-submit,
+.container .login .login-form .form-submit {
   color: #fff;
   border: none;
   border-radius: 3px;
   margin-bottom: 30px;
 }
 
-.container .register .form .form-submit_register,
-.container .login .form .form-submit_register {
+.container .register .register-form .register-form_submit,
+.container .register .login-form .register-form_submit,
+.container .login .register-form .register-form_submit,
+.container .login .login-form .register-form_submit {
   background-color: #38b48b;
 }
 
-.container .register .form .form-submit_login,
-.container .login .form .form-submit_login {
+.container .register .register-form .login-form_submit,
+.container .register .login-form .login-form_submit,
+.container .login .register-form .login-form_submit,
+.container .login .login-form .login-form_submit {
   background-color: #c4972f;
 }
 
@@ -331,32 +345,12 @@ header .header-inner .header-right .login-user_picture {
   margin: 5px;
 }
 
-.container .create-contents {
+.container .create {
   padding: 50px 0;
   text-align: center;
 }
 
-.container .create-contents .post-title {
-  width: 800px;
-  border-bottom: 1px solid #333;
-  margin: 0 auto;
-  padding: 10px 10px 5px;
-  text-align: left;
-  font-weight: bold;
-  text-align: center;
-}
-
-.container .create-contents .error-message {
-  text-align: center;
-  background-color: pink;
-  margin: 0 100px;
-}
-
-.container .create-contents .picture .error-message {
-  margin: 30px 0;
-}
-
-.container .create-contents .picture {
+.container .create .create-post-picture {
   width: 800px;
   height: 500px;
   padding-top: 110px;
@@ -369,9 +363,45 @@ header .header-inner .header-right .login-user_picture {
   background-color: #f5f5f5;
 }
 
-.container .create-contents .picture .my-big1 {
+.container .create .create-post-picture .fa-image {
   color: #fff;
   font-size: 24rem;
+}
+
+.container .create .create-post-picture .error-message {
+  margin: 30px 0;
+}
+
+.container .create .choice-picture img {
+  width: 800px;
+  height: 500px;
+}
+
+.container .create .input-post-picture {
+  display: none;
+}
+
+.container .create .create-post-title {
+  width: 800px;
+  border-bottom: 1px solid #333;
+  margin: 0 auto;
+  padding: 10px 10px 5px;
+  text-align: left;
+  font-weight: bold;
+  text-align: center;
+}
+
+.container .create .create-post-title .post-title {
+  border: none;
+  width: 100%;
+  font-size: 1.6rem;
+  outline: 0;
+}
+
+.container .create .error-message {
+  text-align: center;
+  background-color: pink;
+  margin: 0 100px;
 }
 
 .container .show-contents {
@@ -962,6 +992,49 @@ footer .footer-inner {
     height: 250px;
   }
 
+  .container .create {
+    padding: 30px 0;
+  }
+
+  .container .create .create-post-picture {
+    width: 350px;
+    height: 200px;
+    padding-top: 50px;
+    font-size: 0.8rem;
+  }
+
+  .container .create .create-post-picture .fa-image {
+    color: #fff;
+    font-size: 8rem;
+  }
+
+  .container .create .create-post-picture .error-message {
+    margin: 10px 0;
+  }
+
+  .container .create .choice-picture img {
+    width: 350px;
+    height: 200px;
+  }
+
+  .container .create .create-post-title {
+    width: 350px;
+    padding: 10px 5px 0;
+  }
+
+  .container .create .create-post-title .post-title {
+    border: none;
+    width: 100%;
+    font-size: 0.8rem;
+    padding: 5px;
+    outline: 0;
+  }
+
+  .container .create .error-message {
+    font-size: 0.8rem;
+    margin: 0 12px;
+  }
+
   .container .show-contents .post-title {
     width: 100%;
     padding: 10px 10px 5px;
@@ -982,22 +1055,22 @@ footer .footer-inner {
     padding: 5px 10px 0;
   }
 
-  .container .create-contents {
+  .container .create {
     padding: 30px 0;
   }
 
-  .container .create-contents .post-title {
+  .container .create .post-title {
     width: 350px;
   }
 
-  .container .create-contents .picture {
+  .container .create .picture {
     width: 350px;
     height: 200px;
     padding-top: 50px;
     font-size: 0.8rem;
   }
 
-  .container .create-contents .picture .my-big1 {
+  .container .create .picture .my-big1 {
     font-size: 8rem;
   }
 
@@ -1208,6 +1281,19 @@ footer .footer-inner {
     max-width: 768px;
   }
 
+  .container .main-view {
+    height: 450px;
+  }
+
+  .container .main-view .catch-copy {
+    font-size: 3.6rem;
+    padding-top: 150px;
+  }
+
+  .container .main-view .link {
+    font-size: 1.8rem;
+  }
+
   .container .service-wrapper .service-contents .service-content {
     padding: 30px 50px;
   }
@@ -1234,6 +1320,37 @@ footer .footer-inner {
     height: 250px;
   }
 
+  .container .create {
+    padding: 40px 0;
+  }
+
+  .container .create .create-post-picture {
+    width: 700px;
+    height: 400px;
+    padding-top: 80px;
+  }
+
+  .container .create .create-post-picture .error-message {
+    margin: 10px 0;
+  }
+
+  .container .create .choice-picture img {
+    width: 700px;
+    height: 400px;
+  }
+
+  .container .create .create-post-title {
+    width: 700px;
+  }
+
+  .container .create .create-post-title .post-title {
+    font-size: 1.6rem;
+  }
+
+  .container .create .error-message {
+    margin: 0 33px;
+  }
+
   .container .show-contents .post-title {
     width: 100%;
     padding: 10px 10px 5px;
@@ -1252,14 +1369,6 @@ footer .footer-inner {
     width: 100%;
     font-size: 0.8rem;
     padding: 5px 10px 0;
-  }
-
-  .container .create-contents {
-    padding: 50px 0;
-  }
-
-  .container .create-contents .post-title {
-    width: 700px;
   }
 
   .container .image img {
@@ -1285,19 +1394,6 @@ footer .footer-inner {
 
   .user-contents .user-area .my-big2 {
     margin-left: 300px;
-  }
-
-  .main-view {
-    height: 450px;
-  }
-
-  .main-view .catch-copy {
-    font-size: 3.6rem;
-    padding-top: 150px;
-  }
-
-  .main-view .btn {
-    font-size: 1.8rem;
   }
 }
 

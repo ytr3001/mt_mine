@@ -27,25 +27,24 @@
   </header>
 
   <div class="container">
-    <div class="create-contents">
-      <form action="create" method="post" id="create-post" enctype="multipart/form-data">
+    <div class="create">
+      <form action="create" method="post" id="create-form" enctype="multipart/form-data">
       {{ csrf_field() }}
-        <div class="picture-flie">
-          <label for="file" id="picture" class="picture"><i class="far fa-image my-big1"></i><br>
-            <span>写真を選択</span>
-            @if($errors->has('picture'))
-              <div class="error-message">
-                <span class="invalid-feedback" role="alert">
-                  <strong>{{$errors->first('picture')}}</strong>
-                </span>
-              </div>
-            @endif
-          </label>
-          <label for="file" id="image"></label>
-          <input type="file" id="file" class="file" name="picture" accept="image/*">
-        </div>
-        <div class="post-title">
-          <input type="text" id="title" class="title" name="title" value="{{old('title')}}" placeholder="タイトルを入力">
+        <label for="input-post-picture" id="create-post-picture" class="create-post-picture"><i class="far fa-image"></i><br>
+          <span>写真を選択</span>
+          @if($errors->has('picture'))
+            <div class="error-message">
+              <span class="invalid-feedback" role="alert">
+                <strong>{{$errors->first('picture')}}</strong>
+              </span>
+            </div>
+          @endif
+        </label>
+        <label for="input-post-picture" id="choice-picture" class="choice-picture"></label>
+        <input type="file" id="input-post-picture" class="input-post-picture" name="picture" accept="image/*">
+        
+        <div class="create-post-title">
+          <input type="text" id="post-title" class="post-title" name="title" value="{{old('title')}}" placeholder="タイトルを入力">
         </div>
         @if($errors->has('title'))
           <div class="error-message">
@@ -54,6 +53,7 @@
             </span>
           </div>
         @endif
+        
         <input type="hidden" value="{{$user->id}}" name="user_id">
       </form>
     </div>

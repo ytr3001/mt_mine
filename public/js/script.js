@@ -18,7 +18,7 @@ $(function() {
   //create.php
   //投稿ボタンクリック時に投稿内容をsubmit
   $('#utility-item_post').click(function() {
-    $('#create-post').submit();
+    $('#create-form').submit();
   })
 
   // 投稿写真のアップロード
@@ -28,15 +28,15 @@ $(function() {
     if (! file.type.match('image.*')) {
       // クリア
       $(this).val('');
-      $('#image').html('');
+      $('#choice-picture').html('');
       return;
     }
     // 画像表示
     var reader = new FileReader();
     reader.onload = function() {
       var img_src = $('<img>').attr('src', reader.result);
-      $('#image').html(img_src);
-      $('#picture').css('display', 'none');
+      $('#choice-picture').html(img_src);
+      $('#create-post-picture').css('display', 'none');
     }
     reader.readAsDataURL(file);
   });

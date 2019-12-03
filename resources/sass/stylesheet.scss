@@ -25,7 +25,7 @@ body {
   padding: 0;
   background-color: #f5f5f5;
 }
-.header-inner, .create-contents, .show-contents, .user-contents, .edit-user-contents, .delete-user-contents, .footer-inner {
+.header-inner, .create, .show-contents, .user-contents, .edit-user-contents, .delete-user-contents, .footer-inner {
   max-width: 1000px;
   margin-right: auto;
   margin-left: auto;
@@ -205,14 +205,14 @@ header {
     text-align: center;
     border: 1px solid #a9a9a9;
     background-color: #fff;
-    .form {
+    .register-form, .login-form {
       .form-title {
         border-bottom: 1px solid #a9a9a9;
         font-weight: bold;
         padding-bottom: 5px;
         margin-bottom: 20px;
       }
-      .form-input {
+      .register-input, .login-input {
         display: block;
         width: 100%;
         margin: 15px 0;
@@ -223,10 +223,10 @@ header {
         border-radius: 3px;
         margin-bottom: 30px;
       }
-      .form-submit_register {
+      .register-form_submit {
         background-color: #38b48b;
       }
-      .form-submit_login {
+      .login-form_submit {
         background-color: #c4972f;
       }
     } 
@@ -284,13 +284,7 @@ header {
     }
   }
 
-
-
-
-
-
-
-
+  // 投稿作成画面レイアウト
   @mixin title-style {
     border-bottom: 1px solid #333;
     margin: 0 auto;
@@ -300,24 +294,10 @@ header {
     text-align: center;
   }
   
-  .create-contents {
+  .create {
     padding: 50px 0;
     text-align: center;
-    .post-title {
-      width: 800px;
-      @include title-style;
-    }
-    .error-message {
-      text-align: center;
-      background-color: pink;
-      margin: 0 100px;
-    }
-    .picture {
-      .error-message {
-        margin: 30px 0;
-      }
-    }
-    .picture { 
+    .create-post-picture { 
       width: 800px;
       height: 500px;
       padding-top: 110px;
@@ -328,12 +308,53 @@ header {
       outline: 0;
       font-size: 1.4rem;
       background-color: #f5f5f5;
-      .my-big1 {
+      .fa-image {
         color: #fff;
         font-size: 24rem;
       }
+      .error-message {
+        margin: 30px 0;
+      }
     }
+
+    .choice-picture img {
+        width: 800px;
+        height: 500px;
+      }
+
+    .input-post-picture {
+      display: none;
+    }
+
+    .create-post-title {
+      width: 800px;
+      @include title-style;
+      .post-title {
+        border: none;
+        width: 100%;
+        font-size: 1.6rem;
+        outline: 0;
+      }
+    }
+    
+    .error-message {
+      text-align: center;
+      background-color: pink;
+      margin: 0 100px;
+    }
+
   }
+
+
+
+
+
+
+
+
+
+
+
   .show-contents {
     padding-bottom: 20px;
     text-align: center;
@@ -832,6 +853,49 @@ footer {
       }
     }
 
+    //投稿作成画面レイアウト
+    .create {
+      padding: 30px 0;
+      .create-post-picture { 
+        width: 350px;
+        height: 200px;
+        padding-top: 50px;
+        font-size: 0.8rem;
+        .fa-image {
+          color: #fff;
+          font-size: 8.0rem;
+        }
+        .error-message {
+          margin: 10px 0;
+        }
+      }
+  
+      .choice-picture img {
+          width: 350px;
+          height: 200px;
+        }
+  
+      .create-post-title {
+        width: 350px;
+        padding: 10px 5px 0;
+        .post-title {
+          border: none;
+          width: 100%;
+          font-size: 0.8rem;
+          padding: 5px;
+          outline: 0;
+        }
+      }
+      
+      .error-message {
+        font-size: 0.8rem;
+        margin: 0 12px;
+      }
+
+    }
+
+  
+
 
 
 
@@ -859,7 +923,7 @@ footer {
       font-size: 0.8rem;
       padding: 5px 10px 0; 
     }
-    .create-contents {
+    .create {
       padding: 30px 0;
       .post-title {
         width: 350px;
@@ -1062,6 +1126,17 @@ footer {
     max-width: 768px;
 
     // トップ画面レイアウト
+    .main-view {
+      height: 450px;
+      .catch-copy {
+        font-size: 3.6rem;
+        padding-top: 150px;
+      }
+      .link {
+        font-size: 1.8rem;
+      }
+    }
+
     .service-wrapper {
       .service-contents {
         .service-content {
@@ -1089,6 +1164,36 @@ footer {
       }
     }
 
+    // 新規投稿画面レイアウト
+    .create {
+      padding: 40px 0;
+      .create-post-picture { 
+        width: 700px;
+        height: 400px;
+        padding-top: 80px;
+        .error-message {
+          margin: 10px 0;
+        }
+      }
+  
+      .choice-picture img {
+        width: 700px;
+        height: 400px;
+      }
+  
+      .create-post-title {
+        width: 700px;
+        .post-title {
+          font-size: 1.6rem;
+        }
+      }
+      
+      .error-message {
+        margin: 0 33px;
+      }
+
+    }
+
 
 
 
@@ -1114,12 +1219,6 @@ footer {
       font-size: 0.8rem;
       padding: 5px 10px 0; 
     }
-    .create-contents {
-      padding: 50px 0;
-      .post-title {
-        width: 700px;
-      }
-    }
     .image img {
       width: 700px;
       height: 400px;
@@ -1143,16 +1242,6 @@ footer {
       .my-big2 {
         margin-left: 300px;
       }
-    }
-  }
-  .main-view {
-    height: 450px;
-    .catch-copy {
-      font-size: 3.6rem;
-      padding-top: 150px;
-    }
-    .btn {
-      font-size: 1.8rem;
     }
   }
   
