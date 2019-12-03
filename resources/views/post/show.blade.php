@@ -36,9 +36,9 @@
         <a href="../user/profile?id={{$user->id}}">
         <!-- ユーザー写真の登録があれば登録された写真、なければデフォルト画像表示 -->
         @if(is_null($user->picture))
-          <img src="../../public/images/default.png" alt="画像" class="user-picture">
+          <img src="../../public/images/default.png" alt="画像" class="user-picture_small">
         @else
-          <img src="../../public/storage/{{$user->picture}}" alt="画像" class="user-picture">
+          <img src="../../public/storage/{{$user->picture}}" alt="画像" class="user-picture_small">
         @endif
           <span class="user-name">{{$user->name}}</span>
         </a>

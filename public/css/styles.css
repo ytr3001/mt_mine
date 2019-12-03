@@ -28,23 +28,6 @@ body {
   background-color: #f5f5f5;
 }
 
-.header-inner,
-.create,
-.show,
-.user-contents,
-.edit-user-contents,
-.delete-user-contents,
-.footer-inner {
-  max-width: 1000px;
-  margin-right: auto;
-  margin-left: auto;
-  background-color: #fff;
-}
-
-.user-contents {
-  max-width: 800px;
-}
-
 a {
   text-decoration: none;
   color: #333;
@@ -70,6 +53,23 @@ input {
 
 ul {
   list-style: none;
+}
+
+.header-inner,
+.create,
+.show,
+.profile,
+.edit-user-contents,
+.delete-user-contents,
+.footer-inner {
+  max-width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #fff;
+}
+
+.profile {
+  max-width: 800px;
 }
 
 header {
@@ -152,7 +152,7 @@ header .header-inner .header-right .utility-item .utility-item_trash {
   margin: 14px 35px 0 0;
 }
 
-header .header-inner .header-right .login-user_picture {
+header .header-inner .header-right .login-user-picture {
   width: 40px;
   height: 40px;
   border: 1px solid #696969;
@@ -345,6 +345,33 @@ header .header-inner .header-right .login-user_picture {
   margin: 5px;
 }
 
+.container .pagination {
+  display: -webkit-box;
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: 0.25rem;
+  margin-top: 15px;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+.container .pagination ul {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.container .pagination .page-link {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #696969;
+}
+
 .container .create {
   padding: 50px 0;
   text-align: center;
@@ -416,7 +443,7 @@ header .header-inner .header-right .login-user_picture {
   text-align: left;
 }
 
-.container .show .user-area .user-picture {
+.container .show .user-area .user-picture_small {
   width: 40px;
   height: 40px;
   border: 1px solid #696969;
@@ -511,29 +538,30 @@ header .header-inner .header-right .login-user_picture {
   padding: 15px 0;
 }
 
-.user-contents {
+.container .profile {
   padding-bottom: 50px;
 }
 
-.user-contents .user-area {
+.container .profile .user-area {
   width: 800px;
   margin-bottom: 20px;
   border-bottom: 1px solid #a9a9a9;
   padding: 50px 50px 0px;
 }
 
-.user-contents .user-area .user-picture {
+.container .profile .user-area .user-picture_medium {
   width: 80px;
   height: 80px;
   border-radius: 80px;
+  border: 1px solid #a9a9a9;
 }
 
-.user-contents .user-area .user-name {
+.container .profile .user-area .user-name {
   font-size: 2.4rem;
   padding: 10px 20px;
 }
 
-.user-contents .user-area .my-big2 {
+.container .profile .user-area .fa-paper-plane {
   margin-left: 300px;
   font-size: 1.8rem;
   background-color: #b1b1b1;
@@ -543,12 +571,12 @@ header .header-inner .header-right .login-user_picture {
   vertical-align: bottom;
 }
 
-.user-contents .user-area .introduction {
+.container .profile .user-area .user-introduction {
   max-width: 600px;
   padding: 30px 0;
 }
 
-.user-contents .posts-area1 {
+.container .profile .no-post_user {
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: vertical;
@@ -561,14 +589,14 @@ header .header-inner .header-right .login-user_picture {
   border-bottom: 1px solid #a9a9a9;
 }
 
-.user-contents .posts-area1 .message1 {
+.container .profile .no-post_user .no-post_message {
   font-size: 1.8rem;
   margin: 0 auto 20px;
   font-weight: bold;
   padding: 30px 0 0;
 }
 
-.user-contents .posts-area1 .btn {
+.container .profile .no-post_user .link {
   margin: 0 auto;
   text-align: center;
   background-color: tomato;
@@ -577,7 +605,7 @@ header .header-inner .header-right .login-user_picture {
   padding: 5px 10px;
 }
 
-.user-contents .posts-area2 {
+.container .profile .no-post_guest {
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: vertical;
@@ -590,16 +618,16 @@ header .header-inner .header-right .login-user_picture {
   border-bottom: 1px solid #a9a9a9;
 }
 
-.user-contents .posts-area2 .message2 {
+.container .profile .no-post_guest .no-post_message {
   margin: 0 auto;
   font-weight: bold;
 }
 
-.user-contents .posts-area2 .picture-flie {
+.container .profile .no-post_guest .posts-area {
   margin: 0 auto;
 }
 
-.user-contents .posts-area2 .picture {
+.container .profile .no-post_guest .create-post-picture {
   display: block;
   border: 1px solid #a9a9a9;
   border-radius: 5px;
@@ -614,7 +642,7 @@ header .header-inner .header-right .login-user_picture {
   height: 280px;
 }
 
-.user-contents .posts-area2 .btn {
+.container .profile .no-post_guest .link {
   padding: 5px 10px;
   margin: 0 auto;
   text-align: center;
@@ -623,12 +651,12 @@ header .header-inner .header-right .login-user_picture {
   border-radius: 3px;
 }
 
-.user-contents .posts-area2 .my-big2 {
+.container .profile .no-post_guest .fa-image {
   font-size: 16rem;
   color: #fff;
 }
 
-.user-contents .posts-area3 {
+.container .profile .posts-area {
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: vertical;
@@ -637,12 +665,12 @@ header .header-inner .header-right .login-user_picture {
   margin-bottom: 20px;
 }
 
-.user-contents .posts-area3 .post-picture {
+.container .profile .posts-area .post-picture_medium {
   width: 100%;
   height: 450px;
 }
 
-.user-contents .posts-area3 .post-title {
+.container .profile .posts-area .post-title {
   font-weight: bold;
   padding-left: 5px;
   border-bottom: 1px solid #333;
@@ -793,33 +821,6 @@ header .header-inner .header-right .login-user_picture {
   margin: 30px 0 150px;
 }
 
-.pagination {
-  display: -webkit-box;
-  display: flex;
-  padding-left: 0;
-  list-style: none;
-  border-radius: 0.25rem;
-  margin-top: 15px;
-  -webkit-box-pack: center;
-          justify-content: center;
-}
-
-.pagination ul {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-.pagination .page-link {
-  position: relative;
-  display: block;
-  padding: 0.5rem 0.75rem;
-  margin-left: -1px;
-  line-height: 1.25;
-  color: #333;
-  background-color: #fff;
-  border: 1px solid #696969;
-}
-
 .invalid-feedback {
   width: 100%;
   margin-top: 0.25rem;
@@ -890,7 +891,7 @@ footer .footer-inner {
     margin: 9px 0 0;
   }
 
-  header .header-inner .header-right .login-user_picture {
+  header .header-inner .header-right .login-user-picture {
     width: 30px;
     height: 30px;
     margin-top: 5px;
@@ -1024,7 +1025,7 @@ footer .footer-inner {
     padding: 15px 10px 5px;
   }
 
-  .container .show .user-area .user-picture {
+  .container .show .user-area .user-picture_small {
     width: 40px;
     height: 40px;
     border: 1px solid #696969;
@@ -1077,60 +1078,60 @@ footer .footer-inner {
     font-size: 0.8rem;
   }
 
-  .user-contents {
+  .container .profile {
     padding-bottom: 40px;
   }
 
-  .user-contents .user-area {
+  .container .profile .user-area {
     padding: 20px 20px 0px;
     border-bottom: 1px solid #a9a9a9;
+    width: 100%;
   }
 
-  .user-contents .user-area .user-picture {
+  .container .profile .user-area .user-picture_medium {
     width: 50px;
     height: 50px;
   }
 
-  .user-contents .user-area .user-name {
+  .container .profile .user-area .user-name {
     font-size: 1.2rem;
     padding: 10px;
   }
 
-  .user-contents .user-area .my-big2 {
+  .container .profile .user-area .fa-paper-plane {
     margin-left: 150px;
     font-size: 1.2rem;
     color: #fff;
     padding: 10px;
   }
 
-  .user-contents .user-area .introduction {
+  .container .profile .user-area .user-introduction {
     padding: 10px 0;
   }
 
-  .user-contents .posts-area1 .message1 {
+  .container .profile .no-post_user .no-post_message {
     font-size: 1.2rem;
   }
 
-  .user-contents .posts-area2 .picture {
+  .container .profile .no-post_guest .create-post-picture {
     width: 250px;
     height: 150px;
     padding-top: 25px;
   }
 
-  .user-contents .posts-area2 .my-big2 {
+  .container .profile .no-post_guest .fa-image {
     font-size: 10rem;
   }
 
-  .user-contents .posts-area3 {
+  .container .profile .posts-area {
     text-align: center;
-    border-bottom: 1px solid #a9a9a9;
   }
 
-  .user-contents .posts-area3 .post-picture {
+  .container .profile .posts-area .post-picture_medium {
     height: 250px;
   }
 
-  .user-contents .posts-area3 .post-title {
+  .container .profile .posts-area .post-title {
     font-weight: bold;
     padding: 5px;
     border: none;
@@ -1344,19 +1345,16 @@ footer .footer-inner {
     left: 18%;
   }
 
-  .user-contents .picture {
-    width: 700px;
-    height: 400px;
-    padding-top: 80px;
-    font-size: 0.8rem;
+  .container .profile .user-area {
+    width: 100%;
   }
 
-  .user-contents .picture .my-big1 {
-    font-size: 20rem;
-  }
-
-  .user-contents .user-area .my-big2 {
+  .container .profile .user-area .fa-paper-plane {
     margin-left: 300px;
+  }
+
+  .container .profile .no-post_guest .fa-image {
+    font-size: 20rem;
   }
 }
 
