@@ -59,8 +59,8 @@ ul {
 .create,
 .show,
 .profile,
-.edit-user-contents,
-.delete-user-contents,
+.edit-user,
+.delete-user,
 .footer-inner {
   max-width: 1000px;
   margin-right: auto;
@@ -576,27 +576,27 @@ header .header-inner .header-right .login-user-picture {
   padding: 30px 0;
 }
 
-.container .profile .no-post_user {
+.container .profile .no-post_guest {
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
           flex-direction: column;
-  padding: 80px 0 150px;
-  margin-top: 40px;
+  padding: 160px 0 200px;
+  margin-top: 50px;
   background-color: #e9edf3;
   border-top: 1px solid #a9a9a9;
   border-bottom: 1px solid #a9a9a9;
 }
 
-.container .profile .no-post_user .no-post_message {
+.container .profile .no-post_guest .no-post_message {
   font-size: 1.8rem;
   margin: 0 auto 20px;
   font-weight: bold;
   padding: 30px 0 0;
 }
 
-.container .profile .no-post_user .link {
+.container .profile .no-post_guest .link {
   margin: 0 auto;
   text-align: center;
   background-color: tomato;
@@ -605,7 +605,7 @@ header .header-inner .header-right .login-user-picture {
   padding: 5px 10px;
 }
 
-.container .profile .no-post_guest {
+.container .profile .no-post_user {
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: vertical;
@@ -618,16 +618,16 @@ header .header-inner .header-right .login-user-picture {
   border-bottom: 1px solid #a9a9a9;
 }
 
-.container .profile .no-post_guest .no-post_message {
+.container .profile .no-post_user .no-post_message {
   margin: 0 auto;
   font-weight: bold;
 }
 
-.container .profile .no-post_guest .posts-area {
+.container .profile .no-post_user .posts-area {
   margin: 0 auto;
 }
 
-.container .profile .no-post_guest .create-post-picture {
+.container .profile .no-post_user .create-post-picture {
   display: block;
   border: 1px solid #a9a9a9;
   border-radius: 5px;
@@ -642,7 +642,7 @@ header .header-inner .header-right .login-user-picture {
   height: 280px;
 }
 
-.container .profile .no-post_guest .link {
+.container .profile .no-post_user .link {
   padding: 5px 10px;
   margin: 0 auto;
   text-align: center;
@@ -651,7 +651,7 @@ header .header-inner .header-right .login-user-picture {
   border-radius: 3px;
 }
 
-.container .profile .no-post_guest .fa-image {
+.container .profile .no-post_user .fa-image {
   font-size: 16rem;
   color: #fff;
 }
@@ -676,37 +676,48 @@ header .header-inner .header-right .login-user-picture {
   border-bottom: 1px solid #333;
 }
 
-.edit-user-contents,
-.delete-user-contents {
+.container .edit-user,
+.container .delete-user {
   max-width: 700px;
   padding-top: 30px;
   border-right: 1px solid #a9a9a9;
   border-left: 1px solid #a9a9a9;
 }
 
-.edit-user-contents .picture-flie .user-picture,
-.delete-user-contents .picture-flie .user-picture {
+.container .edit-user .user-picture-area .edit-user-picture,
+.container .edit-user .user-picture-area .delete-user-picture,
+.container .delete-user .user-picture-area .edit-user-picture,
+.container .delete-user .user-picture-area .delete-user-picture {
   margin-left: 30px;
   margin-bottom: 20px;
   display: block;
   width: 80px;
   height: 80px;
-  background-color: #f5f5f5;
   border: 1px solid #a9a9a9;
   border-radius: 50px;
   text-align: center;
   color: #fff;
-  padding: 0 18px;
 }
 
-.edit-user-contents .picture-flie .user-picture .my-big3,
-.delete-user-contents .picture-flie .user-picture .my-big3 {
-  padding-top: 13px;
-  font-size: 5.2rem;
+.container .edit-user .user-picture-area .edit-user-picture img,
+.container .edit-user .user-picture-area .delete-user-picture img,
+.container .delete-user .user-picture-area .edit-user-picture img,
+.container .delete-user .user-picture-area .delete-user-picture img {
+  margin-bottom: 20px;
+  display: block;
+  width: 78px;
+  height: 78px;
+  border-radius: 50px;
 }
 
-.edit-user-contents .picture-flie .user-image img,
-.delete-user-contents .picture-flie .user-image img {
+.container .edit-user .user-picture-area .choice-picture,
+.container .delete-user .user-picture-area .choice-picture {
+  width: 80px;
+  height: 80px;
+}
+
+.container .edit-user .user-picture-area .choice-picture img,
+.container .delete-user .user-picture-area .choice-picture img {
   margin-left: 30px;
   margin-bottom: 20px;
   display: block;
@@ -716,14 +727,26 @@ header .header-inner .header-right .login-user-picture {
   text-align: center;
 }
 
-.edit-user-contents .user-name,
-.delete-user-contents .user-name {
+.container .edit-user .user-picture-area .input-user-picture,
+.container .delete-user .user-picture-area .input-user-picture {
+  display: none;
+}
+
+.container .edit-user .user-name,
+.container .delete-user .user-name {
   border-top: 1px solid #a9a9a9;
   border-bottom: 1px solid #a9a9a9;
 }
 
-.edit-user-contents .user-name .name,
-.delete-user-contents .user-name .name {
+.container .edit-user .user-name .edit-user-name,
+.container .edit-user .user-name .delete-user-name,
+.container .delete-user .user-name .edit-user-name,
+.container .delete-user .user-name .delete-user-name {
+  padding-left: 40px;
+}
+
+.container .edit-user .user-name .input-user-name,
+.container .delete-user .user-name .input-user-name {
   padding: 20px 0;
   padding-left: 67px;
   width: 73%;
@@ -732,25 +755,22 @@ header .header-inner .header-right .login-user-picture {
   border: none;
 }
 
-.edit-user-contents .user-name label,
-.delete-user-contents .user-name label {
-  padding-left: 40px;
-}
-
-.edit-user-contents .user-introduction,
-.delete-user-contents .user-introduction {
+.container .edit-user .user-introduction,
+.container .delete-user .user-introduction {
   padding-top: 20px;
   border-bottom: 1px solid #a9a9a9;
 }
 
-.edit-user-contents .user-introduction label,
-.delete-user-contents .user-introduction label {
+.container .edit-user .user-introduction .edit-user-introduction,
+.container .edit-user .user-introduction .delete-user-introduction,
+.container .delete-user .user-introduction .edit-user-introduction,
+.container .delete-user .user-introduction .delete-user-introduction {
   vertical-align: top;
   padding-left: 40px;
 }
 
-.edit-user-contents .user-introduction textarea,
-.delete-user-contents .user-introduction textarea {
+.container .edit-user .user-introduction .textarea-user-introduction,
+.container .delete-user .user-introduction .textarea-user-introduction {
   padding-left: 35px;
   margin-bottom: 20px;
   width: 80%;
@@ -760,68 +780,68 @@ header .header-inner .header-right .login-user-picture {
   border: none;
 }
 
-.edit-user-contents .logout,
-.edit-user-contents .user-delete,
-.delete-user-contents .logout,
-.delete-user-contents .user-delete {
+.container .edit-user .logout,
+.container .edit-user .user-delete,
+.container .delete-user .logout,
+.container .delete-user .user-delete {
   text-align: center;
   padding: 20px;
   border-bottom: 1px solid #a9a9a9;
 }
 
-.edit-user-contents .logout .logout-btn,
-.edit-user-contents .logout .delete-btn,
-.edit-user-contents .user-delete .logout-btn,
-.edit-user-contents .user-delete .delete-btn,
-.delete-user-contents .logout .logout-btn,
-.delete-user-contents .logout .delete-btn,
-.delete-user-contents .user-delete .logout-btn,
-.delete-user-contents .user-delete .delete-btn {
+.container .edit-user .logout .logout-link,
+.container .edit-user .logout .user-delete-link,
+.container .edit-user .user-delete .logout-link,
+.container .edit-user .user-delete .user-delete-link,
+.container .delete-user .logout .logout-link,
+.container .delete-user .logout .user-delete-link,
+.container .delete-user .user-delete .logout-link,
+.container .delete-user .user-delete .user-delete-link {
   color: red;
 }
 
-.edit-user-contents .col2,
-.delete-user-contents .col2 {
+.container .edit-user .line1,
+.container .delete-user .line1 {
   padding: 20px;
   background-color: #e9edf3;
   border-bottom: 1px solid #a9a9a9;
 }
 
-.edit-user-contents .col3,
-.delete-user-contents .col3 {
-  padding: 50px;
+.container .edit-user .line2,
+.container .delete-user .line2 {
+  padding: 100px;
   background-color: #e9edf3;
   border-bottom: 1px solid #a9a9a9;
 }
 
-.edit-user-contents .error-message,
-.delete-user-contents .error-message {
+.container .edit-user .error-message,
+.container .delete-user .error-message {
   text-align: center;
   background-color: pink;
 }
 
-.edit-user-contents .delete-area,
-.delete-user-contents .delete-area {
+.container .edit-user .delete-area,
+.container .delete-user .delete-area {
   background-color: #e9edf3;
   text-align: center;
 }
 
-.edit-user-contents .delete-area .delete-message,
-.delete-user-contents .delete-area .delete-message {
-  padding: 50px 20px 0;
+.container .edit-user .delete-area .delete-message,
+.container .delete-user .delete-area .delete-message {
+  padding: 100px 20px 0;
   font-weight: bold;
 }
 
-.edit-user-contents .delete-area .delete-btn,
-.delete-user-contents .delete-area .delete-btn {
+.container .edit-user .delete-area .delete-button,
+.container .delete-user .delete-area .delete-button {
   padding: 5px 10px;
   background-color: tomato;
   color: #fff;
   border-radius: 5px;
-  margin: 30px 0 150px;
+  margin: 30px 0 180px;
 }
 
-.invalid-feedback {
+.container .invalid-feedback {
   width: 100%;
   margin-top: 0.25rem;
   font-size: 75%;
@@ -894,7 +914,7 @@ footer .footer-inner {
   header .header-inner .header-right .login-user-picture {
     width: 30px;
     height: 30px;
-    margin-top: 5px;
+    margin-top: 6px;
   }
 
   .container {
@@ -1109,17 +1129,21 @@ footer .footer-inner {
     padding: 10px 0;
   }
 
-  .container .profile .no-post_user .no-post_message {
+  .container .profile .no-post_guest {
+    padding: 70px 0 130px;
+  }
+
+  .container .profile .no-post_guest .no-post_message {
     font-size: 1.2rem;
   }
 
-  .container .profile .no-post_guest .create-post-picture {
+  .container .profile .no-post_user .create-post-picture {
     width: 250px;
     height: 150px;
     padding-top: 25px;
   }
 
-  .container .profile .no-post_guest .fa-image {
+  .container .profile .no-post_user .fa-image {
     font-size: 10rem;
   }
 
@@ -1139,92 +1163,81 @@ footer .footer-inner {
     max-width: 350px;
   }
 
-  .edit-user-contents,
-  .delete-user-contents {
+  .container .edit-user,
+  .container .delete-user {
     border-right: none;
     border-left: none;
     padding-top: 20px;
   }
 
-  .edit-user-contents .picture-flie .user-picture,
-  .delete-user-contents .picture-flie .user-picture {
+  .container .edit-user .user-picture-area .edit-user-picture,
+  .container .edit-user .user-picture-area .delete-user-picture,
+  .container .delete-user .user-picture-area .edit-user-picture,
+  .container .delete-user .user-picture-area .delete-user-picture {
     width: 50px;
     height: 50px;
-    padding: 0 15px;
-    margin: 0px 15px 10px;
+    margin: 0px 30px 10px;
   }
 
-  .edit-user-contents .picture-flie .user-picture .my-big3,
-  .delete-user-contents .picture-flie .user-picture .my-big3 {
-    padding-top: 13px;
-    font-size: 2.3rem;
+  .container .edit-user .user-picture-area .edit-user-picture img,
+  .container .edit-user .user-picture-area .delete-user-picture img,
+  .container .delete-user .user-picture-area .edit-user-picture img,
+  .container .delete-user .user-picture-area .delete-user-picture img {
+    width: 48px;
+    height: 48px;
   }
 
-  .edit-user-contents .picture-flie .user-image img,
-  .delete-user-contents .picture-flie .user-image img {
+  .container .edit-user .user-picture-area .choice-picture img,
+  .container .delete-user .user-picture-area .choice-picture img {
     width: 50px;
     height: 50px;
-    margin: 0px 15px 10px;
+    margin: 0px 30px 10px;
   }
 
-  .edit-user-contents .user-name label,
-  .delete-user-contents .user-name label {
-    padding-left: 30px;
-  }
-
-  .edit-user-contents .user-name .name,
-  .delete-user-contents .user-name .name {
+  .container .edit-user .user-name .input-user-name,
+  .container .delete-user .user-name .input-user-name {
     margin-left: 40px;
     padding: 20px 0;
     width: 63%;
     font-size: 0.8rem;
   }
 
-  .edit-user-contents .user-introduction label,
-  .delete-user-contents .user-introduction label {
-    padding-left: 30px;
-  }
-
-  .edit-user-contents .user-introduction textarea,
-  .delete-user-contents .user-introduction textarea {
+  .container .edit-user .user-introduction .textarea-user-introduction,
+  .container .delete-user .user-introduction .textarea-user-introduction {
     margin: 0 0 20px 20px;
     padding: 0;
-    width: 75%;
+    width: 63%;
     font-size: 0.8rem;
   }
 
-  .edit-user-contents .logout,
-  .edit-user-contents .user-delete,
-  .delete-user-contents .logout,
-  .delete-user-contents .user-delete {
-    padding: 15px;
-  }
-
-  .edit-user-contents .logout .logout-btn,
-  .edit-user-contents .logout .delete-btn,
-  .edit-user-contents .user-delete .logout-btn,
-  .edit-user-contents .user-delete .delete-btn,
-  .delete-user-contents .logout .logout-btn,
-  .delete-user-contents .logout .delete-btn,
-  .delete-user-contents .user-delete .logout-btn,
-  .delete-user-contents .user-delete .delete-btn {
-    font-size: 0.8rem;
-  }
-
-  .edit-user-contents .col2,
-  .delete-user-contents .col2 {
+  .container .edit-user .logout,
+  .container .edit-user .user-delete,
+  .container .delete-user .logout,
+  .container .delete-user .user-delete {
     padding: 10px;
   }
 
-  .edit-user-contents .col3,
-  .delete-user-contents .col3 {
+  .container .edit-user .line1,
+  .container .delete-user .line1 {
+    padding: 10px;
+  }
+
+  .container .edit-user .line2,
+  .container .delete-user .line2 {
     padding: 30px;
   }
 
-  .edit-user-contents .delete-area .delete-btn,
-  .delete-user-contents .delete-area .delete-btn {
+  .container .edit-user .delete-area .delete-message,
+  .container .delete-user .delete-area .delete-message {
+    padding: 50px 20px 0;
+    font-weight: bold;
+  }
+
+  .container .edit-user .delete-area .delete-button,
+  .container .delete-user .delete-area .delete-button {
     font-size: 0.8rem;
     padding: 3px 7px;
+    margin: 20px 0 100px;
   }
 }
 
@@ -1353,7 +1366,11 @@ footer .footer-inner {
     margin-left: 300px;
   }
 
-  .container .profile .no-post_guest .fa-image {
+  .container .profile .no-post_user .create-post-picture {
+    padding-top: 45px;
+  }
+
+  .container .profile .no-post_user .fa-image {
     font-size: 20rem;
   }
 }

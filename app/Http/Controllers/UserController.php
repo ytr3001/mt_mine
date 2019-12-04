@@ -38,7 +38,7 @@ class UserController extends Controller
             $filePath = $originalImg->store('public');
             $user->picture = str_replace('public/', '', $filePath);
         } else {
-            $user->picture = $request->picture2;
+            $user->picture = $request->before_picture;
         }
         $user->name = $request->name;
         $user->introduction = $request->introduction;

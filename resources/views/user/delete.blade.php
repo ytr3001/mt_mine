@@ -20,25 +20,25 @@
   </header>
 
   <div class="container">
-    <div class="delete-user-contents">
+    <div class="delete-user">
     <form action="delete" method="post">
       {{ csrf_field() }}
-        <div class="picture-flie">
+        <div class="user-picture-area">
           @if(is_null($user->picture))
-          <label for="file" id="user-picture" class="user-picture"><i class="fas fa-user my-big3"></i><br></label>
+          <label class="delete-user-picture"><img src="../../public/images/default.png" alt="画像" class="user-picture_medium"></label>
           @else
-          <label for="file" id="user-image" class="user-image"><img src="../../public/storage/{{$user->picture}}" alt="画像"></label>
+          <label class="choice-picture"><img src="../../public/storage/{{$user->picture}}" alt="画像"></label>
           @endif
         </div>
         <div class="user-name">
-          <label>名前</label><input class="name" value="{{$user->name}}" readonly>
+          <label class="delete-user-name">名前</label><input class="input-user-name" value="{{$user->name}}" readonly>
         </div>
         <div class="user-introduction">
-          <label>自己紹介</label><textarea cols="30" rows="5" readonly>{{$user->introduction}}</textarea>
+          <label class="delete-user-introduction">自己紹介</label><textarea class="textarea-user-introduction" cols="30" rows="5" readonly>{{$user->introduction}}</textarea>
         </div>
         <div class="delete-area">
           <p class="delete-message">アカウントの削除を行います。本当によろしいですか？</p>
-          <button class="delete-btn">削除する</button>
+          <button class="delete-button">削除する</button>
         </div>   
       </form>
     </div>

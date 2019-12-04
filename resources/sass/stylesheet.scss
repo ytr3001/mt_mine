@@ -54,7 +54,7 @@ ul {
   font-weight: bold;
   text-align: center;
 }
-.header-inner, .create, .show, .profile, .edit-user-contents, .delete-user-contents, .footer-inner {
+.header-inner, .create, .show, .profile, .edit-user, .delete-user, .footer-inner {
   max-width: 1000px;
   margin-right: auto;
   margin-left: auto;
@@ -498,11 +498,11 @@ header {
       }
     }
 
-    .no-post_user {
+    .no-post_guest {
       display: flex;
       flex-direction: column;
-      padding: 80px 0 150px;
-      margin-top: 40px;
+      padding:  160px 0 200px;
+      margin-top: 50px;
       background-color:#e9edf3;
       border-top: 1px solid #a9a9a9;
       border-bottom: 1px solid #a9a9a9;
@@ -522,20 +522,20 @@ header {
       }
     }
 
-    .no-post_guest {
+    .no-post_user {
       display: flex;
       flex-direction: column;
-      padding:40px 0 70px;
+      padding: 40px 0 70px;
       margin-top: 40px;
-      background-color:#e9edf3;
+      background-color: #e9edf3;
       border-top:1px solid #a9a9a9;
       border-bottom:1px solid #a9a9a9;
       .no-post_message {
         margin:0 auto;
-        font-weight:bold;
+        font-weight: bold;
       }
       .posts-area {
-        margin:0 auto;
+        margin: 0 auto;
       }
       .create-post-picture { 
         display: block;
@@ -581,131 +581,136 @@ header {
     }
   }
 
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-.edit-user-contents, .delete-user-contents {
-  max-width: 700px;
-  padding-top: 30px;
-  border-right: 1px solid #a9a9a9;
-  border-left: 1px solid #a9a9a9;
-  .picture-flie {
-    .user-picture {
-      margin-left: 30px;
-      margin-bottom: 20px;
-      display: block;
-      width: 80px;
-      height: 80px;
-      background-color: #f5f5f5;
-      border: 1px solid #a9a9a9;
-      border-radius: 50px;
-      text-align: center;
-      color: #fff;
-      padding: 0 18px;
-      .my-big3 {
-        padding-top: 13px;
-        font-size: 5.2rem;
+  //ユーザー編集画面,ユーザー削除画面レイアウト
+  .edit-user, .delete-user {
+    max-width: 700px;
+    padding-top: 30px;
+    border-right: 1px solid #a9a9a9;
+    border-left: 1px solid #a9a9a9;
+  
+    .user-picture-area {
+      .edit-user-picture, .delete-user-picture {
+        margin-left: 30px;
+        margin-bottom: 20px;
+        display: block;
+        width: 80px;
+        height: 80px;
+        border: 1px solid #a9a9a9;
+        border-radius: 50px;
+        text-align: center;
+        color: #fff;
+        img {
+          margin-bottom: 20px;
+          display: block;
+          width: 78px;
+          height: 78px;
+          border-radius: 50px;
+        }
+      }
+      .choice-picture {
+        width: 80px;
+        height: 80px;
+          img {
+          margin-left: 30px;
+          margin-bottom: 20px;
+          display: block;
+          width: 80px;
+          height: 80px;
+          border-radius: 50px;
+          text-align: center;
+        }
+      }
+      .input-user-picture {
+        display: none;
       }
     }
-    .user-image img {
-      margin-left: 30px;
-      margin-bottom: 20px;
-      display: block;
-      width: 80px;
-      height: 80px;
-      border-radius: 50px;
+  
+    .user-name {
+      border-top: 1px solid #a9a9a9;
+      border-bottom: 1px solid #a9a9a9;
+      .edit-user-name, .delete-user-name {
+        padding-left: 40px;
+      }
+      .input-user-name {
+        padding: 20px 0;
+        padding-left: 67px;
+        width: 73%;
+        font-size: 1.6rem;
+        outline: 0;
+        border: none;
+      }
+    }
+  
+    .user-introduction {
+      padding-top: 20px;
+      border-bottom: 1px solid #a9a9a9;
+      .edit-user-introduction, .delete-user-introduction {
+        vertical-align: top;
+        padding-left: 40px;
+      }
+      .textarea-user-introduction {
+        padding-left: 35px;
+        margin-bottom: 20px;
+        width: 80%;
+        font-size: 1.6rem;
+        outline: 0;
+        resize: none;
+        border:none;
+      }
+    }
+  
+    .logout, .user-delete {
       text-align: center;
+      padding: 20px;
+      border-bottom: 1px solid #a9a9a9;
+      .logout-link, .user-delete-link {
+        color: red;
+      }
     }
-  }
-  .user-name {
-    border-top: 1px solid #a9a9a9;
-    border-bottom: 1px solid #a9a9a9;
-    .name {
-      padding: 20px 0;
-      padding-left: 67px;
-      width: 73%;
-      font-size: 1.6rem;
-      outline: 0;
-      border: none;
+  
+    .line1 {
+      padding: 20px;
+      background-color: #e9edf3;
+      border-bottom: 1px solid #a9a9a9;
     }
-    label {
-      padding-left: 40px;
+  
+    .line2 {
+      padding: 100px;
+      background-color: #e9edf3;
+      border-bottom: 1px solid #a9a9a9;
     }
-  }
-  .user-introduction {
-    padding-top: 20px;
-    border-bottom: 1px solid #a9a9a9;
-    label {
-      vertical-align: top;
-      padding-left: 40px;
+  
+    .error-message {
+      text-align: center;
+      background-color: pink;
     }
-    textarea {
-      padding-left: 35px;
-      margin-bottom: 20px;
-      width: 80%;
-      font-size: 1.6rem;
-      outline: 0;
-      resize: none;
-      border:none;
+  
+    .delete-area {
+      background-color: #e9edf3;
+      text-align: center;
+      .delete-message {
+        padding: 100px 20px 0;
+        font-weight: bold;
+      }
+      .delete-button {
+        padding:5px 10px;
+        background-color:tomato;
+        color:#fff;
+        border-radius:5px;
+        margin: 30px 0 180px;
+      }
     }
-  }
-  .logout, .user-delete {
-    text-align: center;
-    padding: 20px;
-    border-bottom: 1px solid #a9a9a9;
-    .logout-btn, .delete-btn{
-      color: red;
-    }
-  }
-  .col2 {
-    padding: 20px;
-    background-color: #e9edf3;
-    border-bottom: 1px solid #a9a9a9;
-  }
-  .col3 {
-    padding: 50px;
-    background-color: #e9edf3;
-    border-bottom: 1px solid #a9a9a9;
-  }
-  .error-message {
-    text-align: center;
-    background-color: pink;
-  }
-  .delete-area {
-    background-color: #e9edf3;
-    text-align: center;
-    .delete-message {
-      padding:50px 20px 0;
-      font-weight: bold;
-    }
-    .delete-btn {
-      padding:5px 10px;
-      background-color:tomato;
-      color:#fff;
-      border-radius:5px;
-      margin: 30px 0 150px;
-    }
-  }
-}
 
+  }
 
-//erroメッセージ
-.invalid-feedback {
-  width: 100%;
-  margin-top: 0.25rem;
-  font-size: 75%;
-  color: #e3342f;
+  //erroメッセージ
+  .invalid-feedback {
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 75%;
+    color: #e3342f;
+  }
+  
 }
 
 //フッターレイアウト
@@ -719,12 +724,6 @@ footer {
     background-color: #696969;
   }
 }
-
-
-
-
-
-
 
 //スマホ(iphone6〜8)レスポンシブデザイン
 @media (max-width: 575px) {
@@ -780,7 +779,7 @@ footer {
         .login-user-picture {
           width: 30px;
           height: 30px;  
-          margin-top: 5px;
+          margin-top: 6px;
         }    
       }
 
@@ -986,13 +985,14 @@ footer {
         }
       }
 
-      .no-post_user {
+      .no-post_guest {
+        padding:  70px 0 130px;
         .no-post_message {
           font-size: 1.2rem;
         }
       }
 
-      .no-post_guest {
+      .no-post_user {
         .create-post-picture { 
           width: 250px;
           height: 150px;
@@ -1018,87 +1018,76 @@ footer {
       }
     }
 
-
-  
-
-
-
-
-
-
-
-  }
- 
-
-
-
-  .edit-user-contents, .delete-user-contents {
-    border-right: none;
-    border-left: none;
-    padding-top: 20px;
-    .picture-flie {
-      .user-picture {
-        width: 50px;
-        height: 50px;
-        padding: 0 15px;
-        margin: 0px 15px 10px;
-        .my-big3 {
-          padding-top: 13px;
-          font-size: 2.3rem;
+    //ユーザー編集画面,ユーザー削除画面レイアウト
+    .edit-user, .delete-user {
+      border-right: none;
+      border-left: none;
+      padding-top: 20px;
+    
+      .user-picture-area {
+        .edit-user-picture, .delete-user-picture {
+          width: 50px;
+          height: 50px;
+          margin: 0px 30px 10px;
+          img {
+            width: 48px;
+            height: 48px;
+          }
+        }
+        .choice-picture {
+          img {
+           width: 50px;
+           height: 50px;
+           margin: 0px 30px 10px;
+         }
         }
       }
-      .user-image img {
-        width: 50px;
-        height: 50px;
-        margin: 0px 15px 10px;
+    
+      .user-name {
+        .input-user-name {
+          margin-left: 40px;
+          padding: 20px 0;
+          width: 63%;
+          font-size: 0.8rem;
+        }
       }
-    }
-    .user-name {
-      label {
-        padding-left:30px;
+    
+      .user-introduction {
+        .textarea-user-introduction {
+          margin: 0 0 20px 20px;
+          padding: 0;
+          width: 63%;
+          font-size: 0.8rem;
+        }
       }
-      .name {
-        margin-left: 40px;
-        padding: 20px 0;
-        width: 63%;
-        font-size: 0.8rem;
+    
+      .logout, .user-delete {
+        padding: 10px;
       }
-    }
-    .user-introduction {
-      label {
-        padding-left: 30px;
+    
+      .line1 {
+        padding: 10px;
       }
-      textarea {
-        margin: 0 0 20px 20px;
-        padding: 0;
-        width: 75%;
-        font-size: 0.8rem;
+    
+      .line2 {
+        padding: 30px;
       }
-    }
-    .logout, .user-delete {
-      padding: 15px;
-      .logout-btn, .delete-btn{
-        font-size: 0.8rem;
-      }
-    }
-    .col2 {
-      padding: 10px;
-    }
-    .col3 {
-      padding: 30px;
-    }
-    .delete-area {
-      .delete-btn {
-        font-size: 0.8rem;
-        padding: 3px 7px;
+    
+      .delete-area {
+        .delete-message {
+          padding: 50px 20px 0;
+          font-weight: bold;
+        }
+        .delete-button {
+          font-size: 0.8rem;
+          padding: 3px 7px;  
+          margin: 20px 0 100px;
+        }
       }
     }
   }
   
 }
-
-
-
 
 
 //ipadレスポンシブデザイン
@@ -1201,7 +1190,6 @@ footer {
       .error-message {
         margin: 0 33px;
       }
-
     }
 
     // 投稿詳細画面レイアウト
@@ -1244,12 +1232,16 @@ footer {
         }
       }
 
-      .no-post_guest {
+      .no-post_user {
+        .create-post-picture { 
+          padding-top: 45px;  
+        }
         .fa-image {
           font-size: 20rem;
         }
       }
     }
+
   }
 }
 

@@ -48,12 +48,12 @@
       <!-- 投稿があれば投稿写真を表示。投稿がなければメッセージの表示 -->
       @if(count($posts) <= 0 )
         @if($user->id !== $auth->id)
-          <div class="no-post_user">
+          <div class="no-post_guest">
             <p class="no-post_message">※このアカウントはまだ投稿がありません。</p>
             <a href="../user/profile" class="link">マイページへ</a>
           </div>
         @else
-          <div class="no-post_guest">
+          <div class="no-post_user">
             <p class="no-post_message">ようこそMt.mineへ！</p>
             <p class="no-post_message">さっそくあなたの山の魅力を伝えてみましょう。</p>
             <div class="posts-area">

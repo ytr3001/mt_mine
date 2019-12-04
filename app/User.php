@@ -44,7 +44,7 @@ class User extends Authenticatable
     public static $rules = array (
         'name' => 'required|string|max:20',
         'picture' => 'file|image|mimes:jpeg,png,jpg' ,
-        'introduction' => 'string|max:100'
+        'introduction' => 'max:100'
     );
 }
 

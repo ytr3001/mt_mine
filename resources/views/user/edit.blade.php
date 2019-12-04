@@ -27,18 +27,19 @@
   </header>
 
   <div class="container">
-    <div class="edit-user-contents">
-    <form action="edit" method="post" id="edit-user" enctype="multipart/form-data">
+    <div class="edit-user">
+    <form action="edit" method="post" id="edit-user-form" enctype="multipart/form-data">
       {{ csrf_field() }}
-        <div class="picture-flie">
+
+        <div class="user-picture-area">
           @if(is_null($user->picture))
-          <label for="file" id="user-picture" class="user-picture"><i class="fas fa-user my-big3"></i><br></label>
+            <label for="input-user-picture" id="edit-user-picture" class="edit-user-picture"><img src="../../public/images/default.png" alt="画像" class="user-picture_medium"></label>
           @else
-          <label for="file" id="user-image" class="user-image"><img src="../../public/storage/{{$user->picture}}" alt="画像"></label>
+            <label for="input-user-picture" id="choice-picture" class="choice-picture"><img src="../../public/storage/{{$user->picture}}" alt="画像"></label>
           @endif
-          <label for="file" id="user-image" class="user-image"></label>
-          <input type="file" id="file" class="file" name="picture" accept="image/*" value="{{$user->picture}}">
-          <input type="hidden" name="picture2" value="{{$user->picture}}">
+          <label for="input-user-picture" id="choice-picture" class="choice-picture"></label>
+          <input type="file" id="input-user-picture" class="input-user-picture" name="picture" accept="image/*" value="{{$user->picture}}">
+          <input type="hidden" name="before_picture" value="{{$user->picture}}">
           @if($errors->has('picture'))
            <div class="error-message">
               <span class="invalid-feedback" role="alert">
@@ -47,8 +48,9 @@
             </div>
           @endif
         </div>
+
         <div class="user-name">
-          <label for="name">名前</label><input type="text" id="name" class="name" name="name" placeholder="名前を変更" 
+          <label for="name" class="edit-user-name">名前</label><input type="text" id="name" class="input-user-name" name="name" placeholder="名前を変更" 
           value="{{$user->name}}" required autofocus>
           @if($errors->has('name'))
            <div class="error-message">
@@ -58,26 +60,27 @@
             </div>
           @endif
         </div>
+
         <div class="user-introduction">
-          <label for="introduction">自己紹介</label><textarea name="introduction" class="introduction"
-           placeholder="自己紹介を追加" cols="30" rows="5">{{$user->introduction}}</textarea>
+          <label for="introduction" class="edit-user-introduction">自己紹介</label><textarea id="introduction" class="textarea-user-introduction" name="introduction"  placeholder="自己紹介を追加" cols="30" rows="5">{{$user->introduction}}</textarea>
            @if($errors->has('introduction'))
-           <div class="error-message">
-              <span class="invalid-feedback" role="alert">
-                <strong>{{$errors->first('introduction')}}</strong>
-              </span>
+            <div class="error-message">
+                <span class="invalid-feedback" role="alert">
+                  <strong>{{$errors->first('introduction')}}</strong>
+                </span>
             </div>
-            @endif
+           @endif
         </div>
-        <div class="col2"></div>
+        
+        <div class="line1"></div>
         <div class="logout">
-          <a href="logout" class="logout-btn">ログアウト</a>
+          <a href="logout" class="logout-link">ログアウト</a>
         </div>
-        <div class="col2"></div>
+        <div class="line1"></div>
         <div class="user-delete">
-        <a href="delete" class="logout-btn">アカウントを削除</a>
+          <a href="delete" class="user-delete-link">アカウントを削除</a>
         </div>
-        <div class="col3"></div>
+        <div class="line2"></div>
         <input type="hidden" name="id" value="{{$user->id}}">
       </form>
     </div>
