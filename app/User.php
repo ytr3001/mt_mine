@@ -36,11 +36,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
+    // モデルと関連するテーブルを定義
     protected $table = 'users';
-
+    // idへ予期せぬデータの代入を防止
     protected $guarded = array('id');
-    
+    // ユーザーに関するバリデーションルール
     public static $rules = array (
         'name' => 'required|string|max:20',
         'picture' => 'file|image|mimes:jpeg,png,jpg' ,
