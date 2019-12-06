@@ -10,7 +10,6 @@
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
-
 <body>
   <header>
     <div class="header-inner">
@@ -30,7 +29,7 @@
 
   <div class="container">
     <div class="main-view" style="background-image: url(images/post/forest3.jpg)">
-      <p class="catch-copy">何もない場所が魅力になる</p>
+      <p class="catch-copy">何もない場所に価値がある</p>
       <a href="post/index" class="link">見つける</a>
     </div>
 

@@ -16,31 +16,32 @@
       <div class="header-left">
         <button class="header-back header-back_show" onclick="history.back()">&lt</button>
       </div>
-      <!-- ログインユーザーとリクエストユーザーのidが同じであればデリートアイコンの表示 -->
-      @if($user->id === $auth->id)
-        <div class="header-right">
-          <div class="utility">
-            <div class="utility-item">
-              <button id="utility-item_trash" class="utility-item_trash"><i class="far fa-trash-alt"></i></button>
-            <div>
+      <!-- ログインユーザーと投稿ユーザーのidが同じであればデリートアイコンの表示 -->
+      @if(Auth::check())
+        @if($user->id === $auth->id)
+          <div class="header-right">
+            <div class="utility">
+              <div class="utility-item">
+                <button id="utility-item_trash" class="utility-item_trash"><i class="far fa-trash-alt"></i></button>
+              <div>
+            </div>
           </div>
-        </div>
+        @endif
       @endif
     </div>
   </header>
 
   <div class="container"> 
     <div class="show">
-
       <div class="user-area">
         <a href="../user/profile?id={{$user->id}}">
-        <!-- ユーザー写真の登録があれば登録された写真、なければデフォルト画像表示 -->
-        @if(is_null($user->picture))
-          <img src="../../public/images/default.png" alt="画像" class="user-picture_small">
-        @else
-          <img src="../../public/storage/{{$user->picture}}" alt="画像" class="user-picture_small">
-        @endif
-          <span class="user-name">{{$user->name}}</span>
+          <!-- ユーザー写真の登録があれば登録された写真、なければデフォルト画像表示 -->
+          @if(is_null($user->picture))
+            <img src="../../public/images/default.png" alt="画像" class="user-picture_small">
+          @else
+            <img src="../../public/storage/{{$user->picture}}" alt="画像" class="user-picture_small">
+          @endif
+            <span class="user-name">{{$user->name}}</span>
         </a>
       </div>
 
@@ -49,9 +50,9 @@
         <div class="post-title">
           <!-- 投稿にタイトルがあれば投稿タイトルの表示、なければ無題と表示 -->
           @if(is_null($post->title))
-          <p>無題</p>
+            <p>無題</p>
           @else
-          <p>{{$post->title}}</p>
+           <p>{{$post->title}}</p>
           @endif
         </div> 
         <div class="post-date">
@@ -64,7 +65,6 @@
         <input type="hidden" name="id" value="{{$post->id}}">
         <input type="hidden" name="no" value="<?= $_GET['no']; ?>">
       </form>
-
     </div>
 
     <div id=check-modal class="check-modal">

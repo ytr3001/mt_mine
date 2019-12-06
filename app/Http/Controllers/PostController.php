@@ -9,19 +9,21 @@ use App\User;
 
 class PostController extends Controller
 {
+    // ログインユーザーのデータとidを降順で投稿データを12個ごとviewに渡す
     public function index() {
-        $user = Auth::user();
+        $auth = Auth::user();
         $posts = Post::orderby('id','desc')->paginate(12);
-        return view('post.index',compact('posts', 'user'));
+        return view('post.index',compact('posts', 'auth'));
     }
-
+    // ログインユーザーのデータをviewに渡す
     public function create() {
-        $user = Auth::user();
-        return view('post.create',compact('user'));
+        $auth = Auth::user();
+        return view('post.create',compact('auth'));
     }
-
-    public function  store(Request $request, Post $post) {
+    // storeメソッドで一意のfilePathをpublicディレクトリに保存。str_replaceメソッドで'public/'を空白に置き換え。各投稿データをDBに保存。
+    public function  store(Request $request) {
         $this->validate($request, Post::$rules);
+        $post = new Post;
         $originalImg = $request->picture;
         $filePath = $originalImg->store('public');
         $post->picture = str_replace('public/', '', $filePath);
@@ -30,7 +32,7 @@ class PostController extends Controller
         $post->save();
         return redirect('/user/profile');
         }
-
+    // リクエストされたidと一致する投稿データを取得。投稿内容、投稿ユーザー、ログインユーザーのデータをviewに渡す。
     public function show(Request $request) {
         $post = Post::where('id', $request->id)->first();
         $date = date_format($post->created_at, 'Y-m-d');
@@ -40,8 +42,8 @@ class PostController extends Controller
         return view('post.show',compact('post', 'date', 'time','user', 'auth'));
     }
     
-    //Post必要ないかもviewの修正含めて確認
-    public function delete(Request $request, Post $post) {
+    // リクエストされたidと一致する投稿データを消去。リクエストno==0なら投稿一覧画面へno==1ならユーザープロフィール画面へリダイレクト
+    public function delete(Request $request) {
         $post = Post::find($request->id)->delete();
         if($request->no == 0) { 
             return redirect('/post/index');

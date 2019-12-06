@@ -14,39 +14,35 @@
   <header>
     <div class="header-inner">
       <!-- ログインしていない時はヘッダーロゴからtop画面へナビ -->
-      @if(Auth::check())
       <div class="header-left">
-        <h1 class="header-logo"><a href="#">Mt.Mine</a></h1>
+        @if(Auth::check())
+          <h1 class="header-logo"><a href="#">Mt.Mine</a></h1>
+        @else
+          <h1 class="header-logo"><a href="../top">Mt.Mine</a></h1>
+        @endif
       </div>
-      @else
-      <div class="header-left">
-        <h1 class="header-logo"><a href="../top">Mt.Mine</a></h1>
-      </div>
-      @endif
       <!-- ログインしている時はユーザー写真を表示、ログインしていない時はログイン画面or新規登録画面へのナビを表示 -->
-      @if(Auth::check())
       <div class="header-right">
-        <div class="login-user">
-          <a href="../user/profile?id={{$user->id}}">
-            <!-- ユーザー写真の登録があれば登録された写真、なければデフォルト画像表示 -->
-            @if(is_null($user->picture))
-            <img src="../../public/images/default.png" alt="画像" class="login-user-picture">
-            @else
-            <img src="../../public/storage/{{$user->picture}}" alt="画像" class="login-user-picture">
-            @endif
-          </a>
-        </div>
+        @if(Auth::check())
+          <div class="login-user">
+            <a href="../user/profile?id={{$auth->id}}">
+              <!-- ユーザー写真の登録があれば登録された写真、なければデフォルト画像表示 -->
+              @if(is_null($auth->picture))
+                <img src="../../public/images/default.png" alt="画像" class="login-user-picture">
+              @else
+                <img src="../../public/storage/{{$auth->picture}}" alt="画像" class="login-user-picture">
+              @endif
+            </a>
+          </div>
+        @else
+          <div class="utility">
+            <ul class="utility-item">
+              <li><a href="../login" class="utility-item_login">ログイン /</a></li>
+              <li><a href="../register" class="utility-item_register">新規登録</a></li>
+            </ul>   
+          </div>
+        @endif
       </div>
-      @else
-      <div class="header-right">
-        <div class="utility">
-          <ul class="utility-item">
-            <li><a href="../login" class="utility-item_login">ログイン /</a></li>
-            <li><a href="../register" class="utility-item_register">新規登録</a></li>
-          </ul>   
-        </div>
-      </div>
-      @endif
     </div>
   </header>
 
@@ -61,6 +57,7 @@
         </div>
         @endforeach
       </div>
+      <!-- ペジネーションの表示 -->
       {{$posts->links()}}
     </div>  
   </div>

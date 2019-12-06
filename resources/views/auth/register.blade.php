@@ -29,33 +29,33 @@
 
   <div class="container">
     <div class="register">
-      <form action="{{ route('register') }}" method="post" class="register-form">
+      <form action="register" method="post" class="register-form">
         {{ csrf_field() }}
         <p class="form-title">新規会員登録</p>
 
         <input type="text" class="register-input" name="name" placeholder="ユーザー名" value="{{ old('name') }}" required autocomplete="name" autofocus>
         <!-- ユーザー名の入力がバリデーションに該当する場合はエラーメッセージの表示 -->
         @error('name')
-        <span class="invalid-feedback" role="alert">
-          <strong>{{ $message }}</strong>
-        </span>
+          <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+          </span>
         @enderror
 
         <input type="email" class="register-input" name="email" placeholder="メールアドレス" value="{{ old('email') }}" required autocomplete="email">
         <!-- emailの入力がバリデーションに該当する場合はエラーメッセージの表示 -->
         @error('email')
-        <span class="invalid-feedback" role="alert">
-          <strong>{{ $message }}</strong>
-        </span>
+          <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+          </span>
         @enderror
 
         <input type="password" class="register-input" name="password" placeholder="パスワード" required autocomplete="new-password">
         <input type="password" class="register-input" name="password_confirmation" placeholder="パスワード確認" required autocomplete="new-password">
         <!-- パスワードの入力がバリデーションに該当する場合はエラーメッセージの表示 -->
         @error('password')
-        <span class="invalid-feedback" role="alert">
-          <strong>{{ $message }}</strong>
-        </span>
+          <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+          </span>
         @enderror
         
         <input type="submit" class="register-input form-submit register-form_submit" value="登録する">

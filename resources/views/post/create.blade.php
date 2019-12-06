@@ -32,13 +32,14 @@
       {{ csrf_field() }}
         <label for="input-post-picture" id="create-post-picture" class="create-post-picture"><i class="far fa-image"></i><br>
           <span>写真を選択</span>
-          @if($errors->has('picture'))
+          <!-- emailの指定がバリデーションに該当する場合はエラーメッセージの表示 -->
+          @error('picture')
             <div class="error-message">
               <span class="invalid-feedback" role="alert">
                 <strong>{{$errors->first('picture')}}</strong>
               </span>
             </div>
-          @endif
+          @enderror
         </label>
         <label for="input-post-picture" id="choice-picture" class="choice-picture"></label>
         <input type="file" id="input-post-picture" class="input-post-picture" name="picture" accept="image/*">
@@ -46,15 +47,16 @@
         <div class="create-post-title">
           <input type="text" id="post-title" class="post-title" name="title" value="{{old('title')}}" placeholder="タイトルを入力">
         </div>
-        @if($errors->has('title'))
+        <!-- タイトルの入力がバリデーションに該当する場合はエラーメッセージの表示 -->
+        @error('title')
           <div class="error-message">
             <span class="invalid-feedback" role="alert">
               <strong>{{$errors->first('title')}}</strong>
             </span>
           </div>
-        @endif
+        @enderror
         
-        <input type="hidden" value="{{$user->id}}" name="user_id">
+        <input type="hidden" value="{{$auth->id}}" name="user_id">
       </form>
     </div>
   </div>

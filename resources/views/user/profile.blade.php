@@ -17,14 +17,16 @@
         <a href="../post/index" class="header-back header-back_profile" >&lt</a>
       </div>
       <!-- ログインユーザーのidとリクエストユーザーのidが同じであれば設定アイコンの表示 -->
-      @if($user->id === $auth->id)
-      <div class="header-right">
-        <div class="utility">
-          <div class="utility-item">
-            <a href="edit" class="utility-item_config"><i class="fas fa-cog"></i></a>
-          <div>
-        </div>
-      </div>
+      @if(Auth::check())
+        @if($user->id === $auth->id)
+          <div class="header-right">
+            <div class="utility">
+              <div class="utility-item">
+                <a href="edit" class="utility-item_config"><i class="fas fa-cog"></i></a>
+              <div>
+            </div>
+          </div>
+        @endif
       @endif
     </div>
   </header>
@@ -40,8 +42,10 @@
         @endif
         <span class="user-name">{{$user->name}}</span>
         <!-- ログインユーザーとリクエストユーザーのidが同じであれば投稿アイコンの表示 -->
-        @if($user->id === $auth->id)
-          <a href="../post/create"><i class="far fa-paper-plane"></i></a>
+        @if(Auth::check())
+          @if($user->id === $auth->id)
+            <a href="../post/create"><i class="far fa-paper-plane"></i></a>
+          @endif
         @endif
         <p class="user-introduction">{{$user->introduction}}</p>
       </div>

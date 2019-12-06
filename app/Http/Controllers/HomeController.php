@@ -22,9 +22,10 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    // ログインユーザーのデータをviewに渡す。
     public function index()
     {
-        $user = Auth::user();
-        return view('register_done', compact('user'));
+        $auth = Auth::user();
+        return view('register_done', compact('auth'));
     }
 }

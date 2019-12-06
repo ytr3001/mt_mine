@@ -29,10 +29,10 @@
 
   <div class="container">
     <div class="login">
-      <form action="{{ route('login') }}" method="post" class="login-form">
+      <form action="login" method="post" class="login-form">
         {{ csrf_field() }}
         <p class="form-title">ログイン</p>
-
+        
         <input type="email" class="login-input" name="email" placeholder="メールアドレス" value="{{old('email')}}" required autocomplete="email" autofocus>
         <!-- emailの入力がバリデーションに該当する場合はエラーメッセージの表示 -->
         @error('email')

@@ -21,20 +21,21 @@
 
   <div class="container">
     <div class="delete-user">
-    <form action="delete" method="post">
-      {{ csrf_field() }}
+      <form action="delete" method="post">
+        {{ csrf_field() }}
         <div class="user-picture-area">
-          @if(is_null($user->picture))
-          <label class="delete-user-picture"><img src="../../public/images/default.png" alt="画像" class="user-picture_medium"></label>
+          <!-- ユーザー写真の登録があれば登録された写真、なければデフォルト画像表示 -->
+          @if(is_null($auth->picture))
+            <label class="delete-user-picture"><img src="../../public/images/default.png" alt="画像" class="user-picture_medium"></label>
           @else
-          <label class="choice-picture"><img src="../../public/storage/{{$user->picture}}" alt="画像"></label>
+            <label class="choice-picture"><img src="../../public/storage/{{$auth->picture}}" alt="画像"></label>
           @endif
         </div>
         <div class="user-name">
-          <label class="delete-user-name">名前</label><input class="input-user-name" value="{{$user->name}}" readonly>
+          <label class="delete-user-name">名前</label><input class="input-user-name" value="{{$auth->name}}" readonly>
         </div>
         <div class="user-introduction">
-          <label class="delete-user-introduction">自己紹介</label><textarea class="textarea-user-introduction" cols="30" rows="5" readonly>{{$user->introduction}}</textarea>
+          <label class="delete-user-introduction">自己紹介</label><textarea class="textarea-user-introduction" cols="30" rows="5" readonly>{{$auth->introduction}}</textarea>
         </div>
         <div class="delete-area">
           <p class="delete-message">アカウントの削除を行います。本当によろしいですか？</p>

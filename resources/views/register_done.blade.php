@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Mt.Mine | ログイン</title>
+  <title>Mt.Mine | 新規会員登録完了</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="sanitize.css-master/sanitize.css">
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
@@ -18,12 +18,12 @@
       </div>
       <div class="header-right">
         <div class="login-user">
-          <a href="user/profile?id={{$user->id}}">
+          <a href="user/profile?id={{$auth->id}}">
             <!-- ユーザー写真の登録があれば登録された写真、なければデフォルト画像表示 -->
-            @if(is_null($user->picture))
-            <img src="images/default.png" alt="画像" class="login-user-picture">
+            @if(is_null($auth->picture))
+              <img src="images/default.png" alt="画像" class="login-user-picture">
             @else
-            <img src="storage/{{$user->picture}}" alt="画像" class="login-user-picture">
+             <img src="storage/{{$auth->picture}}" alt="画像" class="login-user-picture">
             @endif
           </a>
         </div>
