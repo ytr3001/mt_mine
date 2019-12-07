@@ -1,6 +1,6 @@
 $(function() {
   // show.php 
-  //削除ボタンクリック時にモーダルの表示
+  //ゴミ箱のアイコンをクリック時にモーダルの表示
   $('#utility-item_trash').click(function() { 
       $('#check-modal').fadeIn();
   });
@@ -31,7 +31,8 @@ $(function() {
       $('#choice-picture').html('');
       return;
     }
-    // 画像表示
+    // 画像表示 FileApi
+    // reader.readAsDataURLでファイルを読み込み正常に完了したらreader.onloadが発火してreader.resultで読み込んだデータを返す
     var reader = new FileReader();
     reader.onload = function() {
       var img_src = $('<img>').attr('src', reader.result);
@@ -53,7 +54,8 @@ $(function() {
       $('#choice-picture').html('');
       return;
     }
-    // 画像表示
+    // 画像表示 FileApi
+    // reader.readAsDataURLでファイルを読み込み正常に完了したらreader.onloadが発火してreader.resultで読み込んだデータを返す
     var reader = new FileReader();
     reader.onload = function() {
       var img_src = $('<img>').attr('src', reader.result);
