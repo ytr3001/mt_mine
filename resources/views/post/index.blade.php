@@ -13,13 +13,8 @@
 <body>
   <header>
     <div class="header-inner">
-      <!-- ログインしていない時はヘッダーロゴからtop画面へナビ -->
       <div class="header-left">
-        @if(Auth::check())
-          <h1 class="header-logo"><a href="#">Mt.Mine</a></h1>
-        @else
-          <h1 class="header-logo"><a href="../top">Mt.Mine</a></h1>
-        @endif
+        <h1 class="header-logo"><a href="#">Mt.Mine</a></h1>
       </div>
       <!-- ログインしている時はユーザー写真を表示、ログインしていない時はログイン画面or新規登録画面へのナビを表示 -->
       <div class="header-right">

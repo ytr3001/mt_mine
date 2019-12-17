@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 use Auth;
 
 class LogoutController extends Controller
-{
+{    
     // ログアウトの実行
     public function getlogout() {
         Auth::logout();
-        return redirect('/top');
+        return redirect('/login');
     }
 }

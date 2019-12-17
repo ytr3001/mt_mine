@@ -14,7 +14,7 @@
   <header>
     <div class="header-inner">
       <div class="header-left">
-        <h1 class="header-logo"><a href="top">Mt.Mine</a></h1>
+        <h1 class="header-logo"><a href="post/index">Mt.Mine</a></h1>
       </div>
       <div class="header-right">
         <div class="utility">

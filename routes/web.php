@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/top', 'Controller@index')->middleware('guest');
+Route::get('/', 'Controller@index');
+Route::get('/auth/register_done', 'Controller@registerdone')->middleware('auth');
 
 Route::get('/post/index', 'PostController@index');
 Route::get('/post/create', 'PostController@create')->middleware('auth');
@@ -29,5 +30,5 @@ Route::get('user/logout', 'LogoutController@getlogout')->middleware('auth');
 
 Auth::routes();
 
-Route::get('/register_done', 'HomeController@index')->name('home');
+
 
